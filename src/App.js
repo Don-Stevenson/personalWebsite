@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Router } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <p> Hello</p>
+        <Router> Hello</Router>
       </div>
     );
   }
