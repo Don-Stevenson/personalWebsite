@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,23 +15,19 @@ class App extends React.Component {
       home: {
         title: "Never Stop Learning",
         subTitle: "Projects that make a difference",
-        text: 'Checkout my projects below' 
+        text: "Checkout my projects below"
       },
       about: {
-        title: 'About me'
+        title: "About me"
       },
       contact: {
-        title: 'Talk to me'
+        title: "Talk to me"
       }
     };
   }
 
   render() {
-    return (
-      <div className="App">
-        <Router> Hello</Router>
-      </div>
-    );
+    return <Router> Hello</Router>;
   }
 }
 
