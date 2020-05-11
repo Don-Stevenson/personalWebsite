@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +35,20 @@ class App extends React.Component {
         <Container className="p-0" fluid={true}>
           <Navbar className="border-bottom">
             <Navbar.Brand>Don Stevenson</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbar-toggle" />
+            <Navbar.Collapse id="navbar-toggle">
+              <Nav>
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
           </Navbar>
         </Container>
       </Router>
