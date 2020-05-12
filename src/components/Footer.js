@@ -3,12 +3,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export const Footer = () => {
+export default function Footer () {
   return (
     <footer className="mt-5">
       <Container>
         <Row>
-          <Col></Col>
+          <Col className="p-0" md={3} sm={12}>
+            Don Stevenson
+          </Col>
         </Row>
       </Container>
     </footer>
