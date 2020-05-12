@@ -67,26 +67,12 @@ class App extends React.Component {
             )}
           />
           <Route
-            path="/"
-            exact
-            render={() => (
-              <AboutPage
-                title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
-                text={this.state.home.text}
-              />
-            )}
+            path="/about"
+            render={() => <AboutPage title={this.state.about.title} />}
           />
           <Route
-            path="/"
-            exact
-            render={() => (
-              <ContactPage
-                title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
-                text={this.state.home.text}
-              />
-            )}
+            path="/contact"
+            render={() => <ContactPage title={this.state.contact.title} />}
           />
           <Footer></Footer>
         </Container>
