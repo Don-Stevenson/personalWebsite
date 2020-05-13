@@ -13,23 +13,23 @@ class Carousel extends React.Component {
           title: "Nag-me",
           subTitle: "A nudge theory goal attainment app",
           imgSrc: NagMe,
-          link: "from git hub",
+          link: "https://github.com/Don-Stevenson/nag-me",
           selected: false
         },
         {
           id: 1,
           title: "Movie-DB",
-          subTitle: "A React based app the returns info on a movie query",
+          subTitle: "A movie DB app that returns movie search results.",
           imgSrc: MovieDB,
-          link: "from git hub",
+          link: "https://github.com/Don-Stevenson/moviedb",
           selected: false
         },
         {
           id: 3,
           title: "Scheduler",
-          subTitle: "A React based app for booking appointments ",
-          imgSrc: MovieDB,
-          link: "from git hub",
+          subTitle: "An app for managing work appointments ",
+          imgSrc: Scheduler,
+          link: "https://github.com/Don-Stevenson/scheduler",
           selected: false
         }
       ]
