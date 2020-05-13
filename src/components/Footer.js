@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export default function Footer () {
+export default function Footer() {
   return (
     <footer className="mt-5">
       <Container fluid={true}>
@@ -11,12 +11,11 @@ export default function Footer () {
           <Col className="p-0" md={3} sm={12}>
             Don Stevenson
           </Col>
-          <Col className="p-0 d-flex justify-content-end" md={3} >
-              This site was made by Don Stevenson
-          
+          <Col className="p-0 d-flex justify-content-end" md={3}>
+            © Don Stevenson
           </Col>
         </Row>
       </Container>
     </footer>
   );
-};
+}
