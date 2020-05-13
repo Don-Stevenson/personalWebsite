@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" });
-console.log(()=> year);
 
 export default function Footer() {
   return (
