@@ -1,5 +1,5 @@
 import React from "react";
-import NagMe from "../components/assets/images/NagTrackerChart.png";
+import NagMe from "../components/assets/images/NagMe.gif";
 import MovieDB from "../components/assets/images/batman.gif";
 import Scheduler from "../components/assets/images/Scheduler.gif";
 
