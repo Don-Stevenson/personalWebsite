@@ -1,6 +1,6 @@
 import React from "react";
 import NagMe from "../components/assets/images/NagTrackerChart.png";
-import MovieDB from "../components/assets/images/batman movieDB2.png";
+import MovieDB from "../components/assets/images/batman.gif";
 import Scheduler from "../components/assets/images/Main interface2.png";
 
 import Card from '../components/Card'
