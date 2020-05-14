@@ -41,14 +41,14 @@ class Carousel extends React.Component {
   }
 
   handleCardClick = (id, card) => {
-    console.log("id is, ", id);
+    
     let items = [...this.state.items];
     // onclick logic to select an item
     items[id].selected = items[id].selected ? false : true;
     // logic to display only one item at a time
     items.forEach(element => {
       if (element.id !== id) {
-        element.selected = true;
+        element.selected = false;
       }
     });
 
