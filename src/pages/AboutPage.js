@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from '../components/Hero'
 import Container from "react-bootstrap/Container";
-// import Content from '../components/Content'
+import Content from '../components/Content'
 
 export default function AboutPage(props) {
     return(
