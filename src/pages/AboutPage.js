@@ -12,14 +12,14 @@ export default function AboutPage(props) {
         <br></br>
         <br></br>
         <p>
-          Hi, I'm Don Stevenson. I'm a full stack web developer with experience
-          in Javascript, Ruby on Rails, Node Js, React, Express JS, PostGres and
+          Hi, I'm Don Stevenson. I'm a full stack web developer with experience <br></br>
+          in Javascript, Ruby on Rails, Node Js, React, Express JS, PostGres and  <br></br>
           Mocha / Chai.
         </p>
         <p>
           {" "}
-          When I am not building apps and work other coding projects, I like to
-          do things like: practice guitar, play sports, roast my own coffee and
+          When I am not building apps and work other coding projects, I like to  <br></br>
+          do things like: practice guitar, play sports, roast my own coffee and  <br></br>
           do different DIY projects.{" "}
         </p>
       </Content>

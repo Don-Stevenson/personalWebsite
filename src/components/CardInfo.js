@@ -9,7 +9,7 @@ export default function CardInfo(props) {
       <p className="d-card-subtitle">{props.subTitle} </p>
       <a href={props.link} target="_blank" rel="noopener noreferrrer">
         {" "}
-        View{" "}
+        View Code{" "}
       </a>
     </animated.div>
   );
