@@ -15,7 +15,7 @@ class Carousel extends React.Component {
         {
           id: 0,
           title: "Nag-me",
-          subTitle: "A mobile first, nudge theory goal attainment app",
+          subTitle: `A mobile first, nudge theory goal attainment app`,
           imgSrc: NagMe,
           link: "https://github.com/Don-Stevenson/nag-me",
           selected: false
