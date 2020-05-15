@@ -7,7 +7,7 @@ export default function AboutPage(props) {
   return (
     <div>
       <Hero title={props.title} />
-      <img className="d-card-image" src={ProfilePic} alt='profile' />
+      <img className="d-card-profile" src={ProfilePic} alt='profile' />
       <Content>
         <p>
           Hi, I'm Don Stevenson. I'm a full stack web developer with experience
