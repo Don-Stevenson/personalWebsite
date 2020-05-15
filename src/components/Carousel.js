@@ -1,7 +1,11 @@
 import React from "react";
+
 import NagMe from "../components/assets/images/NagMe.gif";
 import MovieDB from "../components/assets/images/batman.gif";
 import Scheduler from "../components/assets/images/Scheduler.gif";
+import NagMeStatic from "../components/assets/images/NagMe-static.png"
+import MovieDBStatic from "../components/assets/images/Batman-static.png"
+import SchedulerStatic from "../components/assets/images/Scheduler-static.png"
 
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
@@ -17,6 +21,7 @@ class Carousel extends React.Component {
           title: "Nag-me",
           subTitle: `A mobile first, nudge theory goal attainment app`,
           imgSrc: NagMe,
+          imgSrcStatic: NagMeStatic,
           link: "https://github.com/Don-Stevenson/nag-me",
           selected: false
         },
@@ -25,6 +30,7 @@ class Carousel extends React.Component {
           title: "Movie-DB",
           subTitle: "A movie DB app that returns movie search results.",
           imgSrc: MovieDB,
+          imgSrcStatic: MovieDBStatic,
           link: "https://github.com/Don-Stevenson/moviedb",
           selected: false
         },
@@ -33,6 +39,7 @@ class Carousel extends React.Component {
           title: "Scheduler",
           subTitle: "An app for managing work appointments ",
           imgSrc: Scheduler,
+          imgSrcStatic: SchedulerStatic,
           link: "https://github.com/Don-Stevenson/scheduler",
           selected: false
         }

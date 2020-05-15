@@ -1,14 +1,14 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
-import ProfilePic from "../components/assets/images/profile pic.jpg";
+import ProfilePic from "../components/assets/images/profile-pic.jpg";
 
 export default function AboutPage(props) {
   return (
     <div>
       <Hero title={props.title} />
       <Content>
-        <img className="d-card-profile" src={ProfilePic} alt="profile" />
+        <img className="d-card-profile" src={ProfilePic} alt="profile portrait" />
         <br></br>
         <br></br>
         <p>
