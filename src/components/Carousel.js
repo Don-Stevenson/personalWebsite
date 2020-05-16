@@ -71,10 +71,7 @@ class Carousel extends React.Component {
       }
       if (element.id === 2 && element.selected === false) {
         element.imgSrc = SchedulerStatic;
-      } 
-
-      // element.id === 1 && element.selected === false ? element.imgSrc = MovieDB : element.imgSrc = MovieDBStatic
-      // element.id === 2 && element.selected === false ? element.imgSrc = Scheduler : element.imgSrc = SchedulerStatic
+      }
     });
 
     // update state
