@@ -50,27 +50,27 @@ class Carousel extends React.Component {
     // onclick logic to select an item
     items[id].selected = items[id].selected ? false : true;
     // logic to display only one item at a time
-    items.forEach(element => {
-      if (element.id !== id) {
-        element.selected = false;
+    items.forEach(item => {
+      if (item.id !== id) {
+        item.selected = false;
       }
-      if (element.id === 0 && element.selected === true) {
-        element.imgSrc = NagMeGif;
+      if (item.id === 0 && item.selected) {
+        item.imgSrc = NagMeGif;
       }
-      if (element.id === 0 && element.selected === false) {
-        element.imgSrc = NagMeStatic;
+      if (item.id === 0 && !item.selected) {
+        item.imgSrc = NagMeStatic;
       }
-      if (element.id === 1 && element.selected === true) {
-        element.imgSrc = MovieDBGif;
+      if (item.id === 1 && item.selected) {
+        item.imgSrc = MovieDBGif;
       }
-      if (element.id === 1 && element.selected === false) {
-        element.imgSrc = MovieDBStatic;
+      if (item.id === 1 && !item.selected) {
+        item.imgSrc = MovieDBStatic;
       }
-      if (element.id === 2 && element.selected === true) {
-        element.imgSrc = SchedulerGif;
+      if (item.id === 2 && item.selected) {
+        item.imgSrc = SchedulerGif;
       }
-      if (element.id === 2 && element.selected === false) {
-        element.imgSrc = SchedulerStatic;
+      if (item.id === 2 && !item.selected) {
+        item.imgSrc = SchedulerStatic;
       }
     });
 
