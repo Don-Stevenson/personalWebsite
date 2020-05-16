@@ -49,7 +49,7 @@ class Carousel extends React.Component {
 
     // onclick logic to select an item
     items[id].selected = items[id].selected ? false : true;
-    // logic to display only one item at a time
+    // logic to display only one item at a time with gifs when selceted
     items.forEach(item => {
       if (item.id !== id) {
         item.selected = false;
