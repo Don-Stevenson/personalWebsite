@@ -1,11 +1,11 @@
 import React from "react";
 
-import NagMe from "../components/assets/images/NagMe.gif";
-import MovieDB from "../components/assets/images/batman.gif";
-import Scheduler from "../components/assets/images/Scheduler.gif";
-import NagMeStatic from "../components/assets/images/NagMe-static.png"
-import MovieDBStatic from "../components/assets/images/Batman-static.png"
-import SchedulerStatic from "../components/assets/images/Scheduler-static.png"
+import NagMeGif from "../components/assets/images/NagMe.gif";
+import MovieDBGif from "../components/assets/images/batman.gif";
+import SchedulerGif from "../components/assets/images/Scheduler.gif";
+import NagMeStatic from "../components/assets/images/NagMe-static.png";
+import MovieDBStatic from "../components/assets/images/Batman-static.png";
+import SchedulerStatic from "../components/assets/images/Scheduler-static.png";
 
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
@@ -20,8 +20,7 @@ class Carousel extends React.Component {
           id: 0,
           title: "Nag-me",
           subTitle: `A mobile first, nudge theory goal attainment app`,
-          imgSrc: NagMe,
-          imgSrcStatic: NagMeStatic,
+          imgSrc: NagMeStatic,
           link: "https://github.com/Don-Stevenson/nag-me",
           selected: false
         },
@@ -29,8 +28,7 @@ class Carousel extends React.Component {
           id: 1,
           title: "Movie-DB",
           subTitle: "A movie DB app that returns movie search results.",
-          imgSrc: MovieDB,
-          imgSrcStatic: MovieDBStatic,
+          imgSrc: MovieDBStatic,
           link: "https://github.com/Don-Stevenson/moviedb",
           selected: false
         },
@@ -38,8 +36,7 @@ class Carousel extends React.Component {
           id: 2,
           title: "Scheduler",
           subTitle: "An app for managing work appointments ",
-          imgSrc: Scheduler,
-          imgSrcStatic: SchedulerStatic,
+          imgSrc: SchedulerStatic,
           link: "https://github.com/Don-Stevenson/scheduler",
           selected: false
         }
@@ -48,8 +45,8 @@ class Carousel extends React.Component {
   }
 
   handleCardClick = (id, card) => {
-    
     let items = [...this.state.items];
+
     // onclick logic to select an item
     items[id].selected = items[id].selected ? false : true;
     // logic to display only one item at a time
@@ -57,6 +54,27 @@ class Carousel extends React.Component {
       if (element.id !== id) {
         element.selected = false;
       }
+      if (element.id === 0 && element.selected === true) {
+        element.imgSrc = NagMeGif;
+      }
+      if (element.id === 0 && element.selected === false) {
+        element.imgSrc = NagMeStatic;
+      }
+      if (element.id === 1 && element.selected === true) {
+        element.imgSrc = MovieDBGif;
+      }
+      if (element.id === 1 && element.selected === false) {
+        element.imgSrc = MovieDBStatic;
+      }
+      if (element.id === 2 && element.selected === true) {
+        element.imgSrc = SchedulerGif;
+      }
+      if (element.id === 2 && element.selected === false) {
+        element.imgSrc = SchedulerStatic;
+      } 
+
+      // element.id === 1 && element.selected === false ? element.imgSrc = MovieDB : element.imgSrc = MovieDBStatic
+      // element.id === 2 && element.selected === false ? element.imgSrc = Scheduler : element.imgSrc = SchedulerStatic
     });
 
     // update state
