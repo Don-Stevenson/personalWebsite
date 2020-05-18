@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
 import ProfilePic from "../components/assets/images/profile-pic.jpg";
-import { Route } from "react-router-dom";
 import Resume from "../components/assets/docs/DSresume.pdf";
 
 export default function AboutPage(props) {
