@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
 import ProfilePic from "../components/assets/images/profile-pic.jpg";
-import Resume from "../components/assests/images/resume.pdf"
+import Resume from "../components/assests/doc/Dsresume.pdf"
 
 export default function AboutPage(props) {
   return (
@@ -28,7 +28,7 @@ export default function AboutPage(props) {
           play sports, roast my own coffee and do different <br></br>
           DIY projects.{" "}
         </p>
-        <p href={"resume link"}> My Resume </p>
+        <p src={Resume}> My Resume </p>
         <p href={"https://github.com/Don-Stevenson"}> My github</p>
       </Content>
     </div>
