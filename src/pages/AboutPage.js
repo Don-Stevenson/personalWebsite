@@ -24,7 +24,7 @@ export default function AboutPage(props) {
         <p>
           {" "}
           When I am not building apps and work other coding <br></br>
-          projects, I like to do things like: practice guitar, <br></br>
+          projects, I enjoy doing things like: practice guitar, <br></br>
           play sports, roast my own coffee and do different <br></br>
           DIY projects.{" "}
         </p>
