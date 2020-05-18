@@ -29,7 +29,7 @@ export default function AboutPage(props) {
           play sports, roast my own coffee and do different <br></br>
           DIY projects.{" "}
         </p>
-        <p src={Resume}> My Resume </p>
+        <a href = {Resume} target = "blank">My Resume</a>
         <a target="blank" href="https://github.com/Don-Stevenson">
           {" "}
           My Github
