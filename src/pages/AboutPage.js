@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
 import ProfilePic from "../components/assets/images/profile-pic.jpg";
+import {Link } from 'react-router-dom'
 import Resume from "../components/assets/docs/DSresume.pdf"
 
 export default function AboutPage(props) {
@@ -29,7 +30,7 @@ export default function AboutPage(props) {
           DIY projects.{" "}
         </p>
         <p src={Resume}> My Resume </p>
-        <p href={"https://github.com/Don-Stevenson"}> My Github</p>
+        <p> <Link> My Github</Link></p>
       </Content>
     </div>
   );
