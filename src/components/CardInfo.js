@@ -7,7 +7,7 @@ export default function CardInfo(props) {
     <animated.div className="d-card-info" style={style}>
       <p className="d-card-title">{props.title}</p>
       <p className="d-card-subtitle">{props.subTitle} </p>
-      <a href={props.link} target="_blank" rel="noopener noreferrrer">
+      <a href={props.link} target="blank" rel="noopener noreferrrer">
         {" "}
         View Code{" "}
       </a>
