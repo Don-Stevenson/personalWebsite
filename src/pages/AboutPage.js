@@ -14,24 +14,23 @@ export default function AboutPage(props) {
           src={ProfilePic}
           alt="profile portrait"
         />
-        <br></br>
-        <br></br>
+
         <p>
-          Hi, I'm Don Stevenson. I'm a full stack web developer <br></br>
-          with experience in Javascript, Ruby on Rails, Node Js, <br></br>
-          React, Express JS, PostGres and Mocha / Chai.
+          Hi, I'm Don Stevenson. I'm a full stack web developer with experience
+          in Javascript, Ruby on Rails, Node Js, React, Express JS, PostGres and
+          Mocha / Chai.
         </p>
         <p>
           {" "}
-          When I am not building apps and work other coding <br></br>
-          projects, I enjoy doing things like: practicing guitar, <br></br>
-          playing sports, roasting my own coffee and making different <br></br>
-          DIY projects.{" "}
+          When I am not building apps and work other coding projects, I enjoy
+          doing things like: practicing guitar, <br></br>
+          playing sports, roasting my own coffee and making different DIY
+          projects.{" "}
         </p>
         <a href={Resume} target="blank">
           My Resume
         </a>
-        <br></br>
+
         <a target="blank" href="https://github.com/Don-Stevenson">
           {" "}
           My Github
