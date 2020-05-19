@@ -21,8 +21,8 @@ export default function AboutPage(props) {
         <Column flexGrow={1} horizontal="center">
           <p>
             Hi, I'm Don Stevenson. I'm a full stack web developer with
-            experience in Javascript, Ruby on Rails, Node Js, React, Express JS,
-            PostGres and Mocha / Chai.
+            experience in Javascript, Ruby on Rails, Node JS, React, Express JS,
+            SQl, PostgreSQL and Mocha / Chai.
           </p>
           <p>
             {" "}
