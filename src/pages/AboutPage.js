@@ -18,27 +18,29 @@ export default function AboutPage(props) {
             alt="profile portrait"
           />
         </Column>
-        <Column flexGrow={1} horizontal="left">
-          <p>
-            Hi, I'm Don Stevenson. I'm a full stack web developer with
-            experience in Javascript, Ruby on Rails, Node JS, React, Express JS,
-            SQl, PostgreSQL and Mocha / Chai.
-          </p>
-          <p>
-            {" "}
-            When I am not building apps and work other coding projects, I enjoy
-            doing things like: practicing guitar, playing sports, roasting my
-            own coffee and making different DIY projects.{" "}
-          </p>
+        <Content>
+          <Column flexGrow={1} horizontal="left">
+            <p>
+              Hi, I'm Don Stevenson. I'm a full stack web developer with
+              experience in Javascript, Ruby on Rails, Node JS, React, Express
+              JS, SQl, PostgreSQL and Mocha / Chai.
+            </p>
+            <p>
+              {" "}
+              When I am not building apps and work other coding projects, I
+              enjoy doing things like: practicing guitar, playing sports,
+              roasting my own coffee and making different DIY projects.{" "}
+            </p>
 
-          <a href={Resume} target="blank">
-            Here is my resume
-          </a>
-          <a target="blank" href="https://github.com/Don-Stevenson">
-            {" "}
-            Here is my Github
-          </a>
-        </Column>
+            <a href={Resume} target="blank">
+              Here is my resume
+            </a>
+            <a target="blank" href="https://github.com/Don-Stevenson">
+              {" "}
+              Here is my Github
+            </a>
+          </Column>
+        </Content>
       </Row>
     </Content>
   );
