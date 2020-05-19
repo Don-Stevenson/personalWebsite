@@ -1,5 +1,6 @@
 import React from "react";
 import { Column, Row } from "simple-flexbox";
+import { SocialIcon } from "react-social-icons";
 
 import Hero from "../components/Hero";
 import ProfilePic from "../components/assets/images/profile-pic.jpg";
@@ -21,10 +22,9 @@ export default function AboutPage(props) {
         <Content>
           <Column flexGrow={1} horizontal="left">
             <p>
-              Hi, I'm Don.
-              I'm a full stack web developer with
-              experience in Javascript, Ruby on Rails, Node JS, React, Express
-              JS, SQl, PostgreSQL and Mocha / Chai.
+              Hi, I'm Don. I'm a full stack web developer with experience in
+              Javascript, Ruby on Rails, Node JS, React, Express JS, SQl,
+              PostgreSQL and Mocha / Chai.
             </p>
             <p>
               {" "}
@@ -36,10 +36,13 @@ export default function AboutPage(props) {
             <a href={Resume} target="blank">
               Here is my resume
             </a>
-            <a target="blank" href="https://github.com/Don-Stevenson">
-              {" "}
-              Here is my Github
-            </a>
+            <br></br>
+            <Row>
+            <SocialIcon url="https://github.com/Don-Stevenson" style={{ margin: 5  }}/>
+            
+            <SocialIcon url="https://www.linkedin.com/in/don-stevenson-5b31aa128/" style={{ margin: 5 }} />
+
+            </Row>
           </Column>
         </Content>
       </Row>
