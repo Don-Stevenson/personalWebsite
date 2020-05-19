@@ -21,7 +21,7 @@ export default function AboutPage(props) {
         <Content>
           <Column flexGrow={1} horizontal="left">
             <p>
-              Hi, I'm Don Stevenson.
+              Hi, I'm Don.
               I'm a full stack web developer with
               experience in Javascript, Ruby on Rails, Node JS, React, Express
               JS, SQl, PostgreSQL and Mocha / Chai.
