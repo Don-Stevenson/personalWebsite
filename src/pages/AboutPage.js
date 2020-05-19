@@ -10,7 +10,7 @@ export default function AboutPage(props) {
   return (
     <Content>
       <Hero title={props.title} />
-      <Row flexGrow={2}>
+      <Row flexGrow={1}>
         <Column flexGrow={1} horizontal="center">
           <img
             className="d-card-profile"
@@ -18,7 +18,7 @@ export default function AboutPage(props) {
             alt="profile portrait"
           />
         </Column>
-        <Column flexGrow={1} horizontal="center">
+        <Column flexGrow={1} horizontal="left">
           <p>
             Hi, I'm Don Stevenson. I'm a full stack web developer with
             experience in Javascript, Ruby on Rails, Node JS, React, Express JS,
@@ -32,11 +32,11 @@ export default function AboutPage(props) {
           </p>
 
           <a href={Resume} target="blank">
-            My Resume
+            Here is my resume
           </a>
           <a target="blank" href="https://github.com/Don-Stevenson">
             {" "}
-            My Github
+            Here is my Github
           </a>
         </Column>
       </Row>
