@@ -10,7 +10,7 @@ export default function AboutPage(props) {
   return (
     <Content>
       <Hero title={props.title} />
-      <Row>
+      <Row flexGrow={2}>
         <Column flexGrow={1} horizontal="center">
           <img
             className="d-card-profile"
