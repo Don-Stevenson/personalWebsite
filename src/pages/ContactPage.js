@@ -27,6 +27,17 @@ class ContactPage extends React.Component {
                 name="name"
                 type="text"
                 value={this.state.name}
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="email"> Email </Form.Label>
+              <Form.Control
+                id="email"
+                name="email"
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
               />
             </Form.Group>
           </Form>
