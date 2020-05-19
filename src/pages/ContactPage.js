@@ -1,7 +1,23 @@
 import React from "react";
 
-export default function ContactPage() {
-    return(
-        <p>Contact page </p>
-    )
+class ContactPage extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            message: '',
+            disabled: false,
+            emailSent: null
+
+        }
+    }
+    render(){
+
+        return(
+            <p>Contact page </p>
+        )
+    }
 }
+
+export default ContactPage
