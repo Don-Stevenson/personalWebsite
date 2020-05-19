@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 class ContactPage extends React.Component {
   constructor(props) {
@@ -40,6 +41,25 @@ class ContactPage extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="message"> Message </Form.Label>
+              <Form.Control
+                id="message"
+                name="message"
+                as="textarea"
+                rows="3"
+                value={this.state.message}
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Button
+              className="d-inline-block"
+              variant="outline-primary"
+              type="submit"
+              disabled={this.state.disabled}
+            >
+              Send
+            </Button>
           </Form>
         </Content>
       </div>
