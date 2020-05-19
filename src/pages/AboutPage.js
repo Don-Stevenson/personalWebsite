@@ -10,7 +10,7 @@ import Content from "../components/Content";
 export default function AboutPage(props) {
   return (
     <Content>
-      <Hero title={props.title} />
+      <Hero title={props.title}> title </Hero>>
       <Row flexGrow={1}>
         <Column flexGrow={1} horizontal="center">
           <img
@@ -33,15 +33,24 @@ export default function AboutPage(props) {
               roasting my own coffee and making different DIY projects.{" "}
             </p>
 
-            <a href={Resume} target="blank">
+            <a href={Resume} target="blank" rel="noopener noreferrrer">
               Here is my resume
             </a>
             <br></br>
             <Row>
-            <SocialIcon url="https://github.com/Don-Stevenson" style={{ margin: 5  }}/>
-            
-            <SocialIcon url="https://www.linkedin.com/in/don-stevenson-5b31aa128/" style={{ margin: 5 }} />
+              <SocialIcon
+                url="https://github.com/Don-Stevenson"
+                style={{ margin: 5 }}
+                target="blank"
+                rel="noopener noreferrrer"
+              />
 
+              <SocialIcon
+                url="https://www.linkedin.com/in/don-stevenson-5b31aa128/"
+                style={{ margin: 5 }}
+                target="blank"
+                rel="noopener noreferrrer"
+              />
             </Row>
           </Column>
         </Content>
