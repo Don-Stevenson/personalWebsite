@@ -10,7 +10,7 @@ import Content from "../components/Content";
 export default function AboutPage(props) {
   return (
     <Content>
-      <Hero title={props.title}> title </Hero>>
+      <Hero title={props.title}> title </Hero>
       <Row flexGrow={1}>
         <Column flexGrow={1} horizontal="center">
           <img
