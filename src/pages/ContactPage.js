@@ -1,8 +1,10 @@
 import React from "react";
-import Hero from "../components/Hero";
-import Content from "../components/Content";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
+import Hero from "../components/Hero";
+import Content from "../components/Content";
 
 class ContactPage extends React.Component {
   constructor(props) {
@@ -21,20 +23,18 @@ class ContactPage extends React.Component {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
-    this.setState = {
+    this.setState({
       [name]: value
-    };
+    });
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
-    console.log(event.target)
+    console.log(event.target);
 
-    // prevents multiple submits of the same thing
-    this.setState = ({
-      disabled: true,
-    //   emailSent: true
+    this.setState({
+      disabled: true
     });
   };
 
@@ -42,10 +42,11 @@ class ContactPage extends React.Component {
     return (
       <div>
         <Hero title={this.props.title} />
+
         <Content>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group>
-              <Form.Label htmlFor="full-name"> Name </Form.Label>
+              <Form.Label htmlFor="full-name">Full Name</Form.Label>
               <Form.Control
                 id="full-name"
                 name="name"
@@ -54,8 +55,9 @@ class ContactPage extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
             <Form.Group>
-              <Form.Label htmlFor="email"> Email </Form.Label>
+              <Form.Label htmlFor="email">Email</Form.Label>
               <Form.Control
                 id="email"
                 name="email"
@@ -64,8 +66,9 @@ class ContactPage extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
             <Form.Group>
-              <Form.Label htmlFor="message"> Message </Form.Label>
+              <Form.Label htmlFor="message">Message</Form.Label>
               <Form.Control
                 id="message"
                 name="message"
@@ -75,6 +78,7 @@ class ContactPage extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
             <Button
               className="d-inline-block"
               variant="outline-primary"
@@ -85,10 +89,10 @@ class ContactPage extends React.Component {
             </Button>
 
             {this.state.emailSent === true && (
-              <p className="d-inline success-msg"> Email Sent</p>
+              <p className="d-inline success-msg">Email Sent</p>
             )}
             {this.state.emailSent === false && (
-              <p className="d-inline err-msg"> Email Not Sent</p>
+              <p className="d-inline err-msg">Email Not Sent</p>
             )}
           </Form>
         </Content>
