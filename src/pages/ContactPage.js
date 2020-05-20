@@ -26,14 +26,16 @@ class ContactPage extends React.Component {
     };
   };
 
-  handleChange = event => {
+  handleSubmit = event => {
     event.preventDefault();
 
+    console.log(event.target)
+
     // prevents multiple submits of the same thing
-    this.setState = {
+    this.setState = ({
       disabled: true,
-      emailSent: true
-    };
+    //   emailSent: true
+    });
   };
 
   render() {
