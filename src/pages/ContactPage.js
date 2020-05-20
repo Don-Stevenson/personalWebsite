@@ -31,7 +31,7 @@ class ContactPage extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    console.log(event.target);
+    // console.log(event.target);
 
     this.setState({
       disabled: true
