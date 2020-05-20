@@ -2,10 +2,10 @@ import React from "react";
 
 import NagMeGif from "../components/assets/images/NagMe.gif";
 import MovieDBGif from "../components/assets/images/batman.gif";
-import SchedulerGif from "../components/assets/images/Scheduler.gif";
+import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 import NagMeStatic from "../components/assets/images/NagMe-static.png";
-import MovieDBStatic from "../components/assets/images/Batman-static.png";
-import SchedulerStatic from "../components/assets/images/Scheduler-static.png";
+import MovieDBStatic from "../components/assets/images/MovieDBstatic.png";
+import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
 
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
