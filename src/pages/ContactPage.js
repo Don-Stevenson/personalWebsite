@@ -46,7 +46,7 @@ class ContactPage extends React.Component {
         <Content>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group>
-              <Form.Label htmlFor="full-name">Full Name</Form.Label>
+              <Form.Label htmlFor="full-name">Name</Form.Label>
               <Form.Control
                 id="full-name"
                 name="name"
