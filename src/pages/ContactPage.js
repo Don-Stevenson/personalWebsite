@@ -29,10 +29,12 @@ class ContactPage extends React.Component {
   };
 
   handleSubmit = event => {
+    // prevents blank emails being sent
     event.preventDefault();
 
     // console.log(event.target);
 
+    // prevents multiple inadvertent emails to be sent
     this.setState({
       disabled: true
     });
