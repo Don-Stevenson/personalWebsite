@@ -34,13 +34,13 @@ class ContactPage extends React.Component {
     // prevents blank emails being sent
     event.preventDefault();
 
-    // console.log(event.target);
-
     // prevents multiple inadvertent emails to be sent
     this.setState({
       disabled: true
     });
 
+    // handling the success of the email being sent
+    //********************************************/
     Axios.post("http://localhost:3030/api/email", this.state)
       .then(res => {
         if (res.data.success) {
