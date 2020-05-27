@@ -46,12 +46,12 @@ code {
   align-items: "right";
 }
 
-.sucess-msg {
+.d-sucess-msg {
   color: #57A773;
   padding: 10px 15px;
 }
 
-.err-msg {
+.d-err-msg {
   color: #EE6352;
   padding: 10px 15px;
 }
