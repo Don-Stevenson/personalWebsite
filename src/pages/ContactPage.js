@@ -20,9 +20,11 @@ class ContactPage extends React.Component {
     };
   }
 
+  // handling the changes made on the input fields
+  //*********************************************/
   handleChange = event => {
     const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.value;
     const name = target.name;
 
     this.setState({
@@ -117,10 +119,10 @@ class ContactPage extends React.Component {
             }
 
             {this.state.emailSent === true && (
-              <p className="d-inline d-success-msg"> Email Sent!</p>
+              <p className="d-sucess-msg"> Email Sent!</p>
             )}
             {this.state.emailSent === false && (
-              <p className="d-inline d-err-msg"> Email Not Sent! </p>
+              <p className="d-err-msg"> Email Not Sent! </p>
             )}
           </Form>
         </Content>
