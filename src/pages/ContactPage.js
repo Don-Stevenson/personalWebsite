@@ -39,7 +39,7 @@ class ContactPage extends React.Component {
       disabled: true
     });
 
-    // handling the success of the email being sent
+    // handling the email being sent
     //********************************************/
     Axios.post("http://localhost:3030/api/email", this.state)
       .then(res => {
