@@ -112,6 +112,10 @@ class ContactPage extends React.Component {
               Send
             </Button>
 
+            {
+              //returns a messagge after emailing
+            }
+
             {this.state.emailSent === true && (
               <p className="d-inline d-success-msg"> Email Sent!</p>
             )}
