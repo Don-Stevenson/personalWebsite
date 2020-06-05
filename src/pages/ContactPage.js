@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -8,127 +8,136 @@ import Content from "../components/Content";
 
 import Axios from "axios";
 
-class ContactPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      disabled: false,
-      emailSent: null
-    };
-  }
+const ContactPage = props => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [disabled, setDisabled] = useState(false);
+  const [emailSent, setEmailSent] = useState(null);
+
+  // this.state = {
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  //   disabled: false,
+  //   emailSent: null
+  // };
 
   // handling the changes made on the input fields
   //*********************************************/
-  handleChange = event => {
+  const handleChange = event => {
     const target = event.target;
     const value = target.value;
-    const name = target.name;
+    const names = target.name;
 
-    this.setState({
-      [name]: value
-    });
+    setName(()=>value);
+    console.log(`value is: ${value}
+    name is: ${names}
+    `  )
+    
+    // this.setState({
+    //   [name]: value
+    // });
   };
 
-  handleSubmit = event => {
+  const handleSubmit = event => {
     // prevents blank emails being sent
     //*********************************/
     event.preventDefault();
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
-    this.setState({
-      disabled: true
-    });
+    setDisabled(true);
 
     // handling the email being sent
     //********************************************/
-    Axios.post("http://localhost:3030/api/email", this.state)
+    // Axios.post("http://localhost:3030/api/email", this.state)
+    Axios.post("http://localhost:3030/api/email")
       .then(res => {
         if (res.data.success) {
-          this.setState({
-            disabled: false,
-            emailSent: true
-          });
+          setDisabled(false);
+          setEmailSent(true);
         } else {
-          this.setState({
-            disabled: false,
-            emailSent: false
-          });
+          setDisabled(false);
+          setEmailSent(false);
+
+          // this.setState({
+          //   disabled: false,
+          //   emailSent: false
+          // });
         }
       })
       .catch(err => {
-        this.setState({ disabled: false, email: false });
+        console.error(err);
+        setDisabled(false);
+        setEmail(false);
+        // this.setState({ disabled: false, email: false });
       });
   };
 
-  render() {
-    return (
-      <div>
-        <Hero title={this.props.title} />
+  return (
+    <div>
+      <Hero title={props.title} />
 
-        <Content>
-          <Form onSubmit={this.handleSubmit}>
-            <Form.Group>
-              <Form.Label htmlFor="full-name">Name</Form.Label>
-              <Form.Control
-                id="full-name"
-                name="name"
-                type="text"
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
-            </Form.Group>
+      <Content>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label htmlFor="full-name">Name</Form.Label>
+            <Form.Control
+              id="full-name"
+              name="name"
+              type="text"
+              value={setName}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label htmlFor="email">Email</Form.Label>
-              <Form.Control
-                id="email"
-                name="email"
-                type="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor="email">Email</Form.Label>
+            <Form.Control
+              id="email"
+              name="email"
+              type="email"
+              value={setEmail}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label htmlFor="message">Message</Form.Label>
-              <Form.Control
-                id="message"
-                name="message"
-                as="textarea"
-                rows="3"
-                value={this.state.message}
-                onChange={this.handleChange}
-              />
-            </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor="message">Message</Form.Label>
+            <Form.Control
+              id="message"
+              name="message"
+              as="textarea"
+              rows="3"
+              value={setMessage}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Button
-              className="d-inline-block"
-              variant="outline-primary"
-              type="submit"
-              disabled={this.state.disabled}
-            >
-              Send
-            </Button>
+          <Button
+            className="d-inline-block"
+            variant="outline-primary"
+            type="submit"
+            disabled={setDisabled}
+          >
+            Send
+          </Button>
 
-            {
-              //returns a messagge after emailing
-            }
+          {
+            //returns a messagge after emailing
+          }
 
-            {this.state.emailSent === true && (
-              <p className="d-sucess-msg"> Email Sent!</p>
-            )}
-            {this.state.emailSent === false && (
-              <p className="d-err-msg"> Email Not Sent! </p>
-            )}
-          </Form>
-        </Content>
-      </div>
-    );
-  }
-}
+          {emailSent === true && (
+            <p className="d-sucess-msg"> Email Sent!</p>
+          )}
+          {emailSent === false && (
+            <p className="d-err-msg"> Email Not Sent! </p>
+          )}
+        </Form>
+      </Content>
+    </div>
+  );
+};
 
 export default ContactPage;
