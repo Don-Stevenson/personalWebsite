@@ -16,66 +16,29 @@ const ContactPage = props => {
     disabled: false,
     emailSent: null
   });
-  // const [email, setEmail] = useState("");
-  // const [message, setMessage] = useState("");
-  // const [disabled, setDisabled] = useState(false);
-  // const [emailSent, setEmailSent] = useState(null);
-
-  // this.state = {
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  //   disabled: false,
-  //   emailSent: null
-  // };
-
-  // unction App() {
-  //   const [state, setState] = useState({
-  //     s: "",
-  //     results: [],
-  //     selected: {}
-  //   });
-
-  //   // insert better handling of the apiURL below
-  //   //*******************************************/
-
-  //   const apiURL = process.env.REACT_APP_MOVIE_API_KEY;
-
-  //   // use setstate to take in the search query
-  //   //****************************************/
-  //   const handleInput = e => {
-  //     let s = e.target.value;
-  //     setState(prevState => {
-  //       return { ...prevState, s: s };
-  //     });
-  //   };
 
   // handling the changes made on the input fields
   //*********************************************/
   const handleChange = event => {
+    // the element selected
+    //********************/
     const target = event.target;
-    // console.log(() => "target is, ", target);
+    // the input of the element selected
+    //*********************************/
     const value = target.value;
-    // console.log(() => "value is, ", value);
 
+    // the box selected, i.e. email, name, message
+    //********************************************/
     const boxName = target.name;
-    // console.log(() => "boxname is, ", boxName);
 
+    //goes through the different box names and displays the input value
+    //*****************************************************************/
     setState(prevState => {
       return { ...prevState, [boxName]: value };
     });
   };
-  //   console.log(`value is: ${value}
-  //   name is: ${names}
-  //   `  )
-  //   })
-  //   // this.setState({
-  //   //   [name]: value
-  //   // });
-  // }
 
   const handleSubmit = event => {
-    console.log(() => "state is :", state);
     // prevents blank emails being sent
     //*********************************/
     event.preventDefault();
@@ -84,12 +47,13 @@ const ContactPage = props => {
     // **********************************************/
     setState(true);
 
-    // handling the email being sent
-    //********************************************/
-    // Axios.post("http://localhost:3030/api/email", this.state)
-    Axios.post("http://localhost:3030/api/email", state)
-      .then(res => {
-        if (res.data.success) {
+    // handling the email as an aysnc function sent using axios
+    //*********************************************************
+
+    async function sendEmail() {
+      try {
+        const dataSent = Axios.post("http://localhost:3030/api/email", state);
+        if (dataSent) {
           setState(prevState => {
             return { ...prevState, disabled: false, emailSent: true };
           });
@@ -97,20 +61,33 @@ const ContactPage = props => {
           setState(prevState => {
             return { ...prevState, disabled: false, emailSent: false };
           });
-
-          // this.setState({
-          //   disabled: false,
-          //   emailSent: false
-          // });
         }
-      })
-      .catch(err => {
-        console.error(err);
+      } catch (error) {
+        console.error(error);
         setState(prevState => {
           return { ...prevState, disabled: false, emailSent: false };
         });
-        // this.setState({ disabled: false, email: false });
-      });
+      }
+    }
+    sendEmail()
+    // Axios.post("http://localhost:3030/api/email", state)
+    //   .then(res => {
+    //     if (res.data.success) {
+    //       setState(prevState => {
+    //         return { ...prevState, disabled: false, emailSent: true };
+    //       });
+    //     } else {
+    //       setState(prevState => {
+    //         return { ...prevState, disabled: false, emailSent: false };
+    //       });
+    //     }
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //     setState(prevState => {
+    //       return { ...prevState, disabled: false, emailSent: false };
+    //     });
+    //   });
   };
 
   return (
@@ -163,7 +140,8 @@ const ContactPage = props => {
           </Button>
 
           {
-            //returns a messagge after emailing
+            //returns a success / failue messagge to the screen after emailing
+            // ***************************************************************
           }
 
           {state.emailSent === true && (
