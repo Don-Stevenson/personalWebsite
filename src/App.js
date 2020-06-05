@@ -11,12 +11,12 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
 const App = () => {
-  const [headerLinks] = useState([
-    { title: "Home", path: "/" },
-    { title: "about", path: "/about" },
-    { title: "Contact", path: "/contact" }
-  ]);
-  const [title] = useState("Don Stevenson");
+  // const [headerLinks] = useState([
+  //   { title: "Home", path: "/" },
+  //   { title: "about", path: "/about" },
+  //   { title: "Contact", path: "/contact" }
+  // ]);
+  // const [title] = useState("Don Stevenson");
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
