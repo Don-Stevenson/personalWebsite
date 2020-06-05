@@ -7,6 +7,9 @@ import ProfilePic from "../components/assets/images/profile-pic.jpg";
 import Resume from "../components/assets/docs/DSresume.pdf";
 import Content from "../components/Content";
 
+
+// returns the about page
+//**********************/
 export default function AboutPage(props) {
   return (
     <Content>
