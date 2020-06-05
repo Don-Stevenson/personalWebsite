@@ -75,7 +75,7 @@ const ContactPage = props => {
   // }
 
   const handleSubmit = event => {
-    console.log(() => "event is :", event);
+    console.log(() => "state is :", state);
     // prevents blank emails being sent
     //*********************************/
     event.preventDefault();
@@ -87,7 +87,7 @@ const ContactPage = props => {
     // handling the email being sent
     //********************************************/
     // Axios.post("http://localhost:3030/api/email", this.state)
-    Axios.post("http://localhost:3030/api/email", event)
+    Axios.post("http://localhost:3030/api/email", state)
       .then(res => {
         if (res.data.success) {
           setState(prevState => {
