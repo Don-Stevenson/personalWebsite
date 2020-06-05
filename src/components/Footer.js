@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 
 // displaying the year based on new Date method
 //********************************************
-
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" });
 
 // returns the footer
