@@ -30,7 +30,7 @@ const ContactPage = props => {
     const value = target.value;
     const names = target.name;
 
-    setName(()=>value);
+    setName(...value, value);
     console.log(`value is: ${value}
     name is: ${names}
     `  )
