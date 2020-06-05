@@ -69,25 +69,7 @@ const ContactPage = props => {
         });
       }
     }
-    sendEmail()
-    // Axios.post("http://localhost:3030/api/email", state)
-    //   .then(res => {
-    //     if (res.data.success) {
-    //       setState(prevState => {
-    //         return { ...prevState, disabled: false, emailSent: true };
-    //       });
-    //     } else {
-    //       setState(prevState => {
-    //         return { ...prevState, disabled: false, emailSent: false };
-    //       });
-    //     }
-    //   })
-    //   .catch(err => {
-    //     console.error(err);
-    //     setState(prevState => {
-    //       return { ...prevState, disabled: false, emailSent: false };
-    //     });
-    //   });
+    sendEmail();
   };
 
   return (
