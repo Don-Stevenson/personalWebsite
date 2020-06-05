@@ -9,11 +9,17 @@ import Content from "../components/Content";
 import Axios from "axios";
 
 const ContactPage = props => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [disabled, setDisabled] = useState(false);
-  const [emailSent, setEmailSent] = useState(null);
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    message: "",
+    disabled: false,
+    emailSent: null
+  });
+  // const [email, setEmail] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [disabled, setDisabled] = useState(false);
+  // const [emailSent, setEmailSent] = useState(null);
 
   // this.state = {
   //   name: "",
@@ -23,43 +29,74 @@ const ContactPage = props => {
   //   emailSent: null
   // };
 
+  // unction App() {
+  //   const [state, setState] = useState({
+  //     s: "",
+  //     results: [],
+  //     selected: {}
+  //   });
+
+  //   // insert better handling of the apiURL below
+  //   //*******************************************/
+
+  //   const apiURL = process.env.REACT_APP_MOVIE_API_KEY;
+
+  //   // use setstate to take in the search query
+  //   //****************************************/
+  //   const handleInput = e => {
+  //     let s = e.target.value;
+  //     setState(prevState => {
+  //       return { ...prevState, s: s };
+  //     });
+  //   };
+
   // handling the changes made on the input fields
   //*********************************************/
   const handleChange = event => {
     const target = event.target;
+    console.log(() => "target is, ", target);
     const value = target.value;
-    const names = target.name;
+    console.log(() => "value is, ", value);
 
-    setName(...value, value);
-    console.log(`value is: ${value}
-    name is: ${names}
-    `  )
-    
-    // this.setState({
-    //   [name]: value
-    // });
+    const boxName = target.name;
+    console.log(() => "boxname is, ", boxName);
+
+    setState(prevState => {
+      return { ...prevState, [boxName]: value };
+    });
   };
+  //   console.log(`value is: ${value}
+  //   name is: ${names}
+  //   `  )
+  //   })
+  //   // this.setState({
+  //   //   [name]: value
+  //   // });
+  // }
 
   const handleSubmit = event => {
+    console.log(() => "event is :", event);
     // prevents blank emails being sent
     //*********************************/
     event.preventDefault();
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
-    setDisabled(true);
+    setState(true);
 
     // handling the email being sent
     //********************************************/
     // Axios.post("http://localhost:3030/api/email", this.state)
-    Axios.post("http://localhost:3030/api/email")
+    Axios.post("http://localhost:3030/api/email", event)
       .then(res => {
         if (res.data.success) {
-          setDisabled(false);
-          setEmailSent(true);
+          setState(prevState => {
+            return { ...prevState, disabled: false, emailSent: true };
+          });
         } else {
-          setDisabled(false);
-          setEmailSent(false);
+          setState(prevState => {
+            return { ...prevState, disabled: false, emailSent: false };
+          });
 
           // this.setState({
           //   disabled: false,
@@ -69,8 +106,9 @@ const ContactPage = props => {
       })
       .catch(err => {
         console.error(err);
-        setDisabled(false);
-        setEmail(false);
+        setState(prevState => {
+          return { ...prevState, disabled: false, emailSent: false };
+        });
         // this.setState({ disabled: false, email: false });
       });
   };
@@ -87,7 +125,7 @@ const ContactPage = props => {
               id="full-name"
               name="name"
               type="text"
-              value={setName}
+              value={state.name}
               onChange={handleChange}
             />
           </Form.Group>
@@ -98,7 +136,7 @@ const ContactPage = props => {
               id="email"
               name="email"
               type="email"
-              value={setEmail}
+              value={state.email}
               onChange={handleChange}
             />
           </Form.Group>
@@ -110,7 +148,7 @@ const ContactPage = props => {
               name="message"
               as="textarea"
               rows="3"
-              value={setMessage}
+              value={state.message}
               onChange={handleChange}
             />
           </Form.Group>
@@ -119,7 +157,7 @@ const ContactPage = props => {
             className="d-inline-block"
             variant="outline-primary"
             type="submit"
-            disabled={setDisabled}
+            disabled={state.disabled}
           >
             Send
           </Button>
@@ -128,10 +166,10 @@ const ContactPage = props => {
             //returns a messagge after emailing
           }
 
-          {emailSent === true && (
+          {state.emailSent === true && (
             <p className="d-sucess-msg"> Email Sent!</p>
           )}
-          {emailSent === false && (
+          {state.emailSent === false && (
             <p className="d-err-msg"> Email Not Sent! </p>
           )}
         </Form>
