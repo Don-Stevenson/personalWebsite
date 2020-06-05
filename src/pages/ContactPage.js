@@ -54,12 +54,12 @@ const ContactPage = props => {
   //*********************************************/
   const handleChange = event => {
     const target = event.target;
-    console.log(() => "target is, ", target);
+    // console.log(() => "target is, ", target);
     const value = target.value;
-    console.log(() => "value is, ", value);
+    // console.log(() => "value is, ", value);
 
     const boxName = target.name;
-    console.log(() => "boxname is, ", boxName);
+    // console.log(() => "boxname is, ", boxName);
 
     setState(prevState => {
       return { ...prevState, [boxName]: value };

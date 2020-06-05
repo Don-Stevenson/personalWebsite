@@ -3,8 +3,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// displaying the year based on new Date method
+//********************************************
+
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" });
 
+// returns the footer
+// ******************
 export default function Footer() {
   return (
     <footer className="mt-5">
