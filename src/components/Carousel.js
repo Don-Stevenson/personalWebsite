@@ -11,7 +11,7 @@ import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-const Carousel = props => {
+export default function Carousel () {
   const [state, setState] = useState({
     items: [
       {
@@ -102,4 +102,4 @@ const Carousel = props => {
   );
 };
 
-export default Carousel;
+
