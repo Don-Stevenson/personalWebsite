@@ -48,8 +48,11 @@ class Carousel extends React.Component {
     let items = [...this.state.items];
 
     // onclick logic to select an item
+    //********************************
     items[id].selected = items[id].selected ? false : true;
-    // logic to display only one item at a time with gifs when selceted
+    
+    // logic to display only one item at a time with gifs when selected
+    //******************************************************************
     items.forEach(item => {
       if (item.id !== id) {
         item.selected = false;
@@ -75,12 +78,14 @@ class Carousel extends React.Component {
     });
 
     // update state
+    //*************
     this.setState({
       items
     });
   };
 
   //create a card compoment for each item
+  //*************************************
   makeItems = items => {
     return items.map(item => {
       return (
