@@ -41,7 +41,7 @@ export default function Carousel () {
     ]
   });
 
-  const handleCardClick = (id, card) => {
+  const handleCardClick = (id) => {
     let items = [...state.items];
 
     // onclick logic to select an item
