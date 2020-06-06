@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import NagMeGif from "../components/assets/images/NagMe.gif";
 import MovieDBGif from "../components/assets/images/batman.gif";
@@ -11,46 +11,43 @@ import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [
-        {
-          id: 0,
-          title: "Nag-me",
-          subTitle: `A mobile first, nudge theory goal attainment app`,
-          imgSrc: NagMeStatic,
-          link: "https://github.com/Don-Stevenson/nag-me",
-          selected: false
-        },
-        {
-          id: 1,
-          title: "Movie-DB",
-          subTitle: "A movie DB app that returns movie search results.",
-          imgSrc: MovieDBStatic,
-          link: "https://github.com/Don-Stevenson/moviedb",
-          selected: false
-        },
-        {
-          id: 2,
-          title: "Scheduler",
-          subTitle: "An app for managing work appointments ",
-          imgSrc: SchedulerStatic,
-          link: "https://github.com/Don-Stevenson/scheduler",
-          selected: false
-        }
-      ]
-    };
-  }
+const Carousel = props => {
+  const [state, setState] = useState({
+    items: [
+      {
+        id: 0,
+        title: "Nag-me",
+        subTitle: `A mobile first, nudge theory goal attainment app`,
+        imgSrc: NagMeStatic,
+        link: "https://github.com/Don-Stevenson/nag-me",
+        selected: false
+      },
+      {
+        id: 1,
+        title: "Movie-DB",
+        subTitle: "A movie DB app that returns movie search results.",
+        imgSrc: MovieDBStatic,
+        link: "https://github.com/Don-Stevenson/moviedb",
+        selected: false
+      },
+      {
+        id: 2,
+        title: "Scheduler",
+        subTitle: "An app for managing work appointments ",
+        imgSrc: SchedulerStatic,
+        link: "https://github.com/Don-Stevenson/scheduler",
+        selected: false
+      }
+    ]
+  });
 
-  handleCardClick = (id, card) => {
-    let items = [...this.state.items];
+  const handleCardClick = (id, card) => {
+    let items = [...state.items];
 
     // onclick logic to select an item
     //********************************
     items[id].selected = items[id].selected ? false : true;
-    
+
     // logic to display only one item at a time with gifs when selected
     //******************************************************************
     items.forEach(item => {
@@ -79,34 +76,30 @@ class Carousel extends React.Component {
 
     // update state
     //*************
-    this.setState({
+    setState({
       items
     });
   };
 
   //create a card compoment for each item
   //*************************************
-  makeItems = items => {
+  const makeItems = items => {
     return items.map(item => {
       return (
         <Card
           item={item}
-          click={event => this.handleCardClick(item.id, event)}
+          click={event => handleCardClick(item.id, event)}
           key={item.id}
         />
       );
     });
   };
 
-  render() {
-    return (
-      <Container fluid={true}>
-        <Row className="justify-content-around">
-          {this.makeItems(this.state.items)}
-        </Row>
-      </Container>
-    );
-  }
-}
+  return (
+    <Container fluid={true}>
+      <Row className="justify-content-around">{makeItems(state.items)}</Row>
+    </Container>
+  );
+};
 
 export default Carousel;
