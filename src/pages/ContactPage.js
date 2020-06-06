@@ -53,8 +53,8 @@ export default function ContactPage(props) {
     //*********************************************************
     async function sendEmail() {
       try {
-        const dataSent = Axios.post("http://localhost:3030/api/email", state);
-        if (dataSent) {
+        const dataSent = await Axios.post("http://localhost:3030/api/email", state);
+        if (dataSent.data.success) {
           setState(prevState => {
             return { ...prevState, disabled: false, emailSent: true };
           });
