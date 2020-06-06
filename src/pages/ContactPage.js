@@ -8,7 +8,9 @@ import Content from "../components/Content";
 
 import Axios from "axios";
 
-const ContactPage = props => {
+export default function ContactPage(props) {
+  // Setting the default state
+  //**************************
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -49,7 +51,6 @@ const ContactPage = props => {
 
     // handling the email as an aysnc function sent using axios
     //*********************************************************
-
     async function sendEmail() {
       try {
         const dataSent = Axios.post("http://localhost:3030/api/email", state);
@@ -127,15 +128,13 @@ const ContactPage = props => {
           }
 
           {state.emailSent === true && (
-            <p className="d-sucess-msg"> Email Sent!</p>
+            <p className="inline-block d-sucess-msg"> Email Sent!</p>
           )}
           {state.emailSent === false && (
-            <p className="d-err-msg"> Email Not Sent! </p>
+            <p className="inline-block d-err-msg"> Email Not Sent! </p>
           )}
         </Form>
       </Content>
     </div>
   );
-};
-
-export default ContactPage;
+}
