@@ -68,7 +68,7 @@ export default function ContactPage(props) {
       } catch (error) {
         console.error(error);
         setState(prevState => {
-          return { ...prevState, disabled: false, emailSent: false };
+          return { ...prevState, disabled: true, emailSent: false };
         });
       }
     }
