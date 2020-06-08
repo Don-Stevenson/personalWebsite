@@ -62,7 +62,7 @@ export default function ContactPage(props) {
           });
         } else {
           setState(prevState => {
-            return { ...prevState, disabled: false, emailSent: false };
+            return { ...prevState, disabled: true, emailSent: false };
           });
         }
       } catch (error) {
