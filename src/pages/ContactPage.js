@@ -25,6 +25,7 @@ export default function ContactPage(props) {
     // the element selected
     //********************/
     const target = event.target;
+
     // the input of the element selected
     //*********************************/
     const value = target.value;
@@ -40,11 +41,10 @@ export default function ContactPage(props) {
     });
   };
 
-  const handleSubmit = event => {
-    // prevents blank emails being sent
-    //*********************************/
-    event.preventDefault();
 
+  //function that handles sending the email through the backend
+  // **********************************************************
+  const handleSubmit = event => {
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
     setState(prevState => {
@@ -55,7 +55,10 @@ export default function ContactPage(props) {
     //*********************************************************
     async function sendEmail() {
       try {
-        const dataSent = await Axios.post("http://localhost:3030/api/email", state);
+        const dataSent = await Axios.post(
+          "http://localhost:3030/api/email",
+          state
+        );
         if (dataSent.data.success) {
           setState(prevState => {
             return { ...prevState, disabled: false, emailSent: true };
@@ -73,43 +76,44 @@ export default function ContactPage(props) {
       }
     }
     sendEmail();
+    // prevents blank emails being sent
+    //*********************************/
+    event.preventDefault();
   };
 
-// // handleSubmit = (event) => {
-//   event.preventDefault();
+  // // handleSubmit = (event) => {
+  //   event.preventDefault();
 
-//   console.log(event.target);
+  //   console.log(event.target);
 
-//   this.setState({
-//       disabled: true
-//   });
+  //   this.setState({
+  //       disabled: true
+  //   });
 
-//   Axios.post('http://localhost:3030/api/email', this.state)
-//       .then(res => {
-//           if(res.data.success) {
-//               this.setState({
-//                   disabled: false,
-//                   emailSent: true
-//               });
-//           } else {
-//               this.setState({
-//                   disabled: false,
-//                   emailSent: false
-//               });
-//           }
-//       })
-//       .catch(err => {
-//           console.log(err);
+  //   Axios.post('http://localhost:3030/api/email', this.state)
+  //       .then(res => {
+  //           if(res.data.success) {
+  //               this.setState({
+  //                   disabled: false,
+  //                   emailSent: true
+  //               });
+  //           } else {
+  //               this.setState({
+  //                   disabled: false,
+  //                   emailSent: false
+  //               });
+  //           }
+  //       })
+  //       .catch(err => {
+  //           console.log(err);
 
-//           this.setState({
-//               disabled: false,
-//               emailSent: false
-//           });
-//       })
+  //           this.setState({
+  //               disabled: false,
+  //               emailSent: false
+  //           });
+  //       })
 
-// }
-
-
+  // }
 
   return (
     <div>
@@ -166,10 +170,10 @@ export default function ContactPage(props) {
           }
 
           {state.emailSent === true && (
-            <p className="inline-block d-sucess-msg"> Email Sent!</p>
+            <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}
           {state.emailSent === false && (
-            <p className="inline-block d-err-msg"> Email Not Sent! </p>
+            <p className="d-inline d-err-msg"> Email Not Sent! </p>
           )}
         </Form>
       </Content>
