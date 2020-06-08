@@ -47,7 +47,9 @@ export default function ContactPage(props) {
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
-    setState(true);
+    setState(prevState => {
+      return { ...prevState, disabled: true };
+    });
 
     // handling the email as an aysnc function sent using axios
     //*********************************************************
