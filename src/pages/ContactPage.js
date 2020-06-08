@@ -41,10 +41,14 @@ export default function ContactPage(props) {
     });
   };
 
-
   //function that handles sending the email through the backend
   // **********************************************************
-  const handleSubmit = event => {
+  async function handleSubmit(event) {
+    // prevents blank emails being sent
+    //*********************************/
+    event.preventDefault();
+    console.log("here after event PreventDefault");
+
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
     setState(prevState => {
@@ -53,34 +57,28 @@ export default function ContactPage(props) {
 
     // handling the email as an aysnc function sent using axios
     //*********************************************************
-    async function sendEmail() {
-      try {
-        const dataSent = await Axios.post(
-          "http://localhost:3030/api/email",
-          state
-        );
-        if (dataSent.data.success) {
-          setState(prevState => {
-            return { ...prevState, disabled: false, emailSent: true };
-          });
-        } else {
-          setState(prevState => {
-            return { ...prevState, disabled: false, emailSent: false };
-          });
-        }
-      } catch (error) {
-        console.error(error);
+
+    try {
+      const dataSent = await Axios.post(
+        "http://localhost:3030/api/email",
+        state
+      );
+      if (dataSent.data.success) {
+        setState(prevState => {
+          return { ...prevState, disabled: false, emailSent: true };
+        });
+      } else {
         setState(prevState => {
           return { ...prevState, disabled: false, emailSent: false };
         });
       }
+    } catch (error) {
+      console.error(error);
+      setState(prevState => {
+        return { ...prevState, disabled: false, emailSent: false };
+      });
     }
-    sendEmail();
-    // prevents blank emails being sent
-    //*********************************/
-    event.preventDefault();
-  };
-
+  }
   // // handleSubmit = (event) => {
   //   event.preventDefault();
 

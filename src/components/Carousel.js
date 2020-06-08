@@ -11,7 +11,7 @@ import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-export default function Carousel () {
+export default function Carousel() {
   const [state, setState] = useState({
     items: [
       {
@@ -41,7 +41,7 @@ export default function Carousel () {
     ]
   });
 
-  const handleCardClick = (id) => {
+  const handleCardClick = id => {
     let items = [...state.items];
 
     // onclick logic to select an item
@@ -76,8 +76,8 @@ export default function Carousel () {
 
     // update state
     //*************
-    setState({
-      items
+    setState(prevState => {
+      return { ...prevState, items };
     });
   };
 
@@ -100,6 +100,4 @@ export default function Carousel () {
       <Row className="justify-content-around">{makeItems(state.items)}</Row>
     </Container>
   );
-};
-
-
+}
