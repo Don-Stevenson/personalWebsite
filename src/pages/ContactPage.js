@@ -36,24 +36,20 @@ export default function ContactPage(props) {
 
     //goes through the different box names and displays the input value
     //*****************************************************************/
-    setState(prevState => {
-      return { ...prevState, [boxName]: value };
-    });
+    setState({ ...state, [boxName]: value });
   };
 
   //function that handles sending the email through the backend
   // **********************************************************
   async function handleSubmit(event) {
-    // prevents blank emails being sent
+    // prevents the browser being reloaded upon hiting the send button
     //*********************************/
     event.preventDefault();
     console.log("here after event PreventDefault");
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
-    setState(prevState => {
-      return { ...prevState, disabled: true };
-    });
+    setState({ ...state, disabled: true });
 
     // handling the email as an aysnc function sent using axios
     //*********************************************************
@@ -64,19 +60,13 @@ export default function ContactPage(props) {
         state
       );
       if (dataSent.data.success) {
-        setState(prevState => {
-          return { ...prevState, disabled: false, emailSent: true };
-        });
+        setState({ ...state, disabled: false, emailSent: true });
       } else {
-        setState(prevState => {
-          return { ...prevState, disabled: false, emailSent: false };
-        });
+        setState({ ...state, disabled: false, emailSent: false });
       }
     } catch (error) {
       console.error(error);
-      setState(prevState => {
-        return { ...prevState, disabled: false, emailSent: false };
-      });
+      setState({ ...state, disabled: false, emailSent: false });
     }
   }
   // // handleSubmit = (event) => {
