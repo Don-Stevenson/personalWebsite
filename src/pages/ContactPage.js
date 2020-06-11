@@ -22,17 +22,13 @@ export default function ContactPage(props) {
   // handling the changes made on the input fields
   //*********************************************/
   const handleChange = event => {
-    // the element selected
-    //********************/
-    const target = event.target;
-
     // the input of the element selected
     //*********************************/
-    const value = target.value;
+    const value = event.target.value;
 
     // the box selected, i.e. email, name, message
     //********************************************/
-    const boxName = target.name;
+    const boxName = event.target.name;
 
     //goes through the different box names and displays the input value
     //*****************************************************************/
@@ -45,7 +41,6 @@ export default function ContactPage(props) {
     // prevents the browser being reloaded upon hiting the send button
     //*********************************/
     event.preventDefault();
-    
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
@@ -69,6 +64,7 @@ export default function ContactPage(props) {
       setState({ ...state, disabled: false, emailSent: false });
     }
   }
+
   // // handleSubmit = (event) => {
   //   event.preventDefault();
 
