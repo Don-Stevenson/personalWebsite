@@ -1,10 +1,15 @@
 import { useState } from "react";
 import Axios from "axios";
-
+import validate from "./validateLogin"
 
 // create a custom hook called useForm to handle submit and change
-// ***************************************************************
+//***************************************************************/
 const useForm = () => {
+
+  //handling errors
+  const [errors, setErrors] = useState({email:"", name: "", message:""})
+
+
   // Setting the default state
   //**************************
   const [state, setState] = useState({
