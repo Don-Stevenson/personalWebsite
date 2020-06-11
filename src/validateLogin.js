@@ -2,7 +2,7 @@
 //****************** 
 
 
-const validate = values => {
+const validateLogin = values => {
   let errors = {};
   if (!values.email || !values.name || !values.message) {
     errors.email = "Warning. Field cannot be left blank";
@@ -13,4 +13,4 @@ const validate = values => {
   }
   return errors;
 };
-export default validate;
+export default validateLogin;
