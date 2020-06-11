@@ -24,9 +24,9 @@ export default function ContactPage(props) {
   const handleChange = event => {
     // the input of the element selected, with destructuring
     //*******************************************************/
-    const {name, value} = event.target;
+    const { name, value } = event.target;
 
-     //goes through the different box names and displays the input value
+    //goes through the different box names and displays the input value
     //*****************************************************************/
     setState({ ...state, [name]: value });
   };
@@ -35,7 +35,7 @@ export default function ContactPage(props) {
   // **********************************************************
   async function handleSubmit(event) {
     // prevents the browser being reloaded upon hiting the send button
-    //*********************************/
+    //***************************************************************/
     event.preventDefault();
 
     // prevents multiple inadvertent emails to be sent
