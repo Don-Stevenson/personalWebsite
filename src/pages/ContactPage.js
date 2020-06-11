@@ -45,7 +45,7 @@ export default function ContactPage(props) {
     // prevents the browser being reloaded upon hiting the send button
     //*********************************/
     event.preventDefault();
-    console.log("here after event PreventDefault");
+    
 
     // prevents multiple inadvertent emails to be sent
     // **********************************************/
