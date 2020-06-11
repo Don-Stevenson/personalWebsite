@@ -3,10 +3,11 @@
 Made with React, this website design and structure is based on a tutorial by [Garrett Love](https://github.com/garrettlove8/building-react-portfolio)
 with several important changes
 
-- update from a structure that included both class and functional based React components to a fully functional approach
-- update asynchronis code from a .then / promise aproach to a more modern async / await aproach
-- update from onclick to display gifs instead of static images upon click
-- use of process.env variables to store api keys
+* update from a structure that included both class and functional based React components to a fully functional approach
+* update asynchronis code from a .then / promise aproach to a modern async / await in a try / catch block aproach
+* update from onclick to display gifs instead of static images upon click
+* use of process.env variables to store api keys
+* creating and displaying error messages with the form fields 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
