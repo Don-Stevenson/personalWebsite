@@ -7,9 +7,10 @@ import Hero from "../components/Hero";
 import Content from "../components/Content";
 
 import Useform from "../../src/UseForm";
+import validateLogin from "../../src/validateLogin"
 
 export default function ContactPage(props) {
-  const { handleSubmit, handleChange, state } = Useform();
+  const { handleSubmit, handleChange, state } = Useform(validateLogin);
 
   return (
     <div>
