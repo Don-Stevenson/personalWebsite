@@ -11,7 +11,7 @@ import Useform from "../../src/UseForm";
 export default function ContactPage(props) {
   const { handleSubmit, handleChange, state } = Useform();
 
-    return (
+  return (
     <div>
       <Hero title={props.title} />
 
