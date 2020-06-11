@@ -22,17 +22,13 @@ export default function ContactPage(props) {
   // handling the changes made on the input fields
   //*********************************************/
   const handleChange = event => {
-    // the input of the element selected
-    //*********************************/
-    const value = event.target.value;
+    // the input of the element selected, with destructuring
+    //*******************************************************/
+    const {name, value} = event.target;
 
-    // the box selected, i.e. email, name, message
-    //********************************************/
-    const boxName = event.target.name;
-
-    //goes through the different box names and displays the input value
+     //goes through the different box names and displays the input value
     //*****************************************************************/
-    setState({ ...state, [boxName]: value });
+    setState({ ...state, [name]: value });
   };
 
   //function that handles sending the email through the backend
