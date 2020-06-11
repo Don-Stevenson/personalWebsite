@@ -9,43 +9,9 @@ import Content from "../components/Content";
 import Useform from "../../src/UseForm";
 
 export default function ContactPage(props) {
-  const { handleSubmit, handleChange, state } = Useform;
+  const { handleSubmit, handleChange, state } = Useform();
 
-  // // handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   console.log(event.target);
-
-  //   this.setState({
-  //       disabled: true
-  //   });
-
-  //   Axios.post('http://localhost:3030/api/email', this.state)
-  //       .then(res => {
-  //           if(res.data.success) {
-  //               this.setState({
-  //                   disabled: false,
-  //                   emailSent: true
-  //               });
-  //           } else {
-  //               this.setState({
-  //                   disabled: false,
-  //                   emailSent: false
-  //               });
-  //           }
-  //       })
-  //       .catch(err => {
-  //           console.log(err);
-
-  //           this.setState({
-  //               disabled: false,
-  //               emailSent: false
-  //           });
-  //       })
-
-  // }
-
-  return (
+    return (
     <div>
       <Hero title={props.title} />
 

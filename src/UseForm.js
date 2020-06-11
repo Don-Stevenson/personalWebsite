@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Axios from "axios";
 
+
+// create a custom hook called useForm to handle submit and change
+// ***************************************************************
 const useForm = () => {
   // Setting the default state
   //**************************
