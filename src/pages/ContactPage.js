@@ -7,16 +7,15 @@ import Hero from "../components/Hero";
 import Content from "../components/Content";
 
 import Useform from "../../src/UseForm";
-import validateLogin from "../../src/validateLogin"
+import validateLogin from "../../src/validateLogin";
 
 export default function ContactPage(props) {
-  const { handleSubmit, handleChange, state } = Useform(validateLogin);
-
+  const { handleSubmit, handleChange, state, errors } = Useform(validateLogin);
+  console.log("here in the contact page errors are", errors.email)
   return (
     <div>
       <Hero title={props.title} />
-
-      <Content>
+       <Content>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor="full-name">Name</Form.Label>
@@ -28,6 +27,7 @@ export default function ContactPage(props) {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors.name && <p>{errors.blank}</p>}
 
           <Form.Group>
             <Form.Label htmlFor="email">Email</Form.Label>
@@ -39,6 +39,7 @@ export default function ContactPage(props) {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors.email && <p>{errors.email}</p>}
 
           <Form.Group>
             <Form.Label htmlFor="message">Message</Form.Label>
@@ -51,6 +52,7 @@ export default function ContactPage(props) {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors.message && <p>{errors.blank}</p>}
 
           <Button
             className="d-inline-block"
@@ -62,14 +64,14 @@ export default function ContactPage(props) {
           </Button>
 
           {
-            //returns a success / failue messagge to the screen after emailing
+            //returns a conditional success / failue message to the screen after emailing
             // ***************************************************************
           }
 
-          {state.emailSent === true && (
+          {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}
-          {state.emailSent === false && (
+          {!state.emailSent && (
             <p className="d-inline d-err-msg"> Email Not Sent! </p>
           )}
         </Form>
