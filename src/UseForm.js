@@ -6,7 +6,7 @@ import validateLogin from "./validateLogin";
 //***************************************************************/
 const useForm = (cb) => {
 
-  //handling errors
+  //setting the errors with usestate
   const [errors, setErrors] = useState({email:"", name: "", message:""})
 
 
