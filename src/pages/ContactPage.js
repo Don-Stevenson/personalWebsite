@@ -65,7 +65,7 @@ export default function ContactPage(props) {
 
           {
             //returns a conditional success / failue message to the screen after emailing
-            // ***************************************************************
+            // **************************************************************************
           }
 
           {state.emailSent && (
