@@ -11,11 +11,12 @@ import validateLogin from "../../src/validateLogin";
 
 export default function ContactPage(props) {
   const { handleSubmit, handleChange, state, errors } = Useform(validateLogin);
-  console.log("here in the contact page errors are", errors.email)
+  console.log({ state });
+  console.log("here in the contact page errors are", errors.email);
   return (
     <div>
       <Hero title={props.title} />
-       <Content>
+      <Content>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor="full-name">Name</Form.Label>
@@ -25,6 +26,7 @@ export default function ContactPage(props) {
               type="text"
               value={state.name}
               onChange={handleChange}
+              required
             />
           </Form.Group>
           {errors.name && <p>{errors.blank}</p>}
@@ -37,6 +39,7 @@ export default function ContactPage(props) {
               type="email"
               value={state.email}
               onChange={handleChange}
+              required
             />
           </Form.Group>
           {errors.email && <p>{errors.email}</p>}
@@ -50,6 +53,7 @@ export default function ContactPage(props) {
               rows="3"
               value={state.message}
               onChange={handleChange}
+              required
             />
           </Form.Group>
           {errors.message && <p>{errors.blank}</p>}
@@ -71,9 +75,12 @@ export default function ContactPage(props) {
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}
+
+          {/* 
+          todo: handle state when email is not sent
           {!state.emailSent && (
             <p className="d-inline d-err-msg"> Email Not Sent! </p>
-          )}
+          )} */}
         </Form>
       </Content>
     </div>
