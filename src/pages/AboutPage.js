@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 
 import Hero from "../components/Hero";
 import ProfilePic from "../components/assets/images/profile-pic.jpg";
-import Resume from "../components/assets/docs/DSresume.pdf";
+import Resume from "../components/assets/docs/DS Resume.pdf";
 import Content from "../components/Content";
 
 // returns the about page
