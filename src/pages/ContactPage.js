@@ -1,11 +1,8 @@
 import React from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 import Hero from "../components/Hero";
 import Content from "../components/Content";
-
 import Useform from "../../src/UseForm";
 import validateLogin from "../../src/validateLogin";
 
@@ -66,8 +63,8 @@ export default function ContactPage(props) {
           </Button>
 
           {
-            //returns a conditional success / failue message to the screen after emailing
-            // **************************************************************************
+            //returns a conditional success  message to the screen after emailing
+            // ******************************************************************
           }
 
           {state.emailSent && (
