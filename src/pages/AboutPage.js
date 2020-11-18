@@ -27,7 +27,7 @@ export default function AboutPage(props) {
               <p>
                 Hi, I'm Don! I'm a full stack web developer with experience in
                 Javascript, Ruby on Rails, Clojure, Python, PhP, Node JS, 
-                React, Express JS,  SQl, PostgreSQL, HTML5, CSS, Jest, and Mocha /
+                React JS, Express JS,  SQl, PostgreSQL, HTML5, CSS, Jest, and Mocha /
                 Chai.
               </p>
               <p>
