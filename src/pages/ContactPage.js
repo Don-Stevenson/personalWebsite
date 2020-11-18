@@ -11,8 +11,6 @@ import validateLogin from "../../src/validateLogin";
 
 export default function ContactPage(props) {
   const { handleSubmit, handleChange, state, errors } = Useform(validateLogin);
-  console.log({ state });
-  console.log("here in the contact page errors are", errors.email);
   return (
     <div>
       <Hero title={props.title} />
