@@ -32,9 +32,10 @@ export default function AboutPage(props) {
               </p>
               <p>
                 {" "}
-                When I am not building apps and working on other coding projects, I
-                enjoy doing things like: practicing guitar, playing sports,
-                roasting my own coffee and making different DIY projects.{" "}
+                When I am not building apps and working on other coding
+                projects, I enjoy doing things like: practicing guitar, playing
+                sports, roasting my own coffee and making different DIY
+                projects.{" "}
               </p>
 
               <a href={Resume} target="blank" rel="noopener noreferrrer">

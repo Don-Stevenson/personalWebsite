@@ -11,43 +11,14 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
 const App = () => {
-  // const [headerLinks] = useState([
-  //   { title: "Home", path: "/" },
-  //   { title: "about", path: "/about" },
-  //   { title: "Contact", path: "/contact" }
-  // ]);
-  // const [title] = useState("Don Stevenson");
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
-    text: "Checkout my projects below."
+    text: "Checkout my work below."
   });
   const [about] = useState({ title: "About Me" });
   const [contact] = useState({ title: "Talk to Me" });
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     title: "Don Stevenson",
-  //     headerLinks: [
-  //       { title: "Home", path: "/" },
-  //       { title: "about", path: "/about" },
-  //       { title: "Contact", path: "/contact" }
-  //     ],
-  //     home: {
-  //       title: "Keep Learning.",
-  //       subTitle: "Projects that make a difference",
-  //       text: "Checkout my projects below."
-  //     },
-  //     about: {
-  //       title: "About me"
-  //     },
-  //     contact: {
-  //       title: "Talk to me"
-  //     }
-  //   };
-  // }
 
-  // render() {
   return (
     <Router>
       <Container className="p-0" fluid={true}>
@@ -91,6 +62,6 @@ const App = () => {
     </Router>
   );
 };
-// }
+
 
 export default App;
