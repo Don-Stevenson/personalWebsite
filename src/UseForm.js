@@ -5,10 +5,8 @@ import validateLogin from "./validateLogin";
 // create a custom hook called useForm to handle submit and change
 //***************************************************************/
 const useForm = (cb) => {
-
   //setting the errors with usestate
-  const [errors, setErrors] = useState({email:"", name: "", message:""})
-
+  const [errors, setErrors] = useState({ email: "", name: "", message: "" });
 
   // Setting the default state
   //**************************
@@ -17,12 +15,12 @@ const useForm = (cb) => {
     email: "",
     message: "",
     disabled: false,
-    emailSent: null
+    emailSent: null,
   });
 
   // handling the changes made on the input fields
   //*********************************************/
-  const handleChange = event => {
+  const handleChange = (event) => {
     // the input of the element selected, with destructuring
     //*******************************************************/
     const { name, value } = event.target;
@@ -35,10 +33,9 @@ const useForm = (cb) => {
   //function that handles sending the email through the backend
   // **********************************************************
   async function handleSubmit(event) {
-
     // checking for errors in the form
     // *******************************
-    setErrors(validateLogin(state))
+    setErrors(validateLogin(state));
 
     // prevents the browser being reloaded upon hiting the send button
     //***************************************************************/
@@ -69,7 +66,7 @@ const useForm = (cb) => {
     handleChange,
     handleSubmit,
     state,
-    errors
+    errors,
   };
 };
 
