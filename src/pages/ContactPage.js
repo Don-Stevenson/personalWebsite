@@ -65,6 +65,7 @@ export default function ContactPage(props) {
           {
             //returns a conditional success  message to the screen after emailing
             // ******************************************************************
+            // todo: time-out back to go back to !state.emailSent after 3 secs
           }
 
           {state.emailSent && (
