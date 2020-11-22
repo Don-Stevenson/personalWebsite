@@ -48,6 +48,7 @@ const useForm = (cb) => {
     // handling the email as an aysnc function sent using axios
     //*********************************************************
     try {
+      //todo: findout how to post with axios in production to heroku
       const dataSent = await Axios.post(
         "http://localhost:3030/api/email",
         // "https://donpersonalwebsite-api.herokuapp.com/api/email",
