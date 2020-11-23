@@ -18,7 +18,7 @@ export default function Footer() {
             {/* Don Stevenson Web Developer */}
           </Col>
           <Col className="p-0 d-flex justify-content-end" md={3}>
-             This site made by Don Stevenson © {year}
+             Custom site made by Don Stevenson © {year}
           </Col>
         </Row>
       </Container>
