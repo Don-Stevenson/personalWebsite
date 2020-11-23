@@ -61,13 +61,11 @@ export default function ContactPage(props) {
           >
             Send
           </Button>
-
           {
             //returns a conditional success  message to the screen after emailing
             // ******************************************************************
             // todo: time-out back to go back to !state.emailSent after 3 secs
           }
-
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}

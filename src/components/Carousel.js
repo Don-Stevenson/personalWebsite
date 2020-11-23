@@ -20,7 +20,7 @@ export default function Carousel() {
         subTitle: `A mobile first, nudge theory goal attainment app`,
         imgSrc: NagMeStatic,
         link: "https://github.com/Don-Stevenson/nag-me",
-        selected: false
+        selected: false,
       },
       {
         id: 1,
@@ -28,7 +28,7 @@ export default function Carousel() {
         subTitle: "A movie DB app that returns movie search results.",
         imgSrc: MovieDBStatic,
         link: "https://github.com/Don-Stevenson/moviedb",
-        selected: false
+        selected: false,
       },
       {
         id: 2,
@@ -36,12 +36,12 @@ export default function Carousel() {
         subTitle: "An app for managing work appointments ",
         imgSrc: SchedulerStatic,
         link: "https://github.com/Don-Stevenson/scheduler",
-        selected: false
-      }
-    ]
+        selected: false,
+      },
+    ],
   });
 
-  const handleCardClick = id => {
+  const handleCardClick = (id) => {
     let items = [...state.items];
 
     // onclick logic to select an item
@@ -50,7 +50,7 @@ export default function Carousel() {
 
     // logic to display only one item at a time with gifs when selected
     //******************************************************************
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.id !== id) {
         item.selected = false;
       }
@@ -76,19 +76,19 @@ export default function Carousel() {
 
     // update state
     //*************
-    setState(prevState => {
+    setState((prevState) => {
       return { ...prevState, items };
     });
   };
 
   //create a card compoment for each item
   //*************************************
-  const makeItems = items => {
-    return items.map(item => {
+  const makeItems = (items) => {
+    return items.map((item) => {
       return (
         <Card
           item={item}
-          click={event => handleCardClick(item.id, event)}
+          click={(event) => handleCardClick(item.id, event)}
           key={item.id}
         />
       );

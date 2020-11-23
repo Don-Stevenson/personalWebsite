@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // creates a custom wrapper that we can use elsewhere to wrap and style text
-//**************************************************************************/
+// **************************************************************************/
 
 export default function Content(props) {
   return (
