@@ -14,7 +14,7 @@ const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
-    text: "Checkout my work below"
+    text: "Checkout my work below",
   });
   const [about] = useState({ title: "About Me" });
   const [contact] = useState({ title: "Talk to Me" });
@@ -49,10 +49,7 @@ const App = () => {
             />
           )}
         />
-        <Route
-          path="/about"
-          render={() => <AboutPage title={about.title} />}
-        />
+        <Route path="/about" render={() => <AboutPage title={about.title} />} />
         <Route
           path="/contact"
           render={() => <ContactPage title={contact.title} />}
@@ -62,6 +59,5 @@ const App = () => {
     </Router>
   );
 };
-
 
 export default App;
