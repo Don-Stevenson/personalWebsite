@@ -23,7 +23,7 @@ const App = () => {
     <Router>
       <Container className="p-0" fluid={true}>
         <Navbar className="border-bottom" bg="transparent" expand="lg">
-        <Navbar.Brand>Don Stevenson - Web Developer</Navbar.Brand>
+          <Navbar.Brand>Don Stevenson - Web Developer</Navbar.Brand>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">
             <Nav className="ml-auto">
@@ -50,7 +50,10 @@ const App = () => {
             />
           )}
         />
-        <Route path="/about" render={() => <AboutPage title={about.title} />} />
+        <Route 
+         path="/about" 
+         render={() => <AboutPage title={about.title} />}
+        />
         <Route
           path="/contact"
           render={() => <ContactPage title={contact.title} />}
