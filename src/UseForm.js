@@ -50,8 +50,8 @@ const useForm = (cb) => {
     try {
       //todo: findout how to post with axios in production to heroku
       const dataSent = await Axios.post(
-        "http://localhost:3030/api/email",
-        // "https://donpersonalwebsite-api.herokuapp.com/api/email",
+        // "http://localhost:3030/api/email",
+        "https://donpersonalwebsite-api.herokuapp.com",
         state
       );
       if (dataSent.data.success) {
