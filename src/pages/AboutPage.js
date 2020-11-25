@@ -15,53 +15,52 @@ export default function AboutPage(props) {
       <Hero title={props.title}> title </Hero>
       <Content>
         <Column flexGrow={1} horizontal="start">
-            <img
-              className="d-card-profile"
-              src={ProfilePic}
-              alt="profile portrait"
-            />
+          <img
+            className="d-card-profile"
+            src={ProfilePic}
+            alt="profile portrait"
+          />
         </Column>
-        {/* <Row flexGrow={1}> */}
-          {/* <Column flexGrow={1} horizontal="center"> */}
-          {/* </Column> */}
-          {/* <Content> */}
-          <br></br>
-            <Column flexGrow={1} horizontal="start">
-              <p>
-                Hi, I'm Don! I'm a full stack web developer with experience in
-                Javascript, Ruby on Rails, Clojure, Python, PhP, Node JS, React
-                JS, Express JS, SQl, PostgreSQL, HTML5, CSS, Jest, and Mocha /
-                Chai.
-              </p>
-              <p>
-                {" "}
-                When I am not building apps and working on other coding
-                projects, I enjoy doing things like: practicing guitar, playing
-                sports, roasting my own coffee and making different DIY
-                projects.{" "}
-              </p>
+        {/* <Row flexGrow={1} horiztonal="start"> */}
+        {/* <Column flexGrow={1} horizontal="center"> */}
+        {/* </Column> */}
+        {/* <Content> */}
+        <br></br>
+        <Column flexGrow={1} horizontal="start">
+          <p>
+            Hi, I'm Don! I'm a full stack web developer with experience in
+            Javascript, Ruby on Rails, Clojure, Python, PhP, Node JS, React JS,
+            Express JS, SQl, PostgreSQL, HTML5, CSS, Jest, and Mocha / Chai.
+          </p>
+          <p>
+            When I am not building apps and working on other coding projects, I
+            enjoy doing things like: practicing guitar, playing sports, roasting
+            my own coffee and making different DIY projects.
+          </p>
+          <p>
+            Here is my{" "}
+            <a href={Resume} target="blank" rel="noopener noreferrrer">
+              resume
+            </a>
+          </p>
 
-              <a href={Resume} target="blank" rel="noopener noreferrrer">
-                Here is my resume
-              </a>
-              <br></br>
-              <Row>
-                <SocialIcon
-                  url="https://github.com/Don-Stevenson"
-                  style={{ margin: 5 }}
-                  target="blank"
-                  rel="noopener noreferrrer"
-                />
+          <Row>
+            <SocialIcon
+              url="https://github.com/Don-Stevenson"
+              style={{ margin: 5 }}
+              target="blank"
+              rel="noopener noreferrrer"
+            />
 
-                <SocialIcon
-                  url="https://www.linkedin.com/in/don-stevenson-5b31aa128/"
-                  style={{ margin: 5 }}
-                  target="blank"
-                  rel="noopener noreferrrer"
-                />
-              </Row>
-            </Column>
-          {/* </Content> */}
+            <SocialIcon
+              url="https://www.linkedin.com/in/don-stevenson-5b31aa128/"
+              style={{ margin: 5 }}
+              target="blank"
+              rel="noopener noreferrrer"
+            />
+          </Row>
+        </Column>
+        {/* </Content> */}
         {/* </Row> */}
       </Content>
     </div>
