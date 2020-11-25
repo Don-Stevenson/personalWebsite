@@ -14,15 +14,18 @@ export default function AboutPage(props) {
     <div>
       <Hero title={props.title}> title </Hero>
       <Content>
-        <Row flexGrow={1}>
-          <Column flexGrow={1} horizontal="center">
+        <Column flexGrow={1} horizontal="start">
             <img
               className="d-card-profile"
               src={ProfilePic}
               alt="profile portrait"
             />
-          </Column>
-          <Content>
+        </Column>
+        {/* <Row flexGrow={1}> */}
+          {/* <Column flexGrow={1} horizontal="center"> */}
+          {/* </Column> */}
+          {/* <Content> */}
+          <br></br>
             <Column flexGrow={1} horizontal="start">
               <p>
                 Hi, I'm Don! I'm a full stack web developer with experience in
@@ -58,8 +61,8 @@ export default function AboutPage(props) {
                 />
               </Row>
             </Column>
-          </Content>
-        </Row>
+          {/* </Content> */}
+        {/* </Row> */}
       </Content>
     </div>
   );
