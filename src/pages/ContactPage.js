@@ -6,6 +6,8 @@ import Content from "../components/Content";
 import Useform from "../../src/UseForm";
 import validateLogin from "../../src/validateLogin";
 
+// contact page
+// ************
 export default function ContactPage(props) {
   const { handleSubmit, handleChange, state, errors } = Useform(validateLogin);
   return (
