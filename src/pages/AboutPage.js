@@ -14,24 +14,19 @@ export default function AboutPage(props) {
     <div>
       <Hero title={props.title}> title </Hero>
       <Content>
-        <Column flexGrow={1} horizontal="start">
+        <Column wrap={true} vertical={"spaced"}>
           <img
             className="d-card-profile"
             src={ProfilePic}
             alt="profile portrait"
           />
-        </Column>
-        {/* <Row flexGrow={1} horiztonal="start"> */}
-        {/* <Column flexGrow={1} horizontal="center"> */}
-        {/* </Column> */}
-        {/* <Content> */}
-        <br></br>
-        <Column flexGrow={1} horizontal="start">
+          <br></br>
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
             Javascript, Ruby on Rails, Clojure, Python, PhP, Node JS, React JS,
             Express JS, SQl, PostgreSQL, HTML5, CSS, Jest, and Mocha / Chai.
           </p>
+
           <p>
             When I am not building apps and working on other coding projects, I
             enjoy doing things like: practicing guitar, playing sports, roasting
@@ -60,8 +55,6 @@ export default function AboutPage(props) {
             />
           </Row>
         </Column>
-        {/* </Content> */}
-        {/* </Row> */}
       </Content>
     </div>
   );
