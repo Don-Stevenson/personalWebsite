@@ -17,7 +17,7 @@ export default function Carousel() {
       {
         id: 0,
         title: "Nag-me",
-        subTitle: `A React JS mobile first, nudge-theory goal attainment app`,
+        subTitle: `A mobile first, nudge-theory goal attainment app`,
         imgSrc: NagMeStatic,
         link: "https://github.com/Don-Stevenson/nag-me",
         selected: false,
@@ -25,7 +25,7 @@ export default function Carousel() {
       {
         id: 1,
         title: "Movie-DB",
-        subTitle: "A React JS movie DB app that returns movie search results.",
+        subTitle: "An app that returns movie search results.",
         imgSrc: MovieDBStatic,
         link: "https://github.com/Don-Stevenson/moviedb",
         selected: false,
@@ -33,7 +33,7 @@ export default function Carousel() {
       {
         id: 2,
         title: "Scheduler",
-        subTitle: "A React JS app for managing work appointments ",
+        subTitle: "An app for managing work appointments ",
         imgSrc: SchedulerStatic,
         link: "https://github.com/Don-Stevenson/scheduler",
         selected: false,
