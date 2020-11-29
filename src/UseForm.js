@@ -49,6 +49,7 @@ const useForm = (cb) => {
     // handling the email as an aysnc function sent using axios
     //*********************************************************
     try {
+      console.log("in the try block in the submit")
       //todo: findout how to post with axios in production to heroku
       // double check the url is correct
       const dataSent = await Axios.post(
