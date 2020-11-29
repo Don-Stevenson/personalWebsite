@@ -57,20 +57,25 @@ export default function Carousel() {
       if (item.id === 0 && item.selected) {
         item.imgSrc = NagMeGif;
       }
-      if (item.id === 0 && !item.selected) {
-        item.imgSrc = NagMeStatic;
-      }
+      // if (item.id === 0 && !item.selected) {
+      //   item.imgSrc = NagMeStatic;
+      // }
       if (item.id === 1 && item.selected) {
         item.imgSrc = MovieDBGif;
       }
-      if (item.id === 1 && !item.selected) {
-        item.imgSrc = MovieDBStatic;
-      }
+      // if (item.id === 1 && !item.selected) {
+      //   item.imgSrc = MovieDBStatic;
+      // }
       if (item.id === 2 && item.selected) {
         item.imgSrc = SchedulerGif;
       }
-      if (item.id === 2 && !item.selected) {
+      // if (item.id === 2 && !item.selected) {
+      //   item.imgSrc = SchedulerStatic;
+      // }
+      else {
         item.imgSrc = SchedulerStatic;
+        item.imgSrc = MovieDBStatic;
+        item.imgSrc = NagMeStatic;
       }
     });
 
