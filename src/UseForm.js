@@ -33,6 +33,7 @@ const useForm = (cb) => {
   //function that handles sending the email through the backend
   // **********************************************************
   const handleSubmit = async (event) => {
+    console.log("in the submit")
     // checking for errors in the form
     // *******************************
     setErrors(validateLogin(state));
