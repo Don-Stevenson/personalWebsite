@@ -49,7 +49,7 @@ export default function Carousel() {
     items[id].selected = items[id].selected ? false : true;
 
     // logic to display only one item at a time with gifs when selected
-    //******************************************************************
+    //*****************************************************************
     items.forEach((item) => {
       if (item.id !== id) {
         item.selected = false;
@@ -72,11 +72,6 @@ export default function Carousel() {
       if (item.id === 2 && !item.selected) {
         item.imgSrc = SchedulerStatic;
       }
-      // else {
-      //   item.imgSrc = SchedulerStatic;
-      //   item.imgSrc = MovieDBStatic;
-      //   item.imgSrc = NagMeStatic;
-      // }
     });
 
     // update state
