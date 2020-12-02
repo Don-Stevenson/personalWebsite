@@ -52,6 +52,7 @@ const useForm = (cb) => {
       // double check the url is correct
       const dataSent = await Axios.post(
         // to do: add ternary to check if on local or production
+        // to do: clear form after sending email 
         // "http://localhost:3030/api/email",
         "https://donpersonalwebsite-api.herokuapp.com/api/email",
         state
