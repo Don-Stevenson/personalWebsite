@@ -58,7 +58,7 @@ const useForm = (cb) => {
         state
       );
       if (dataSent.data.success) {
-        setState({ ...state, disabled: false, emailSent: true });
+        setState({disabled: false, emailSent: true });
       } else {
         setState({ ...state, disabled: false, emailSent: false });
       }
