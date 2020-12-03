@@ -42,14 +42,13 @@ export default function AboutPage(props) {
           <Row>
             <SocialIcon
               url="https://github.com/Don-Stevenson"
-              style={{ margin: 5 }}
+              style={{ margin: 6 }}
               target="blank"
               rel="noopener noreferrrer"
             />
-
             <SocialIcon
               url="https://www.linkedin.com/in/don-stevenson-5b31aa128/"
-              style={{ margin: 5 }}
+              style={{ margin: 6 }}
               target="blank"
               rel="noopener noreferrrer"
             />
