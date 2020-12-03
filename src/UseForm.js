@@ -70,8 +70,11 @@ const useForm = (cb) => {
       console.error(error);
       setState({ ...state, disabled: false, emailSent: false });
     }
-    event.value.reset();
-    event.target.reset();
+
+    // how to clear form upon submit
+    // *****************************
+    // event.value.reset();
+    // event.target.reset();
   };
   return {
     handleChange,
