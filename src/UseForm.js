@@ -59,10 +59,10 @@ const useForm = (cb) => {
       );
       if (dataSent.data.success) {
         setState({
-          ...state, disabled: false, emailSent: true,
+          ...state,
+          disabled: false,
+          emailSent: true,
         });
-        event.value.reset();
-        // event.t.reset();
       } else {
         setState({ ...state, disabled: false, emailSent: false });
       }
@@ -70,6 +70,8 @@ const useForm = (cb) => {
       console.error(error);
       setState({ ...state, disabled: false, emailSent: false });
     }
+    event.value.reset();
+    // event.t.reset();
   };
   return {
     handleChange,
