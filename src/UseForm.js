@@ -71,7 +71,7 @@ const useForm = (cb) => {
       setState({ ...state, disabled: false, emailSent: false });
     }
     event.value.reset();
-    // event.t.reset();
+    event.target.reset();
   };
   return {
     handleChange,
