@@ -40,8 +40,8 @@ export default function AboutPage(props) {
             </a>
           </p>
 
-          <p> You can also find here:</p>
 
+          <p> You can also find me here: {"  "} </p>
           <Row>
             <SocialIcon
               url="https://github.com/Don-Stevenson"
