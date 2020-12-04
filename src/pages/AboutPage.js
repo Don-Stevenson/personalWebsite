@@ -24,7 +24,8 @@ export default function AboutPage(props) {
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
             Javascript, Ruby on Rails, Clojure, Python, PhP, Node JS, React JS,
-            Express JS, SQl, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha / Chai.
+            Express JS, SQl, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha /
+            Chai.
           </p>
 
           <p>
@@ -38,6 +39,8 @@ export default function AboutPage(props) {
               resume
             </a>
           </p>
+
+          <p> You can also find here:</p>
 
           <Row>
             <SocialIcon
