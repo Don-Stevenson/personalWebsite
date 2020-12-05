@@ -17,7 +17,7 @@ export default function Footer() {
             <Col className="p-0" md={3} sm={12}>
                 {/* Don Stevenson */}
             </Col>
-          <Col className="p-0 d-flex justify-content-end" md={3}>
+          <Col className="p-0 d-flex justify-content-end" md={3} sm={12} >
             Custom site by Don Stevenson © {year}
           </Col>
         </Row>
