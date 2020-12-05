@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// displaying the year based on new Date method
+// storing the current year in a variable using the new Date method
 //*********************************************
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" });
 
