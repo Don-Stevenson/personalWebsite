@@ -24,18 +24,18 @@ export default function Carousel() {
       },
       {
         id: 1,
-        title: "Movie-DB",
-        subTitle: "An app that returns movie search results.",
-        imgSrc: MovieDBStatic,
-        link: "https://github.com/Don-Stevenson/moviedb",
-        selected: false,
-      },
-      {
-        id: 2,
         title: "Scheduler",
         subTitle: "An app for managing work appointments ",
         imgSrc: SchedulerStatic,
         link: "https://github.com/Don-Stevenson/scheduler",
+        selected: false,
+      },
+      {
+        id: 2,
+        title: "Movie-DB",
+        subTitle: "An app that returns movie search results.",
+        imgSrc: MovieDBStatic,
+        link: "https://github.com/Don-Stevenson/moviedb",
         selected: false,
       },
     ],
@@ -60,16 +60,16 @@ export default function Carousel() {
       if (item.id === 0 && !item.selected) {
         item.imgSrc = NagMeStatic;
       }
-      if (item.id === 1 && item.selected) {
+      if (item.id === 2 && item.selected) {
         item.imgSrc = MovieDBGif;
       }
-      if (item.id === 1 && !item.selected) {
+      if (item.id === 2 && !item.selected) {
         item.imgSrc = MovieDBStatic;
       }
-      if (item.id === 2 && item.selected) {
+      if (item.id === 1 && item.selected) {
         item.imgSrc = SchedulerGif;
       }
-      if (item.id === 2 && !item.selected) {
+      if (item.id === 1 && !item.selected) {
         item.imgSrc = SchedulerStatic;
       }
     });
