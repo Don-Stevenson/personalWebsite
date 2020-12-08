@@ -62,7 +62,12 @@ const useForm = (cb) => {
           ...state,
           disabled: false,
           emailSent: true,
+          name: "",
+          email: "",
+          message: ""
         });
+
+       
       } else {
         setState({ ...state, disabled: false, emailSent: false });
       }
