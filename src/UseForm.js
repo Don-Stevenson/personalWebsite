@@ -76,53 +76,6 @@ const useForm = (cb) => {
       setState({ ...state, disabled: false, emailSent: false });
     }
 
-    // how to clear form upon submit
-    // *****************************
-    // event.value.reset();
-    // event.target.reset();
-
-    // from stack overflow
-    // *********************
-    // class MyForm extends Component {
-    //   initialState = { name: '' }
-    
-    //   state = this.initialState
-    
-    //   handleFormReset = () => {
-    //     this.setState(() => this.initialState)
-    //   }
-    
-    //   render() {
-    
-    //     return (
-    //       <form onReset={this.handleFormReset}>
-    //         <div>
-    //           <label htmlFor="name">Name</label>
-    //           <input
-    //             type="text"
-    //             placeholder="Enter name"
-    //             name="name"
-    //             value={name}
-    //             onChange={this.handleInputOnChange}
-    //           />
-    //         </div>
-    //         <div>
-    //           <input
-    //             type="submit"
-    //             value="Submit"
-    //           />
-    //           <input
-    //             type="reset"
-    //             value="Reset"
-    //           />
-    //         </div>
-    //       </form>
-    //     )
-    //   }
-    // }
-
-
-
   };
   return {
     handleChange,
