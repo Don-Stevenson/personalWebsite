@@ -71,10 +71,8 @@ export default function ContactPage(props) {
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}
-
-          {/* 
-          todo: handle state when email is not sent
-          {!state.emailSent && (
+         {/* todo: handle state when email is not sent */}
+          {/* {!state.emailSent && (
             <p className="d-inline d-err-msg"> Email Not Sent! </p>
           )} */}
         </Form>
