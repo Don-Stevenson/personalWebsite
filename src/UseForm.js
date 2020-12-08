@@ -3,7 +3,7 @@ import Axios from "axios";
 import validateLogin from "./validateLogin";
 
 // create a custom hook called useForm to handle submit and change
-//***************************************************************/
+//****************************************************************
 const useForm = (cb) => {
   //setting the errors with usestate
   const [errors, setErrors] = useState({ email: "", name: "", message: "" });
@@ -19,14 +19,14 @@ const useForm = (cb) => {
   });
 
   // handling the changes made on the input fields
-  //*********************************************/
+  //**********************************************
   const handleChange = (event) => {
     // the input of the element selected, with destructuring
-    //*******************************************************/
+    //******************************************************
     const { name, value } = event.target;
 
     //goes through the different box names and displays the input value
-    //*****************************************************************/
+    //*****************************************************************
     setState({ ...state, [name]: value });
   };
 
@@ -38,18 +38,16 @@ const useForm = (cb) => {
     setErrors(validateLogin(state));
 
     // prevents the browser being reloaded upon hiting the send button
-    //***************************************************************/
+    //****************************************************************
     event.preventDefault();
 
     // prevents multiple inadvertent emails to be sent
-    // **********************************************/
+    // ***********************************************
     setState({ ...state, disabled: true });
 
     // handling the email as an aysnc function sent using axios
     //*********************************************************
     try {
-      //todo: findout how to post with axios in production to heroku
-      // double check the url is correct
       const dataSent = await Axios.post(
         // to do: add ternary to check if on local or production
         // to do: clear form after sending email
@@ -64,10 +62,8 @@ const useForm = (cb) => {
           emailSent: true,
           name: "",
           email: "",
-          message: ""
+          message: "",
         });
-
-       
       } else {
         setState({ ...state, disabled: false, emailSent: false });
       }
@@ -75,7 +71,6 @@ const useForm = (cb) => {
       console.error(error);
       setState({ ...state, disabled: false, emailSent: false });
     }
-
   };
   return {
     handleChange,
