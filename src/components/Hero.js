@@ -4,6 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// function that returns the homepage title, subtitle and text
+// ***********************************************************
+
 export default function Hero(props) {
   return (
     <Jumbotron className="bg-transparent jumbotron-fluid p-0">
