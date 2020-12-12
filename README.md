@@ -1,6 +1,9 @@
 # A Personal Website
 
-Made with React, this website design and structure is based on a tutorial by [Garrett Love](https://github.com/garrettlove8/building-react-portfolio)
+You can find my portolio site deployed here: [https://donstevenson.netlify.app/](https://donstevenson.netlify.app/)
+
+## About
+Made with React JS, this website design and structure is based on a tutorial by [Garrett Love](https://github.com/garrettlove8/building-react-portfolio)
 with several important changes
 
 * update from a structure that included both class and functional based React components to a fully functional, react hooks based approach
