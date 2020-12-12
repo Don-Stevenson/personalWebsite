@@ -1,6 +1,6 @@
-# A Personal Website
+# A Personalized Portfolio Website
 
-You can find my portolio site deployed here: [https://donstevenson.netlify.app/](https://donstevenson.netlify.app/)
+You can find my portolio site here: [https://donstevenson.netlify.app/](https://donstevenson.netlify.app/)
 
 ## About
 Made with React JS, this website design and structure is based on a tutorial by [Garrett Love](https://github.com/garrettlove8/building-react-portfolio)
