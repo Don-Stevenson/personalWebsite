@@ -39,6 +39,7 @@ export default function AboutPage(props) {
               resume
             </a>
           </p>
+            {/* add links to ftpsych.ca and sebastian knox.com */}
 
 
           <p> You can also find me here: {"  "} </p>
