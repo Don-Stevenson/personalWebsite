@@ -17,7 +17,7 @@ export default function Carousel() {
       {
         id: 0,
         title: "Nag-me",
-        subTitle: `A nudge-theory goal attainment app`,
+        subTitle: "A nudge-theory goal attainment app",
         imgSrc: NagMeStatic,
         link: "https://github.com/Don-Stevenson/nag-me",
         selected: false,
