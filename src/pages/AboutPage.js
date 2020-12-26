@@ -30,8 +30,8 @@ export default function AboutPage(props) {
 
           <p>
             When I am not building apps and working on other coding projects, I
-            enjoy doing things like: practicing guitar, playing sports, roasting
-            my own coffee and making different DIY projects.
+            enjoy doing things like: practicing guitar, playing sports, keeping
+            aqauriums, roasting my own coffee and making different DIY projects.
           </p>
           <p>
             Here is my{" "}
@@ -39,8 +39,7 @@ export default function AboutPage(props) {
               resume
             </a>
           </p>
-            {/* add links to ftpsych.ca and sebastian knox.com */}
-
+          {/* add links to ftpsych.ca and sebastian knox.com */}
 
           <p> You can also find me here: {"  "} </p>
           <Row>
