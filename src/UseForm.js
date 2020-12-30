@@ -26,7 +26,7 @@ const useForm = (cb) => {
     const { name, value } = event.target;
 
     //goes through the different box names and displays the input value
-    //*****************************************************************
+    //******************************************************************
     setState({ ...state, [name]: value });
   };
 
