@@ -6,7 +6,7 @@ import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 import NagMeStatic from "../components/assets/images/NagMe-static.png";
 import MovieDBStatic from "../components/assets/images/MovieDBstatic.png";
 import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
-
+import WeatherAppStatic from "https://github.com/Don-Stevenson/weather-app/blob/master/docs/Homepage.png"
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -41,25 +41,25 @@ export default function Carousel() {
       {
         id: 3,
         title: "Weather App",
-        subTitle: "An app that returns movie weather results.",
-        imgSrc: MovieDBStatic,
-        link: "https://github.com/Don-Stevenson/moviedb",
+        subTitle: "An app that returns weather results based on locations.",
+        imgSrc: WeatherAppStatic,
+        link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
       {
         id: 4,
-        title: "Smart To-Do",
-        subTitle: "An auto categorizing to-do list",
+        title: "Smart to-Do",
+        subTitle: "An autocategorizing, no hassle app with 4 categories, Movies/TV, Books, Restaurants and Products.",
         imgSrc: MovieDBStatic,
-        link: "https://github.com/Don-Stevenson/moviedb",
+        link: "https://github.com/Don-Stevenson/to-do",
         selected: false,
       },
       {
         id: 6,
         title: "Jungle Rails",
-        subTitle: "An online retail app clone.",
+        subTitle: "A mini e-commerce application built with Rails 4.2.",
         imgSrc: MovieDBStatic,
-        link: "https://github.com/Don-Stevenson/moviedb",
+        link: "https://github.com/Don-Stevenson/Jungle-Rails",
         selected: false,
       },
     ],
