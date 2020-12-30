@@ -38,6 +38,30 @@ export default function Carousel() {
         link: "https://github.com/Don-Stevenson/moviedb",
         selected: false,
       },
+      {
+        id: 3,
+        title: "Movie-DB",
+        subTitle: "An app that returns movie search results.",
+        imgSrc: MovieDBStatic,
+        link: "https://github.com/Don-Stevenson/moviedb",
+        selected: false,
+      },
+      {
+        id: 4,
+        title: "Movie-DB",
+        subTitle: "An app that returns movie search results.",
+        imgSrc: MovieDBStatic,
+        link: "https://github.com/Don-Stevenson/moviedb",
+        selected: false,
+      },
+      {
+        id: 5,
+        title: "Movie-DB",
+        subTitle: "An app that returns movie search results.",
+        imgSrc: MovieDBStatic,
+        link: "https://github.com/Don-Stevenson/moviedb",
+        selected: false,
+      },
     ],
   });
 
@@ -98,6 +122,6 @@ export default function Carousel() {
   return (
     <Container fluid={true}>
       <Row className="justify-content-around">{makeItems(state.items)}</Row>
-    </Container>
+     </Container>
   );
 }
