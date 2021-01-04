@@ -1,22 +1,24 @@
 import React from "react";
 import CardInfo from "../components/CardInfo";
 
-export default function Card(props) {
+export default function Card({onClick, item, handleCardHover}) {
   return (
     <div
       className="d-inline-block d-card"
-      onClick={(e) => props.click(props.item)}
+      onClick={(e) => onClick(item)}
+      onMouseEnter={() => handleCardHover()}
+      onMouseLeave={() => handleCardHover()}
     >
       <img
         className="d-card-image"
-        src={props.item.imgSrc}
-        alt={props.item.subTitle}
+        src={item.imgSrc}
+        alt={item.subTitle}
       />
-      {props.item.selected && (
+      {item.selected && (
         <CardInfo
-          title={props.item.title}
-          subTitle={props.item.subTitle}
-          link={props.item.link}
+          title={item.title}
+          subTitle={item.subTitle}
+          link={item.link}
         />
       )}
     </div>

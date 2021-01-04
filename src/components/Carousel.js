@@ -6,7 +6,7 @@ import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 import NagMeStatic from "../components/assets/images/NagMe-static.png";
 import MovieDBStatic from "../components/assets/images/MovieDBstatic.png";
 import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
-import WeatherAppStatic from "https://github.com/Don-Stevenson/weather-app/blob/master/docs/Homepage.png"
+import WeatherAppStatic from "../components/assets/images/WeatherAppStatic.png";
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -49,7 +49,8 @@ export default function Carousel() {
       {
         id: 4,
         title: "Smart to-Do",
-        subTitle: "An autocategorizing, no hassle app with 4 categories, Movies/TV, Books, Restaurants and Products.",
+        subTitle:
+          "An autocategorizing, no hassle app with 4 categories, Movies/TV, Books, Restaurants and Products.",
         imgSrc: MovieDBStatic,
         link: "https://github.com/Don-Stevenson/to-do",
         selected: false,
@@ -64,6 +65,10 @@ export default function Carousel() {
       },
     ],
   });
+
+  const handleCardHover = () => {
+    console.log("hovering...");
+  };
 
   const handleCardClick = (id) => {
     let items = [...state.items];
@@ -112,7 +117,8 @@ export default function Carousel() {
       return (
         <Card
           item={item}
-          click={(event) => handleCardClick(item.id, event)}
+          // onClick={(event) => handleCardClick(item.id, event)}
+          handleCardHover={handleCardHover(item.id, event)}
           key={item.id}
         />
       );
@@ -122,6 +128,6 @@ export default function Carousel() {
   return (
     <Container fluid={true}>
       <Row className="justify-content-around">{makeItems(state.items)}</Row>
-     </Container>
+    </Container>
   );
 }
