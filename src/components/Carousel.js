@@ -66,9 +66,45 @@ export default function Carousel() {
     ],
   });
 
-  const handleCardHover = () => {
-    console.log("hovering...");
-  };
+  const handleCardHover = (id) => {
+    let items = [...state.items];
+
+    // onclick logic to select an item
+    //********************************
+    items[id].selected = items[id].selected ? false : true;
+
+    // logic to display only one item at a time with gifs when selected
+    //*****************************************************************
+    items.forEach((item) => {
+      if (item.id !== id) {
+        item.selected = false;
+      }
+      if (item.id === 0 && item.selected) {
+        item.imgSrc = NagMeGif;
+      }
+      if (item.id === 0 && !item.selected) {
+        item.imgSrc = NagMeStatic;
+      }
+      if (item.id === 1 && item.selected) {
+        item.imgSrc = SchedulerGif;
+      }
+      if (item.id === 1 && !item.selected) {
+        item.imgSrc = SchedulerStatic;
+      }
+      if (item.id === 2 && item.selected) {
+        item.imgSrc = MovieDBGif;
+      }
+      if (item.id === 2 && !item.selected) {
+        item.imgSrc = MovieDBStatic;
+      }
+    });
+
+    // update state
+    //*************
+    setState((prevState) => {
+      return { ...prevState, items };
+    });
+}
 
   const handleCardClick = (id) => {
     let items = [...state.items];
@@ -118,7 +154,7 @@ export default function Carousel() {
         <Card
           item={item}
           // onClick={(event) => handleCardClick(item.id, event)}
-          handleCardHover={handleCardHover(item.id, event)}
+          handleCardHover={handleCardHover}
           key={item.id}
         />
       );
