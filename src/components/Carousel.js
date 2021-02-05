@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 
-import NagMeGif from "../components/assets/images/NagMe.gif";
-import MovieDBGif from "../components/assets/images/batman.gif";
-import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
-import NagMeStatic from "../components/assets/images/NagMe-static.png";
+// image imports
 import MovieDBStatic from "../components/assets/images/MovieDBstatic.png";
-import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
+import MovieDBGif from "../components/assets/images/batman.gif";
 
+import NagMeStatic from "../components/assets/images/NagMe-static.png";
+import NagMeGif from "../components/assets/images/NagMe.gif";
+
+import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
+import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
+
+// To be updated and added later
+// *****************************
+// import JungleRailsStatic from "../components/assets/images/JungleRailsStatic.png"
+// import JungleRailsGif from "../components/assets/images"
+
+// import SmartToDoStatic from "../components/assets/images/SmartTodoStatic.png"
+// import SmartToDoGif from "../components/assets/images"
+
+import WeatherAppStatic from "../components/assets/images/WeatherAppStatic.jpg";
+import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif";
+
+// library imports
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -38,28 +53,31 @@ export default function Carousel() {
         link: "https://github.com/Don-Stevenson/moviedb",
         selected: false,
       },
-      // {
-      //   id: 3,
-      //   title: "Weather App",
-      //   subTitle: "An app that returns movie weather results.",
-      //   imgSrc: MovieDBStatic,
-      //   link: "https://github.com/Don-Stevenson/moviedb",
-      //   selected: false,
-      // },
+      {
+        id: 3,
+        title: "Weather App",
+        subTitle: "An app that returns movie weather results.",
+        imgSrc: WeatherAppStatic,
+        link: "https://github.com/Don-Stevenson/weather-app",
+        selected: false,
+      },
+
+      // To be updated and added later
+      // *****************************
       // {
       //   id: 4,
       //   title: "Smart To-Do",
       //   subTitle: "An auto categorizing to-do list",
-      //   imgSrc: MovieDBStatic,
-      //   link: "https://github.com/Don-Stevenson/moviedb",
+      //   imgSrc: SmartToDoStatic,
+      //   link: "https://github.com/Don-Stevenson/to-do",
       //   selected: false,
       // },
       // {
-      //   id: 6,
+      //   id: 5,
       //   title: "Jungle Rails",
       //   subTitle: "An online retail app clone.",
-      //   imgSrc: MovieDBStatic,
-      //   link: "https://github.com/Don-Stevenson/moviedb",
+      //   imgSrc: JungleRailsStatic,
+      //   link: "https://github.com/Don-Stevenson/Jungle-Rails",
       //   selected: false,
       // },
     ],
@@ -96,6 +114,26 @@ export default function Carousel() {
       if (item.id === 2 && !item.selected) {
         item.imgSrc = MovieDBStatic;
       }
+      if (item.id === 3 && item.selected) {
+        item.imgSrc = WeatherAppGif;
+      }
+      if (item.id === 3 && !item.selected) {
+        item.imgSrc = WeatherAppStatic;
+      }
+      // To be updated and added later
+      // *****************************
+      // if (item.id === 4 && item.selected) {
+      //   // item.imgSrc = SmartToDoGif;
+      // }
+      // if (item.id === 4 && !item.selected) {
+      //   item.imgSrc = SmartToDoStatic;
+      // }
+      // if (item.id === 5 && item.selected) {
+      //   // item.imgSrc = JungleRailsGif;
+      // }
+      // if (item.id === 5 && !item.selected) {
+      //   item.imgSrc = JungleRailsStatic;
+      // }
     });
 
     // update state
@@ -122,6 +160,6 @@ export default function Carousel() {
   return (
     <Container fluid={true}>
       <Row className="justify-content-around">{makeItems(state.items)}</Row>
-     </Container>
+    </Container>
   );
 }
