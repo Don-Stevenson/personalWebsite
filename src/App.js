@@ -50,10 +50,7 @@ const App = () => {
             />
           )}
         />
-        <Route 
-         path="/about" 
-         render={() => <AboutPage title={about.title} />}
-        />
+        <Route path="/about" render={() => <AboutPage title={about.title} />} />
         <Route
           path="/contact"
           render={() => <ContactPage title={contact.title} />}
