@@ -12,7 +12,7 @@ export default function CardInfo({ title, subTitle, link }) {
       <p className="d-card-subtitle">{subTitle} </p>
       <a href={link} target="blank" rel="noopener noreferrrer">
         {" "}
-        , View Code{" "}
+        View Code{" "}
       </a>
     </animated.div>
   );
