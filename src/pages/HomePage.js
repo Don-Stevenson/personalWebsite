@@ -4,10 +4,10 @@ import Carousel from "../components/Carousel";
 
 // function displays the homepage
 //**********************
-export default function HomePage(props) {
+export default function HomePage({title, subTitle, text}) {
   return (
     <div>
-      <Hero title={props.title} subTitle={props.subTitle} text={props.text} />;
+      <Hero title={title} subTitle={subTitle} text={text} />;
       <Carousel />
     </div>
   );
