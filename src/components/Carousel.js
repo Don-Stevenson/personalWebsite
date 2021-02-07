@@ -15,8 +15,8 @@ import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 // import JungleRailsStatic from "../components/assets/images/JungleRailsStatic.png"
 // import JungleRailsGif from "../components/assets/images"
 
-// import SmartToDoStatic from "../components/assets/images/SmartTodoStatic.png"
-// import SmartToDoGif from "../components/assets/images"
+import FTPyschStatic from "../components/assets/images/FTPsychStatic.png";
+import FTPyschGif from "../components/assets/images/FTPsychGif.gif";
 
 import WeatherAppStatic from "../components/assets/images/WeatherAppStatic.jpg";
 import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif";
@@ -61,17 +61,16 @@ export default function Carousel() {
         link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
-
+      {
+        id: 4,
+        title: "Foward Thinking Pyschology",
+        subTitle: "I work as Front-End Dev for this site",
+        imgSrc: FTPyschStatic,
+        link: "https://www.ftpsych.ca/",
+        selected: false,
+      },
       // To be updated and added later
       // *****************************
-      // {
-      //   id: 4,
-      //   title: "Smart To-Do",
-      //   subTitle: "An auto categorizing to-do list",
-      //   imgSrc: SmartToDoStatic,
-      //   link: "https://github.com/Don-Stevenson/to-do",
-      //   selected: false,
-      // },
       // {
       //   id: 5,
       //   title: "Jungle Rails",
@@ -120,11 +119,11 @@ export default function Carousel() {
       if (item.id === 3 && !item.selected) {
         item.imgSrc = WeatherAppStatic;
       }
+      if (item.id === 4 && item.selected) {
+        item.imgSrc = FTPyschGif;
+      }
       // To be updated and added later
       // *****************************
-      // if (item.id === 4 && item.selected) {
-      //   // item.imgSrc = SmartToDoGif;
-      // }
       // if (item.id === 4 && !item.selected) {
       //   item.imgSrc = SmartToDoStatic;
       // }
