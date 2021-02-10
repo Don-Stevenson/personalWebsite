@@ -25,6 +25,7 @@ import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif";
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col"
 
 export default function Carousel() {
   const [state, setState] = useState({
@@ -32,7 +33,7 @@ export default function Carousel() {
       {
         id: 0,
         title: "Foward Thinking Pyschology",
-        subTitle: "I work as Front-End Dev for this site",
+        subTitle: "I work as Front-End Dev for this clinic",
         imgSrc: FTPyschStatic,
         link: "https://www.ftpsych.ca/",
         selected: false,
@@ -69,14 +70,14 @@ export default function Carousel() {
         link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
-     
+
       // To be updated and added later
       // *****************************
       // {
       //   id: 5,
-      //   title: "Jungle Rails",
-      //   subTitle: "An online retail app clone.",
-      //   imgSrc: JungleRailsStatic,
+      //   title: "Sebastian Knox Woodwinds Services",
+      //   subTitle: "I work as Front-End Dev for this E-commerce Site.",
+      //   imgSrc: SebastianStatic,
       //   link: "https://github.com/Don-Stevenson/Jungle-Rails",
       //   selected: false,
       // },
@@ -151,18 +152,20 @@ export default function Carousel() {
   const makeItems = (items) => {
     return items.map((item) => {
       return (
-        <Card
-          item={item}
-          click={(event) => handleCardClick(item.id, event)}
-          key={item.id}
-        />
+        <Col sm>
+          <Card
+            item={item}
+            click={(event) => handleCardClick(item.id, event)}
+            key={item.id}
+          />
+        </Col>
       );
     });
   };
 
   return (
-    <Container fluid={true}>
-      <Row className="justify-content-around">{makeItems(state.items)}</Row>
+    <Container fluid>
+      <Row className="justify-content-around" lg="3">{makeItems(state.items)}</Row>
     </Container>
   );
 }
