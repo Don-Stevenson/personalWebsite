@@ -64,8 +64,8 @@ export default function Carousel() {
       },
       {
         id: 4,
-        title: "Weather App",
-        subTitle: "An app that returns movie weather results.",
+        title: "The Weather App",
+        subTitle: "An app that returns weather results.",
         imgSrc: WeatherAppStatic,
         link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
