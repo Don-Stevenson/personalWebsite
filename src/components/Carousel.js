@@ -10,9 +10,8 @@ import NagMeGif from "../components/assets/images/NagMe.gif";
 import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
 import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 
-
-import SebastianKnoxStatic from "../components/assets/images/SebastianKnoxStatic.png"
-import SebastianKnoxGif from "../components/assets/images/SebastianKnoxGif.gif"
+import SebastianKnoxStatic from "../components/assets/images/SebastianKnoxStatic.png";
+import SebastianKnoxGif from "../components/assets/images/SebastianKnoxGif.gif";
 
 import FTPyschStatic from "../components/assets/images/FTPsychStatic.png";
 import FTPyschGif from "../components/assets/images/FTPsychGif.gif";
@@ -24,7 +23,7 @@ import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif";
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col"
+import Col from "react-bootstrap/Col";
 
 export default function Carousel() {
   const [state, setState] = useState({
@@ -69,9 +68,6 @@ export default function Carousel() {
         link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
-
-      // To be updated and added later
-      // *****************************
       {
         id: 5,
         title: "Sebastian Knox Woodwinds Services",
@@ -126,9 +122,8 @@ export default function Carousel() {
       if (item.id === 0 && !item.selected) {
         item.imgSrc = FTPyschStatic;
       }
-      // To be updated and added later
-      // *****************************
-          if (item.id === 5 && item.selected) {
+
+      if (item.id === 5 && item.selected) {
         item.imgSrc = SebastianKnoxGif;
       }
       if (item.id === 5 && !item.selected) {
@@ -161,7 +156,9 @@ export default function Carousel() {
 
   return (
     <Container fluid>
-      <Row className="justify-content-around" lg="3">{makeItems(state.items)}</Row>
+      <Row className="justify-content-around" lg="3">
+        {makeItems(state.items)}
+      </Row>
     </Container>
   );
 }
