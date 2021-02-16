@@ -10,10 +10,9 @@ import NagMeGif from "../components/assets/images/NagMe.gif";
 import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
 import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 
-// To be updated and added later
-// *****************************
-// import JungleRailsStatic from "../components/assets/images/JungleRailsStatic.png"
-// import JungleRailsGif from "../components/assets/images"
+
+import SebastianKnoxStatic from "../components/assets/images/SebastianKnoxStatic.png"
+import SebastianKnoxGif from "../components/assets/images/SebastianKnoxGif.gif"
 
 import FTPyschStatic from "../components/assets/images/FTPsychStatic.png";
 import FTPyschGif from "../components/assets/images/FTPsychGif.gif";
@@ -73,14 +72,14 @@ export default function Carousel() {
 
       // To be updated and added later
       // *****************************
-      // {
-      //   id: 5,
-      //   title: "Sebastian Knox Woodwinds Services",
-      //   subTitle: "I work as Front-End Dev for this E-commerce Site.",
-      //   imgSrc: SebastianStatic,
-      //   link: "https://github.com/Don-Stevenson/Jungle-Rails",
-      //   selected: false,
-      // },
+      {
+        id: 5,
+        title: "Sebastian Knox Woodwinds Services",
+        subTitle: "I work as Front-End Dev for this Saxophone E-commerce Site.",
+        imgSrc: SebastianKnoxStatic,
+        link: "https://www.sebastianknox.com/",
+        selected: false,
+      },
     ],
   });
 
@@ -129,15 +128,12 @@ export default function Carousel() {
       }
       // To be updated and added later
       // *****************************
-      // if (item.id === 4 && !item.selected) {
-      //   item.imgSrc = SmartToDoStatic;
-      // }
-      // if (item.id === 5 && item.selected) {
-      //   // item.imgSrc = JungleRailsGif;
-      // }
-      // if (item.id === 5 && !item.selected) {
-      //   item.imgSrc = JungleRailsStatic;
-      // }
+          if (item.id === 5 && item.selected) {
+        item.imgSrc = SebastianKnoxGif;
+      }
+      if (item.id === 5 && !item.selected) {
+        item.imgSrc = SebastianKnoxStatic;
+      }
     });
 
     // update state
