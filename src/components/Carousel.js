@@ -31,17 +31,19 @@ export default function Carousel() {
       {
         id: 0,
         title: "Foward Thinking Pyschology",
-        subTitle: "I work as Front-End Dev for this clinic",
+        subTitle: "I am a Front-End Dev for this clinic",
         imgSrc: FTPyschStatic,
         link: "https://www.ftpsych.ca/",
         selected: false,
       },
       {
         id: 1,
-        title: "Nag-me",
-        subTitle: "A nudge-theory goal attainment app",
-        imgSrc: NagMeStatic,
-        link: "https://github.com/Don-Stevenson/nag-me",
+        title: "Sebastian Knox Woodwinds Services",
+        subTitle:
+          `I am a Front-End Dev for this \n Saxophone
+           Service & E-commerce Site.`,
+        imgSrc: SebastianKnoxStatic,
+        link: "https://www.sebastianknox.com/",
         selected: false,
       },
       {
@@ -62,18 +64,18 @@ export default function Carousel() {
       },
       {
         id: 4,
-        title: "The Weather App",
-        subTitle: "An app that returns weather results.",
-        imgSrc: WeatherAppStatic,
-        link: "https://github.com/Don-Stevenson/weather-app",
+        title: "Nag-me",
+        subTitle: "A nudge-theory goal attainment app",
+        imgSrc: NagMeStatic,
+        link: "https://github.com/Don-Stevenson/nag-me",
         selected: false,
       },
       {
         id: 5,
-        title: "Sebastian Knox Woodwinds Services",
-        subTitle: "I work as Front-End Dev for this Saxophone E-commerce Site.",
-        imgSrc: SebastianKnoxStatic,
-        link: "https://www.sebastianknox.com/",
+        title: "The Weather App",
+        subTitle: "An app that returns weather results.",
+        imgSrc: WeatherAppStatic,
+        link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
     ],
@@ -92,11 +94,17 @@ export default function Carousel() {
       if (item.id !== id) {
         item.selected = false;
       }
+      if (item.id === 0 && item.selected) {
+        item.imgSrc = FTPyschGif;
+      }
+      if (item.id === 0 && !item.selected) {
+        item.imgSrc = FTPyschStatic;
+      }
       if (item.id === 1 && item.selected) {
-        item.imgSrc = NagMeGif;
+        item.imgSrc = SebastianKnoxGif;
       }
       if (item.id === 1 && !item.selected) {
-        item.imgSrc = NagMeStatic;
+        item.imgSrc = SebastianKnoxStatic;
       }
       if (item.id === 2 && item.selected) {
         item.imgSrc = SchedulerGif;
@@ -111,23 +119,16 @@ export default function Carousel() {
         item.imgSrc = MovieDBStatic;
       }
       if (item.id === 4 && item.selected) {
-        item.imgSrc = WeatherAppGif;
+        item.imgSrc = NagMeGif;
       }
       if (item.id === 4 && !item.selected) {
-        item.imgSrc = WeatherAppStatic;
+        item.imgSrc = NagMeStatic;
       }
-      if (item.id === 0 && item.selected) {
-        item.imgSrc = FTPyschGif;
-      }
-      if (item.id === 0 && !item.selected) {
-        item.imgSrc = FTPyschStatic;
-      }
-
       if (item.id === 5 && item.selected) {
-        item.imgSrc = SebastianKnoxGif;
+        item.imgSrc = WeatherAppGif;
       }
       if (item.id === 5 && !item.selected) {
-        item.imgSrc = SebastianKnoxStatic;
+        item.imgSrc = WeatherAppStatic;
       }
     });
 
