@@ -5,7 +5,7 @@ export default function Card(props) {
   return (
     <div
       className="d-inline-block d-card"
-      onClick={(e) => props.click(props.item)}
+      onClick={() => props.click(props.item)}
     >
       <img
         className="d-card-image"
