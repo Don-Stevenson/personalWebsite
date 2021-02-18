@@ -27,7 +27,7 @@ import Col from "react-bootstrap/Col";
 
 export default function Carousel() {
   const [state, setState] = useState({
-    items: [
+    carouselItems: [
       {
         id: 0,
         title: "Foward Thinking Pyschology",
@@ -81,16 +81,21 @@ export default function Carousel() {
     ],
   });
 
+
+  // function that handles what happens when a card is clicked
+  // *********************************************************
   const handleCardClick = (id) => {
-    let items = [...state.items];
+    // bringing in carousel items from state using spread operator
+    // ***********************************************************
+    const carouselItems = [...state.carouselItems];
 
     // onclick logic to select an item
-    //********************************
-    items[id].selected = items[id].selected ? false : true;
+    // *******************************
+    carouselItems[id].selected = carouselItems[id].selected ? false : true;
 
     // logic to display only one item at a time with gifs when selected
     //*****************************************************************
-    items.forEach((item) => {
+    carouselItems.forEach((item) => {
       if (item.id !== id) {
         item.selected = false;
       }
@@ -132,17 +137,17 @@ export default function Carousel() {
       }
     });
 
-    // update state
-    //*************
+    // update state after checking to see if a card has been clicked 
+    // *************************************************************
     setState((prevState) => {
-      return { ...prevState, items };
+      return { ...prevState, carouselItems };
     });
   };
 
-  //create a card compoment for each item
-  //*************************************
-  const makeItems = (items) => {
-    return items.map((item) => {
+  // create a card compoment for each item
+  // *************************************
+  const makeCarouselItems = (carouselItems) => {
+    return carouselItems.map((item) => {
       return (
         <Col sm>
           <Card
@@ -158,7 +163,7 @@ export default function Carousel() {
   return (
     <Container fluid>
       <Row className="justify-content-around" lg="3">
-        {makeItems(state.items)}
+        {makeCarouselItems(state.carouselItems)}
       </Row>
     </Container>
   );
