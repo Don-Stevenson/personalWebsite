@@ -30,8 +30,8 @@ export default function AboutPage(props) {
 
           <p>
             When I am not building apps and working on other coding projects, I
-            enjoy doing things like: practicing guitar, playing team sports, keeping
-            aquariums, roasting my own coffee and making different DIY projects.
+            enjoy doing things like: practicing the guitar, playing team sports, keeping
+            aquariums, roasting my own coffee and working on different DIY projects.
           </p>
           <p>
             Here is my{" "}
