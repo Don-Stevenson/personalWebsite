@@ -4,12 +4,11 @@ import Button from "react-bootstrap/Button";
 import Hero from "../components/Hero";
 import Content from "../components/Content";
 import Useform from "../../src/UseForm";
-import validateLogin from "../../src/validateLogin";
 
 // contact page
 // ************
 export default function ContactPage(props) {
-  const { handleSubmit, handleChange, state, errors } = Useform(validateLogin);
+  const { handleSubmit, handleChange, state, errors } = Useform();
   return (
     <div>
       <Hero title={props.title} />
@@ -68,10 +67,20 @@ export default function ContactPage(props) {
             // ******************************************************************
             // todo: time-out back to go back to !state.emailSent after 3 secs
           }
+          
+          {/* do something on click */}
+
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
-          )}
-         {/* todo: handle state when email is not sent */}
+          ) }
+          
+          {/* 
+          conditional
+          // : (
+          //   <p className="d-inline d-failure-msg"> sending email ...</p>
+          // )} */}
+
+          {/* todo: handle state when email is not sent */}
           {/* {!state.emailSent && (
             <p className="d-inline d-err-msg"> Email Not Sent! </p>
           )} */}
