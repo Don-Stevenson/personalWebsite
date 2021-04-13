@@ -9,6 +9,7 @@ import Useform from "../../src/UseForm";
 // ************
 export default function ContactPage(props) {
   const { handleSubmit, handleChange, state, errors } = Useform();
+
   return (
     <div>
       <Hero title={props.title} />
@@ -38,7 +39,7 @@ export default function ContactPage(props) {
               required
             />
           </Form.Group>
-          {errors.email && <p>{errors.email}</p>}
+          {/* {errors.email && <p>error is here{errors.message}</p>} */}
 
           <Form.Group>
             <Form.Label htmlFor="message">Message</Form.Label>
@@ -67,13 +68,13 @@ export default function ContactPage(props) {
             // ******************************************************************
             // todo: time-out back to go back to !state.emailSent after 3 secs
           }
-          
+
           {/* do something on click */}
 
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
-          ) }
-          
+          )}
+
           {/* 
           conditional
           // : (
