@@ -7,7 +7,7 @@ import Carousel from "../components/Carousel";
 export default function HomePage({title, subTitle, text}) {
   return (
     <div>
-      <Hero title={title} subTitle={subTitle} text={text} />;
+      <Hero title={title} subTitle={subTitle} text={text} />
       <Carousel />
     </div>
   );
