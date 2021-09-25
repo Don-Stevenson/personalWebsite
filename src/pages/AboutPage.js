@@ -23,15 +23,15 @@ export default function AboutPage(props) {
           <br></br>
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
-            Javascript, Ruby on Rails, Clojure, WordPress, Python, PhP, Node JS, React JS,
+            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS, React JS,
             Express JS, SQl, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha /
             Chai.
           </p>
 
           <p>
             When I am not building apps and working on other coding projects, I
-            enjoy doing things like: practicing the guitar, playing team sports, keeping
-            aquariums, roasting my own coffee and working on different DIY projects.
+            enjoy doing things like: practicing guitar, playing team sports, keeping
+            aquariums, roasting my own coffee, knife sharpening and making different DIY projects.
           </p>
           <p>
             Here is my{" "}
