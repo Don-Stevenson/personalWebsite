@@ -10,10 +10,8 @@ import NagMeGif from "../components/assets/images/NagMe.gif";
 import SchedulerStatic from "../components/assets/images/SchedulerStatic.png";
 import SchedulerGif from "../components/assets/images/SchedulerGIF.gif";
 
-// To be updated and added later
-// *****************************
-// import JungleRailsStatic from "../components/assets/images/JungleRailsStatic.png"
-// import JungleRailsGif from "../components/assets/images"
+import SebastianKnoxStatic from "../components/assets/images/SebastianKnoxStatic.png";
+import SebastianKnoxGif from "../components/assets/images/SebastianKnoxGif.gif";
 
 import FTPyschStatic from "../components/assets/images/FTPsychStatic.png";
 import FTPyschGif from "../components/assets/images/FTPsychGif.gif";
@@ -25,10 +23,11 @@ import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif";
 import Card from "../components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function Carousel() {
   const [state, setState] = useState({
-    items: [
+    carouselItems: [
       {
         id: 0,
         title: "Foward Thinking Pyschology",
@@ -39,10 +38,12 @@ export default function Carousel() {
       },
       {
         id: 1,
-        title: "Nag-me",
-        subTitle: "A nudge-theory goal attainment app",
-        imgSrc: NagMeStatic,
-        link: "https://github.com/Don-Stevenson/nag-me",
+        title: "Sebastian Knox Woodwinds Services",
+        subTitle:
+          `I am a Front-End Dev for this \n Saxophone
+           Service & E-commerce Site.`,
+        imgSrc: SebastianKnoxStatic,
+        link: "https://www.sebastianknox.com/",
         selected: false,
       },
       {
@@ -63,44 +64,52 @@ export default function Carousel() {
       },
       {
         id: 4,
-        title: "Weather App",
-        subTitle: "An app that returns movie weather results.",
+        title: "Nag-me",
+        subTitle: "A nudge-theory goal attainment app",
+        imgSrc: NagMeStatic,
+        link: "https://github.com/Don-Stevenson/nag-me",
+        selected: false,
+      },
+      {
+        id: 5,
+        title: "The Weather App",
+        subTitle: "An app that returns weather results.",
         imgSrc: WeatherAppStatic,
         link: "https://github.com/Don-Stevenson/weather-app",
         selected: false,
       },
-     
-      // To be updated and added later
-      // *****************************
-      // {
-      //   id: 5,
-      //   title: "Jungle Rails",
-      //   subTitle: "An online retail app clone.",
-      //   imgSrc: JungleRailsStatic,
-      //   link: "https://github.com/Don-Stevenson/Jungle-Rails",
-      //   selected: false,
-      // },
     ],
   });
 
+
+  // function that handles what happens when a card is clicked
+  // *********************************************************
   const handleCardClick = (id) => {
-    let items = [...state.items];
+    // bringing in carousel items from state using spread operator
+    // ***********************************************************
+    const carouselItems = [...state.carouselItems];
 
     // onclick logic to select an item
-    //********************************
-    items[id].selected = items[id].selected ? false : true;
+    // *******************************
+    carouselItems[id].selected = carouselItems[id].selected ? false : true;
 
     // logic to display only one item at a time with gifs when selected
     //*****************************************************************
-    items.forEach((item) => {
+    carouselItems.forEach((item) => {
       if (item.id !== id) {
         item.selected = false;
       }
+      if (item.id === 0 && item.selected) {
+        item.imgSrc = FTPyschGif;
+      }
+      if (item.id === 0 && !item.selected) {
+        item.imgSrc = FTPyschStatic;
+      }
       if (item.id === 1 && item.selected) {
-        item.imgSrc = NagMeGif;
+        item.imgSrc = SebastianKnoxGif;
       }
       if (item.id === 1 && !item.selected) {
-        item.imgSrc = NagMeStatic;
+        item.imgSrc = SebastianKnoxStatic;
       }
       if (item.id === 2 && item.selected) {
         item.imgSrc = SchedulerGif;
@@ -115,54 +124,47 @@ export default function Carousel() {
         item.imgSrc = MovieDBStatic;
       }
       if (item.id === 4 && item.selected) {
-        item.imgSrc = WeatherAppGif;
+        item.imgSrc = NagMeGif;
       }
       if (item.id === 4 && !item.selected) {
+        item.imgSrc = NagMeStatic;
+      }
+      if (item.id === 5 && item.selected) {
+        item.imgSrc = WeatherAppGif;
+      }
+      if (item.id === 5 && !item.selected) {
         item.imgSrc = WeatherAppStatic;
       }
-      if (item.id === 0 && item.selected) {
-        item.imgSrc = FTPyschGif;
-      }
-      if (item.id === 0 && !item.selected) {
-        item.imgSrc = FTPyschStatic;
-      }
-      // To be updated and added later
-      // *****************************
-      // if (item.id === 4 && !item.selected) {
-      //   item.imgSrc = SmartToDoStatic;
-      // }
-      // if (item.id === 5 && item.selected) {
-      //   // item.imgSrc = JungleRailsGif;
-      // }
-      // if (item.id === 5 && !item.selected) {
-      //   item.imgSrc = JungleRailsStatic;
-      // }
     });
 
-    // update state
-    //*************
+    // update state after checking to see if a card has been clicked 
+    // *************************************************************
     setState((prevState) => {
-      return { ...prevState, items };
+      return { ...prevState, carouselItems };
     });
   };
 
-  //create a card compoment for each item
-  //*************************************
-  const makeItems = (items) => {
-    return items.map((item) => {
+  // create a card compoment for each item
+  // *************************************
+  const makeCarouselItems = (carouselItems) => {
+    return carouselItems.map((item) => {
       return (
-        <Card
-          item={item}
-          click={(event) => handleCardClick(item.id, event)}
-          key={item.id}
-        />
+        <Col sm>
+          <Card
+            item={item}
+            click={(event) => handleCardClick(item.id, event)}
+            key={item.id}
+          />
+        </Col>
       );
     });
   };
 
   return (
-    <Container fluid={true}>
-      <Row className="justify-content-around">{makeItems(state.items)}</Row>
+    <Container fluid>
+      <Row className="justify-content-around" lg="3">
+        {makeCarouselItems(state.carouselItems)}
+      </Row>
     </Container>
   );
 }
