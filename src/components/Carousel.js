@@ -30,8 +30,8 @@ export default function Carousel() {
     carouselItems: [
       {
         id: 0,
-        title: "Forward Thinking Pyschology",
-        subTitle: "I am a Front-End Dev for this clinic",
+        title: "Foward Thinking Pyschology",
+        subTitle: "I worked as a Front-End Dev for this site",
         imgSrc: FTPyschStatic,
         link: "https://www.ftpsych.ca/",
         selected: false,
