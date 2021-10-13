@@ -32,7 +32,7 @@ export default function Carousel() {
       {
         id: 0,
         title: "Foward Thinking Pyschology",
-        subTitle: "I work as Front-End Dev for this site",
+        subTitle: "I worked as a Front-End Dev for this site",
         imgSrc: FTPyschStatic,
         link: "https://www.ftpsych.ca/",
         selected: false,
