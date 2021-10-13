@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Axios from "axios";
-import validateLogin from "./validateLogin";
+
 
 // create a custom hook called useForm to handle submit and change
 //****************************************************************
-const useForm = (cb) => {
+const useForm = () => {
   //setting the errors with usestate
   const [errors, setErrors] = useState({ email: "", name: "", message: "" });
 
@@ -35,7 +35,7 @@ const useForm = (cb) => {
   const handleSubmit = async (event) => {
     // checking for errors in the form
     // *******************************
-    setErrors(validateLogin(state));
+    setErrors(state);
 
     // prevents the browser being reloaded upon hiting the send button
     //****************************************************************
