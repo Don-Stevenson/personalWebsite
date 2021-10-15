@@ -95,7 +95,7 @@ export default function Carousel() {
 
     // logic to display only one item at a time with gifs when selected
     //*****************************************************************
-    carouselItems.forEach((item) => {
+    carouselItems.map((item) => {
       if (item.id !== id) {
         item.selected = false;
       }
