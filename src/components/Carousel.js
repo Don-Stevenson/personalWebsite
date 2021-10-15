@@ -84,7 +84,7 @@ export default function Carousel() {
 
   // function that handles what happens when a card is clicked
   // *********************************************************
-  const handleCardClick = (id) => {
+  const handleCardClick = id => {
     // bringing in carousel items from state using spread operator
     // ***********************************************************
     const carouselItems = [...state.carouselItems];
@@ -95,7 +95,7 @@ export default function Carousel() {
 
     // logic to display only one item at a time with gifs when selected
     //*****************************************************************
-    carouselItems.map((item) => {
+    carouselItems.map(item => {
       if (item.id !== id) {
         item.selected = false;
       }
@@ -147,12 +147,12 @@ export default function Carousel() {
   // create a card compoment for each item
   // *************************************
   const makeCarouselItems = (carouselItems) => {
-    return carouselItems.map((item) => {
+    return carouselItems.map(item => {
       return (
         <Col sm>
           <Card
             item={item}
-            click={(event) => handleCardClick(item.id, event)}
+            click={event => handleCardClick(item.id, event)}
             key={item.id}
           />
         </Col>
