@@ -7,18 +7,17 @@ import Col from "react-bootstrap/Col";
 //*********************************************
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" });
 
+console.log("i", year)
 // returns the footer
 // ******************
 export default function Footer() {
   return (
     <footer className="mt-5">
-    <Container fluid={true}>
+      <Container fluid={true}>
         <Row className="border-top justify-content-between p-3">
-            <Col className="p-0" md={3} sm={12}>
-                {/* Don Stevenson */}
-            </Col>
+          <Col> </Col>
           <Col className="p-0 d-flex justify-content-end" md={3} sm={12} >
-            Custom site by Don Stevenson © {year}
+            Custom site by Don&nbsp;Stevenson ©&nbsp;{year}
           </Col>
         </Row>
       </Container>
