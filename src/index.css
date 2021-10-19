@@ -25,7 +25,7 @@ code {
 
 .d-card-info {
   margin-top: 10px;
-  min-height: 100px;
+  min-height: 150px;
 }
 
 .d-card-title {
@@ -54,4 +54,9 @@ code {
 .d-err-msg {
   color: #EE6352;
   padding: 10px 15px;
+}
+
+.placeholder {
+  margin-top: 10px;
+  min-height: 150px;
 }
