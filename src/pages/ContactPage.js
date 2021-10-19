@@ -39,7 +39,7 @@ export default function ContactPage(props) {
               required
             />
           </Form.Group>
-          {/* {errors.email && <p>error is here{errors.message}</p>} */}
+      
 
           <Form.Group>
             <Form.Label htmlFor="message">Message</Form.Label>
@@ -63,28 +63,10 @@ export default function ContactPage(props) {
           >
             Send
           </Button>
-          {
-            //returns a conditional success  message to the screen after emailing
-            // ******************************************************************
-            // todo: time-out back to go back to !state.emailSent after 3 secs
-          }
-
-          {/* do something on click */}
 
           {state.emailSent && (
             <p className="d-inline d-sucess-msg"> Email Sent!</p>
           )}
-
-          {/* 
-          conditional
-          // : (
-          //   <p className="d-inline d-failure-msg"> sending email ...</p>
-          // )} */}
-
-          {/* todo: handle state when email is not sent */}
-          {/* {!state.emailSent && (
-            <p className="d-inline d-err-msg"> Email Not Sent! </p>
-          )} */}
         </Form>
       </Content>
     </div>
