@@ -12,6 +12,8 @@ export default function Card(props) {
         src={props.item.imgSrc}
         alt={props.item.subTitle}
       />
+     
+
       {props.item.selected && (
         <CardInfo
           title={props.item.title}
@@ -19,6 +21,8 @@ export default function Card(props) {
           link={props.item.link}
         />
       )}
+
+      {!props.item.selected && (<div className="placeholder"></div>)}
     </div>
   );
 }
