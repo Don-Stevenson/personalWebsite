@@ -11,7 +11,9 @@ Made with React JS, this website design and structure is based on a tutorial by 
 * use of process.env variables to store api keys
 * creating and displaying error messages with the form fields
 * the front end is deployed on netlify.com
-* the back end handles emails from the contact form to my email acount and is deployed on heroku.com 
+* the back end handles emails from the contact form to my email acount and is deployed on heroku.com
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ede2f1e5-b63a-4050-b976-889a47a56d09/deploy-status)](https://app.netlify.com/sites/donstevenson/deploys)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
