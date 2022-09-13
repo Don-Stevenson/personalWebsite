@@ -38,7 +38,7 @@ const carouselItems = [
     id: 1,
     title: "Sebastian Knox Woodwinds Services",
     subTitle:
-      `I am a Front-End Dev for this \n Saxophone
+      `I worked Front-End Dev for this \n Saxophone
        Service & E-commerce Site.`,
     imgSrc: SebastianKnoxStatic,
     link: "https://www.sebastianknox.com/",
