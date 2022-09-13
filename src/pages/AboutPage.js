@@ -1,4 +1,5 @@
 import React from "react";
+import { Column, Row } from "simple-flexbox";
 import { SocialIcon } from "react-social-icons";
 
 import Hero from "../components/Hero";
@@ -13,14 +14,12 @@ export default function AboutPage(props) {
     <div>
       <Hero title={props.title}> title </Hero>
       <Content>
-        <div> Column
-
-        {/* <Column wrap={true} vertical={"spaced"}> */}
+        <Column wrap={true} vertical={"spaced"}>
           <img
             className="d-card-profile"
             src={ProfilePic}
             alt="profile portrait"
-            />
+          />
           <br></br>
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
@@ -43,24 +42,21 @@ export default function AboutPage(props) {
           
 
           <p> You can also find me here: {"  "} </p>
-            <div> row 
-
+          <Row>
             <SocialIcon
               url="https://github.com/Don-Stevenson"
               style={{ margin: 6 }}
               target="blank"
               rel="noopener noreferrrer"
-              />
+            />
             <SocialIcon
               url="https://www.linkedin.com/in/don-stevenson-5b31aa128/"
               style={{ margin: 6 }}
               target="blank"
               rel="noopener noreferrrer"
-              />
-          
-              </div>
-        {/* </Column> */}
-              </div>
+            />
+          </Row>
+        </Column>
       </Content>
     </div>
   );
