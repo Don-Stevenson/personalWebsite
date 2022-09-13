@@ -1,5 +1,5 @@
-import React from "react";
-import CardInfo from "../components/CardInfo";
+import React from "react"
+import CardInfo from "../components/CardInfo"
 
 export default function Card(props) {
   return (
@@ -12,7 +12,6 @@ export default function Card(props) {
         src={props.item.imgSrc}
         alt={props.item.subTitle}
       />
-     
 
       {props.item.selected && (
         <CardInfo
@@ -22,7 +21,7 @@ export default function Card(props) {
         />
       )}
 
-      {!props.item.selected && (<div className="placeholder"></div>)}
+      {!props.item.selected && <div className="placeholder"></div>}
     </div>
-  );
+  )
 }

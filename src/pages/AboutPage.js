@@ -1,11 +1,11 @@
-import React from "react";
-import { Column, Row } from "simple-flexbox";
-import { SocialIcon } from "react-social-icons";
+import React from "react"
+import { Column, Row } from "simple-flexbox"
+import { SocialIcon } from "react-social-icons"
 
-import Hero from "../components/Hero";
-import ProfilePic from "../components/assets/images/profile-pic.jpg";
-import Resume from "../components/assets/docs/DS Resume.pdf";
-import Content from "../components/Content";
+import Hero from "../components/Hero"
+import ProfilePic from "../components/assets/images/profile-pic.jpg"
+import Resume from "../components/assets/docs/DS Resume.pdf"
+import Content from "../components/Content"
 
 // returns the about page
 //**********************/
@@ -23,15 +23,16 @@ export default function AboutPage(props) {
           <br></br>
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
-            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS, React JS, Gatsby JS,
-            Express JS, SQl, GraphQL, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha /
-            Chai.
+            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS,
+            React JS, Gatsby JS, Express JS, SQl, GraphQL, PostgreSQL, MongoDB,
+            HTML5, CSS, Jest, and Mocha / Chai.
           </p>
 
           <p>
             When I am not building apps and working on other coding projects, I
-            enjoy doing things like: practicing guitar, playing team sports, keeping
-            aquariums, roasting my own coffee, knife sharpening and working on different DIY projects.
+            enjoy doing things like: practicing guitar, playing team sports,
+            keeping aquariums, roasting my own coffee, knife sharpening and
+            working on different DIY projects.
           </p>
           <p>
             Here is my{" "}
@@ -39,7 +40,6 @@ export default function AboutPage(props) {
               resume
             </a>
           </p>
-          
 
           <p> You can also find me here: {"  "} </p>
           <Row>
@@ -59,5 +59,5 @@ export default function AboutPage(props) {
         </Column>
       </Content>
     </div>
-  );
+  )
 }

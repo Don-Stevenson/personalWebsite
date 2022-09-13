@@ -1,7 +1,7 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 // creates a custom wrapper that we can use elsewhere to wrap and style text
 // **************************************************************************/
@@ -13,5 +13,5 @@ export default function Content({ children }) {
         <Col md={8}>{children}</Col>
       </Row>
     </Container>
-  );
+  )
 }

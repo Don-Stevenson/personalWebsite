@@ -1,14 +1,14 @@
-import React from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Hero from "../components/Hero";
-import Content from "../components/Content";
-import Useform from "../../src/UseForm";
+import React from "react"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
+import Hero from "../components/Hero"
+import Content from "../components/Content"
+import Useform from "../../src/UseForm"
 
 // contact page
 // ************
 export default function ContactPage(props) {
-  const { handleSubmit, handleChange, state, errors } = Useform();
+  const { handleSubmit, handleChange, state, errors } = Useform()
 
   return (
     <div>
@@ -39,7 +39,6 @@ export default function ContactPage(props) {
               required
             />
           </Form.Group>
-      
 
           <Form.Group>
             <Form.Label htmlFor="message">Message</Form.Label>
@@ -70,5 +69,5 @@ export default function ContactPage(props) {
         </Form>
       </Content>
     </div>
-  );
+  )
 }
