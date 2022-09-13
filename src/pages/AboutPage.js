@@ -23,8 +23,8 @@ export default function AboutPage(props) {
           <br></br>
           <p>
             Hi, I'm Don! I'm a full stack web developer with experience in
-            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS, React JS,
-            Express JS, SQl, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha /
+            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS, React JS, Gatsby JS,
+            Express JS, SQl, GraphQL, PostgreSQL, MongoDB, HTML5, CSS, Jest, and Mocha /
             Chai.
           </p>
 

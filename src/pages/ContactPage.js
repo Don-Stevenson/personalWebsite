@@ -54,7 +54,7 @@ export default function ContactPage(props) {
             />
           </Form.Group>
           {errors.message && <p>{errors.blank}</p>}
-          <p>Note: please allow up to 15 seconds for the email to send</p>
+          <p>Note: please allow up to 10 seconds for the email to send</p>
           <Button
             className="d-inline-block"
             variant="outline-primary"
