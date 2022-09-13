@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import React, { useState } from "react"
+import "./App.css"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import Footer from "./components/Footer"
+import HomePage from "./pages/HomePage"
+import AboutPage from "./pages/AboutPage"
+import ContactPage from "./pages/ContactPage"
 
 const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
-    text: "Checkout my work below",
-  });
-  const [about] = useState({ title: "About Me" });
-  const [contact] = useState({ title: "Talk to Me" });
+    text: "Checkout my work below"
+  })
+  const [about] = useState({ title: "About Me" })
+  const [contact] = useState({ title: "Talk to Me" })
 
   return (
     <Router>
@@ -57,7 +57,7 @@ const App = () => {
         <Footer></Footer>
       </Container>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
