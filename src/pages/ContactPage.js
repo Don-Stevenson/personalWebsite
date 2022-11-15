@@ -7,12 +7,12 @@ import Useform from "../../src/UseForm"
 
 // contact page
 // ************
-export default function ContactPage(props) {
+export default function ContactPage({title}) {
   const { handleSubmit, handleChange, state, errors } = Useform()
 
   return (
     <div>
-      <Hero title={props.title} />
+      <Hero title={title} />
       <Content>
         <Form onSubmit={handleSubmit}>
           <Form.Group>

@@ -9,10 +9,10 @@ import Content from "../components/Content"
 
 // returns the about page
 //**********************/
-export default function AboutPage(props) {
+export default function AboutPage({ title }) {
   return (
     <div>
-      <Hero title={props.title}> title </Hero>
+      <Hero title={title}> title </Hero>
       <Content>
         <Column wrap={true} vertical={"spaced"}>
           <img
