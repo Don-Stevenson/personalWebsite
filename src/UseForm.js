@@ -54,18 +54,17 @@ const useForm = () => {
         "https://donpersonalwebsite-api.herokuapp.com/api/email",
         state
       )
-      if (dataSent.data.success) {
-        setState({
-          ...state,
-          disabled: false,
-          emailSent: true,
-          name: "",
-          email: "",
-          message: ""
-        })
-      } else {
-        setState({ ...state, disabled: false, emailSent: false })
-      }
+      
+      dataSent.data.success
+        ? setState({
+            ...state,
+            disabled: false,
+            emailSent: true,
+            name: "",
+            email: "",
+            message: ""
+          })
+        : setState({ ...state, disabled: false, emailSent: false })
     } catch (error) {
       console.error(error)
       setState({ ...state, disabled: false, emailSent: false })
