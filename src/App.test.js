@@ -78,7 +78,6 @@ describe("Testing site functionality", () => {
     const { getByText } = render(<App />)
     const contactLink = getByText(/Contact/i)
     expect(contactLink).toBeInTheDocument()
-
     fireEvent.click(contactLink)
 
     const nameField = getByText(/Name/i)
