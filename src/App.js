@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./App.css"
+// import "./App.css"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
@@ -15,8 +15,8 @@ const App = () => {
     subTitle: "Projects that make a difference",
     text: "Checkout my work below"
   })
-  const [about] = useState({ title: "About Me" })
-  const [contact] = useState({ title: "Talk to Me" })
+  const [about] = useState({ title: "About Me." })
+  const [contact] = useState({ title: "Talk to Me." })
 
   return (
     <Router>
