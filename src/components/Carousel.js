@@ -19,11 +19,12 @@ import FTPyschGif from "../components/assets/images/FTPsychGif.gif"
 import WeatherAppStatic from "../components/assets/images/WeatherAppStatic.jpg"
 import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif"
 
-// library imports
+import styled from "styled-components";
 import Card from "../components/Card"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+const Container = styled.section`padding:4em`
+
+const Row = styled.section`padding:4em`
+const Col = styled.section`padding:4em`
 
 const carouselItems = [
   {

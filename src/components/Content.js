@@ -1,7 +1,14 @@
 import React from "react"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import styled from "styled-components"
+const Container = styled.div`margin: 2rem;
+padding: 2rem;
+`
+const Row = styled.div`margin: 2rem;
+padding: 2rem;
+`
+const Col = styled.div`margin: 2rem;
+padding: 2rem;
+`
 
 // creates a custom wrapper that we can use elsewhere to wrap and style text
 // **************************************************************************/
