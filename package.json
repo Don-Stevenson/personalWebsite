@@ -28,7 +28,6 @@
     "object-path": "^0.11.8",
     "postcss": ">=8.3.9",
     "react": "^18.2.0",
-    "react-bootstrap": "^1.6.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
@@ -36,9 +35,9 @@
     "react-spring": "^8.0.27",
     "serialize-javascript": ">=3.1.0",
     "set-value": ">=4.0.1",
-    "simple-flexbox": "^2.3.3",
     "sockjs": ">=0.3.20",
     "ssri": ">=8.0.1",
+    "styled-components": "^5.3.6",
     "tmpl": ">=1.0.5",
     "websocket-extensions": ">=0.1.4",
     "ws": ">=8.17.1"

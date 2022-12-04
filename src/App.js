@@ -1,14 +1,20 @@
 import React, { useState } from "react"
-// import "./App.css"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import Container from "react-bootstrap/Container"
-import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
+import styled from "styled-components";
 import Footer from "./components/Footer"
 import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 
+const Container = styled.div`margin: 2rem;
+padding: 2rem;
+`
+const Navbar = styled.div`margin: 2rem;
+padding: 2rem;
+`
+const Nav = styled.div`margin: 2rem;
+padding: 2rem;
+`
 const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
@@ -20,11 +26,13 @@ const App = () => {
 
   return (
     <Router>
+      <h1>hello</h1>
       <Container className="p-0" fluid={true}>
+        <div> hello</div>
         <Navbar className="border-bottom" bg="transparent" expand="lg">
-          <Navbar.Brand>Don Stevenson - Web Developer</Navbar.Brand>
-          <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-          <Navbar.Collapse id="navbar-toggle">
+          <Navbar>Don Stevenson - Web Developer</Navbar>
+          <Navbar className="border-0" aria-controls="navbar-toggle" />
+          <Navbar id="navbar-toggle">
             <Nav className="ml-auto">
               <Link className="nav-link" to="/">
                 Home
@@ -36,7 +44,7 @@ const App = () => {
                 Contact
               </Link>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar>
         </Navbar>
         <Route
           path="/"

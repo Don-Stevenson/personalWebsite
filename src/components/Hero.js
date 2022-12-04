@@ -1,8 +1,10 @@
 import React from "react"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import styled from "styled-components";
+
+const Jumbotron = styled.div`padding:4 rem;`
+const Container = styled.div`padding:4 rem;`
+const Row = styled.div`padding:4 rem;`
+const Col = styled.div`padding:4 rem;`
 
 // function that returns the homepage title, subtitle and text
 // ***********************************************************

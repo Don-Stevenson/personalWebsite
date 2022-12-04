@@ -1,11 +1,14 @@
 import React from "react"
-import { Column, Row } from "simple-flexbox"
+import styled from "styled-components";
 import { SocialIcon } from "react-social-icons"
 
 import Hero from "../components/Hero"
 import ProfilePic from "../components/assets/images/profile pic 2024.webp"
 import Resume from "../components/assets/docs/DS Resume.pdf"
 import Content from "../components/Content"
+
+const Column = styled.div`padding: 3rem`
+const Row = styled.div`padding: 3rem`
 
 // returns the about page
 //**********************/
