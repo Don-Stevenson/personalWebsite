@@ -1,10 +1,8 @@
 import React from "react"
-import styled from "styled-components";
+import { Jumbotron, Container, Row, Col } from "./style"
 
-const Jumbotron = styled.div`padding:4 rem;`
-const Container = styled.div`padding:4 rem;`
-const Row = styled.div`padding:4 rem;`
-const Col = styled.div`padding:4 rem;`
+
+
 
 // function that returns the homepage title, subtitle and text
 // ***********************************************************
