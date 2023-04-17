@@ -1,34 +1,35 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import styled from "styled-components";
+import styled from "styled-components"
 import Footer from "./components/Footer"
 import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 
-const Container = styled.div`margin: 2rem;
-padding: 2rem;
+const Container = styled.div`
+  margin: 2rem;
+  padding: 2rem;
 `
-const Navbar = styled.div`margin: 2rem;
-padding: 2rem;
+const Navbar = styled.div`
+  margin: 2rem;
+  padding: 2rem;
 `
-const Nav = styled.div`margin: 2rem;
-padding: 2rem;
+const Nav = styled.div`
+  margin: 2rem;
+  padding: 2rem;
 `
 const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
-    text: "Checkout my work below"
+    text: "Checkout my work below",
   })
   const [about] = useState({ title: "About Me." })
   const [contact] = useState({ title: "Talk to Me." })
 
   return (
     <Router>
-      <h1>hello</h1>
       <Container className="p-0" fluid={true}>
-        <div> hello</div>
         <Navbar className="border-bottom" bg="transparent" expand="lg">
           <Navbar>Don Stevenson - Web Developer</Navbar>
           <Navbar className="border-0" aria-controls="navbar-toggle" />
