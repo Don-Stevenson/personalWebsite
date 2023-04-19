@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Col, Jumbotron } from "./style"
+import { Container, Row, Col, Title, SubTitle1, SubTitle2 } from "./style"
 
 // function that returns the homepage title, subtitle and text
 // ***********************************************************
@@ -9,9 +9,9 @@ export default function Hero({ title, subTitle, text }) {
     <Container>
       <Row>
         <Col>
-          {title && <Jumbotron>{title}</Jumbotron>}
-          {subTitle && <h3>{subTitle}</h3>}
-          {text && <h3>{text}</h3>}
+          {title && <Title>{title}</Title>}
+          {subTitle && <SubTitle1>{subTitle}</SubTitle1>}
+          {text && <SubTitle2>{text}</SubTitle2>}
         </Col>
       </Row>
     </Container>
