@@ -1,6 +1,8 @@
 import React from "react"
 import { Container, Row, Col, Title, SubTitle1, SubTitle2 } from "./style"
 
+// These are the imports above and bellow is the react component.
+
 // function that returns the homepage title, subtitle and text
 // ***********************************************************
 
