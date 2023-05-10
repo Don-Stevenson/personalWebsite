@@ -9,6 +9,7 @@ export const Title = styled.div`
   font-size: 6rem;
   padding: 4 rem;
   color: #212529;
+  margin-bottom: 0.5rem;
 `
 export const SubTitle1 = styled.div`
   color: #212529;
@@ -16,6 +17,7 @@ export const SubTitle1 = styled.div`
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-align: left;
+  margin-bottom: 0.5rem;
   font-weight: 300 !important;
   font-size: 3.5rem;
 `
@@ -26,17 +28,11 @@ export const SubTitle2 = styled.div`
   font-weight: 300 !important;
   font-size: 1.25rem;
   font-weight: 500;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: #212529;
   text-align: left;
 `
-
 export const Container = styled.div`
-  padding: 4 rem;
-`
-export const Row = styled.div`
-  padding: 4 rem;
-`
-export const Col = styled.div`
-  padding: 4 rem;
+  margin-left: 5.5rem;
 `
