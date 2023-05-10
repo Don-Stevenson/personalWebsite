@@ -1,28 +1,21 @@
 import React from "react"
-import styled from "styled-components";
+import { Container, Row, Col, Title, SubTitle1, SubTitle2 } from "./style"
 
-const Jumbotron = styled.div`padding:4 rem;`
-const Container = styled.div`padding:4 rem;`
-const Row = styled.div`padding:4 rem;`
-const Col = styled.div`padding:4 rem;`
+// These are the imports above and bellow is the react component.
 
 // function that returns the homepage title, subtitle and text
 // ***********************************************************
 
 export default function Hero({ title, subTitle, text }) {
   return (
-    <Jumbotron className="bg-transparent jumbotron-fluid p-0">
-      <Container fluid={true}>
-        <Row className="justify-content-center py-5">
-          <Col md={8} sm={12}>
-            {title && <h1 className="display-1 font-weight-bolder">{title}</h1>}
-            {subTitle && (
-              <h3 className="display-4 font-weight-light">{subTitle}</h3>
-            )}
-            {text && <h3 className="lead font-weight-light">{text}</h3>}
-          </Col>
-        </Row>
-      </Container>
-    </Jumbotron>
+    <Container>
+      <Row>
+        <Col>
+          {title && <Title>{title}</Title>}
+          {subTitle && <SubTitle1>{subTitle}</SubTitle1>}
+          {text && <SubTitle2>{text}</SubTitle2>}
+        </Col>
+      </Row>
+    </Container>
   )
 }
