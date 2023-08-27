@@ -1,14 +1,18 @@
 import React from "react"
-import styled from "styled-components";
+import styled from "styled-components"
 import { SocialIcon } from "react-social-icons"
 
-import Hero from "../components/Hero"
+import Hero from "../components/Hero/Hero"
 import ProfilePic from "../components/assets/images/profile-pic.jpg"
 import Resume from "../components/assets/docs/DS Resume.pdf"
 import Content from "../components/Content"
 
-const Column = styled.div`padding: 3rem`
-const Row = styled.div`padding: 3rem`
+const Column = styled.div`
+  padding: 3rem;
+`
+const Row = styled.div`
+  padding: 3rem;
+`
 
 // returns the about page
 //**********************/
