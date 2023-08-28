@@ -1,30 +1,36 @@
 import React, { useState } from "react"
 
 // image imports
-import MovieDBStatic from "../components/assets/images/MovieDBstatic.png"
-import MovieDBGif from "../components/assets/images/batman.gif"
+import MovieDBStatic from "../../components/assets/images/MovieDBstatic.png"
+import MovieDBGif from "../../components/assets/images/batman.gif"
 
-import NagMeStatic from "../components/assets/images/NagMe-static.png"
-import NagMeGif from "../components/assets/images/NagMe.gif"
+import NagMeStatic from "../../components/assets/images/NagMe-static.png"
+import NagMeGif from "../../components/assets/images/NagMe.gif"
 
-import SchedulerStatic from "../components/assets/images/SchedulerStatic.png"
-import SchedulerGif from "../components/assets/images/SchedulerGIF.gif"
+import SchedulerStatic from "../../components/assets/images/SchedulerStatic.png"
+import SchedulerGif from "../../components/assets/images/SchedulerGIF.gif"
 
-import SebastianKnoxStatic from "../components/assets/images/SebastianKnoxStatic.png"
-import SebastianKnoxGif from "../components/assets/images/SebastianKnoxGif.gif"
+import SebastianKnoxStatic from "../../components/assets/images/SebastianKnoxStatic.png"
+import SebastianKnoxGif from "../../components/assets/images/SebastianKnoxGif.gif"
 
-import FTPyschStatic from "../components/assets/images/FTPsychStatic.png"
-import FTPyschGif from "../components/assets/images/FTPsychGif.gif"
+import FTPyschStatic from "../../components/assets/images/FTPsychStatic.png"
+import FTPyschGif from "../../components/assets/images/FTPsychGif.gif"
 
-import WeatherAppStatic from "../components/assets/images/WeatherAppStatic.jpg"
-import WeatherAppGif from "../components/assets/images/WeatherAppGif.gif"
+import WeatherAppStatic from "../../components/assets/images/WeatherAppStatic.jpg"
+import WeatherAppGif from "../../components/assets/images/WeatherAppGif.gif"
 
-import styled from "styled-components";
-import Card from "../components/Card"
-const Container = styled.section`padding:4em`
+import styled from "styled-components"
+import Card from "../Card"
+const Container = styled.section`
+  padding: 4em;
+`
 
-const Row = styled.section`padding:4em`
-const Col = styled.section`padding:4em`
+const Row = styled.section`
+  padding: 4em;
+`
+const Col = styled.section`
+  padding: 4em;
+`
 
 const carouselItems = [
   {
@@ -33,7 +39,7 @@ const carouselItems = [
     subTitle: "I worked as a Front-End Dev for this site",
     imgSrc: FTPyschStatic,
     link: "https://www.ftpsych.ca/",
-    selected: false
+    selected: false,
   },
   {
     id: 1,
@@ -42,7 +48,7 @@ const carouselItems = [
        Service & E-commerce Site.`,
     imgSrc: SebastianKnoxStatic,
     link: "https://www.sebastianknox.com/",
-    selected: false
+    selected: false,
   },
   {
     id: 2,
@@ -50,7 +56,7 @@ const carouselItems = [
     subTitle: "An app for managing work appointments ",
     imgSrc: SchedulerStatic,
     link: "https://github.com/Don-Stevenson/scheduler",
-    selected: false
+    selected: false,
   },
   {
     id: 3,
@@ -58,7 +64,7 @@ const carouselItems = [
     subTitle: "An app that returns movie search results.",
     imgSrc: MovieDBStatic,
     link: "https://github.com/Don-Stevenson/moviedb",
-    selected: false
+    selected: false,
   },
   {
     id: 4,
@@ -66,7 +72,7 @@ const carouselItems = [
     subTitle: "A nudge-theory goal attainment app",
     imgSrc: NagMeStatic,
     link: "https://github.com/Don-Stevenson/nag-me",
-    selected: false
+    selected: false,
   },
   {
     id: 5,
@@ -74,14 +80,14 @@ const carouselItems = [
     subTitle: "An app that returns weather results.",
     imgSrc: WeatherAppStatic,
     link: "https://github.com/Don-Stevenson/weather-app",
-    selected: false
-  }
+    selected: false,
+  },
 ]
 
 export default function Carousel() {
   // setting stating via hooks and passing in carousel array in as default
   const [state, setState] = useState({
-    carouselItems
+    carouselItems,
   })
 
   // function that handles what happens when a card is clicked
