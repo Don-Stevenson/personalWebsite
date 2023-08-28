@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Card from "../components/Card"
+// import Card from "../components/Card"
 
 const Container = styled.section`
   padding: 4em;
@@ -11,14 +11,17 @@ const Row = styled.section`
 const Col = styled.section`
   padding: 4em;
 `
+const Card = styled.section`
+  padding: 4em;
+`
 
 const carouselItems = [
   {
     id: 0,
     title: "Foward Thinking Pyschology",
     subTitle: "I worked as a Front-End Dev for this site",
-    imgSrc: require("../components/assets/images/FTPsychStatic.png"),
-    gifSrc: require("../components/assets/images/FTPsychGif.gif"),
+    imgSrc: require("../assets/images/FTPsychStatic.png"),
+    gifSrc: require("../assets/images/FTPsychGif.gif"),
     link: "https://www.ftpsych.ca/",
     selected: false,
   },
@@ -27,8 +30,8 @@ const carouselItems = [
     title: "Sebastian Knox Woodwinds Services",
     subTitle: `I worked Front-End Dev for this \n Saxophone
        Service & E-commerce Site.`,
-    imgSrc: require("../components/assets/images/SebastianKnoxStatic.png"),
-    gifSrc: require("../components/assets/images/SebastianKnoxGif.gif"),
+    imgSrc: require("../assets/images/SebastianKnoxStatic.png"),
+    gifSrc: require("../assets/images/SebastianKnoxGif.gif"),
     link: "https://www.sebastianknox.com/",
     selected: false,
   },
@@ -36,8 +39,8 @@ const carouselItems = [
     id: 2,
     title: "Scheduler",
     subTitle: "An app for managing work appointments ",
-    imgSrc: require("../components/assets/images/SchedulerStatic.png"),
-    gifSrc: require("../components/assets/images/SchedulerGIF.gif"),
+    imgSrc: require("../assets/images/SchedulerStatic.png"),
+    gifSrc: require("../assets/images/SchedulerGIF.gif"),
     link: "https://github.com/Don-Stevenson/scheduler",
     selected: false,
   },
@@ -45,8 +48,8 @@ const carouselItems = [
     id: 3,
     title: "Movie-DB",
     subTitle: "An app that returns movie search results.",
-    imgSrc: require("../components/assets/images/MovieDBstatic.png"),
-    gifSrc: require("../components/assets/images/batman.gif"),
+    imgSrc: require("../assets/images/MovieDBstatic.png"),
+    gifSrc: require("../assets/images/batman.gif"),
     link: "https://github.com/Don-Stevenson/moviedb",
     selected: false,
   },
@@ -54,8 +57,8 @@ const carouselItems = [
     id: 4,
     title: "Nag-me",
     subTitle: "A nudge-theory goal attainment app",
-    imgSrc: require("../components/assets/images/NagMe-static.png"),
-    gifSrc: require("../components/assets/images/NagMe.gif"),
+    imgSrc: require("../assets/images/NagMe-static.png"),
+    gifSrc: require("../assets/images/NagMe.gif"),
     link: "https://github.com/Don-Stevenson/nag-me",
     selected: false,
   },
@@ -63,8 +66,8 @@ const carouselItems = [
     id: 5,
     title: "The Weather App",
     subTitle: "An app that returns weather results.",
-    imgSrc: require("../components/assets/images/WeatherAppStatic.jpg"),
-    gifSrc: require("../components/assets/images/WeatherAppGif.gif"),
+    imgSrc: require("../assets/images/WeatherAppStatic.jpg"),
+    gifSrc: require("../assets/images/WeatherAppGif.gif"),
     link: "https://github.com/Don-Stevenson/weather-app",
     selected: false,
   },
