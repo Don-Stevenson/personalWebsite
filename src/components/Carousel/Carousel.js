@@ -19,18 +19,9 @@ import FTPyschGif from "../../components/assets/images/FTPsychGif.gif"
 import WeatherAppStatic from "../../components/assets/images/WeatherAppStatic.jpg"
 import WeatherAppGif from "../../components/assets/images/WeatherAppGif.gif"
 
-import styled from "styled-components"
-import Card from "../Card"
-const Container = styled.section`
-  padding: 4em;
-`
+import { CardContainer } from "./style"
 
-const Row = styled.section`
-  padding: 4em;
-`
-const Col = styled.section`
-  padding: 4em;
-`
+import Card from "../Card/Card"
 
 const carouselItems = [
   {
@@ -132,22 +123,14 @@ export default function Carousel() {
   const makeCarouselItems = carouselItems => {
     return carouselItems.map(item => {
       return (
-        <Col sm>
-          <Card
-            item={item}
-            click={event => handleCardClick(item.id, event)}
-            key={item.id}
-          />
-        </Col>
+        <Card
+          item={item}
+          click={event => handleCardClick(item.id, event)}
+          key={item.id}
+        />
       )
     })
   }
 
-  return (
-    <Container fluid>
-      <Row className="justify-content-around" lg="3">
-        {makeCarouselItems(state.carouselItems)}
-      </Row>
-    </Container>
-  )
+  return <CardContainer>{makeCarouselItems(state.carouselItems)}</CardContainer>
 }
