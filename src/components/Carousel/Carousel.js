@@ -1,18 +1,17 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-// import Card from "../components/Card"
 
-const Container = styled.section`
+const CardContent = styled.section`
   padding: 4em;
 `
-const Row = styled.section`
-  padding: 4em;
-`
-const Col = styled.section`
+const CardTitle = styled.section`
   padding: 4em;
 `
 const Card = styled.section`
   padding: 4em;
+`
+const CardHeader = styled.section`
+  padding: 4rem;
 `
 
 const carouselItems = [
@@ -74,41 +73,45 @@ const carouselItems = [
 ]
 
 export default function Carousel() {
-  const [state, setState] = useState({
-    carouselItems,
-  })
+  const [items, setItems] = useState(carouselItems)
 
   const handleCardClick = id => {
-    const carouselItems = [...state.carouselItems]
-    carouselItems[id].selected = !carouselItems[id].selected
-
-    carouselItems.forEach(item => {
-      if (item.id === id) {
-        item.imgSrc = item.selected ? item.gifSrc : item.imgSrc
-      } else {
-        item.selected = false
-      }
-    })
-
-    setState(prevState => ({
-      ...prevState,
-      carouselItems,
-    }))
-  }
-
-  const makeCarouselItems = carouselItems => {
-    return carouselItems.map(item => (
-      <Col sm key={item.id}>
-        <Card item={item} click={() => handleCardClick(item.id)} />
-      </Col>
-    ))
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id
+          ? { ...item, selected: !item.selected }
+          : { ...item, selected: false }
+      )
+    )
   }
 
   return (
-    <Container fluid>
-      <Row className="justify-content-around" lg="3">
-        {makeCarouselItems(state.carouselItems)}
-      </Row>
-    </Container>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      {items.map(item => (
+        <Card
+          key={item.id}
+          className="cursor-pointer"
+          onClick={() => handleCardClick(item.id)}
+        >
+          <CardHeader>
+            <CardTitle>{item.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>{item.subTitle}</p>
+            <img
+              src={item.selected ? item.gifSrc : item.imgSrc}
+              alt={item.title}
+              className="w-full h-48 object-cover mt-2"
+            />
+            <a
+              href={item.link}
+              className="text-blue-500 hover:underline mt-2 block"
+            >
+              View Project
+            </a>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
   )
 }
