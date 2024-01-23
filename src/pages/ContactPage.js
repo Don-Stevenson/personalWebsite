@@ -1,10 +1,14 @@
 import React from "react"
 import styled from "styled-components"
-import Hero from "../components/Hero"
+import Hero from "../components/Hero/Hero"
 import Content from "../components/Content"
 import Useform from "../../src/UseForm"
-const Form = styled.div`padding:4 rem;`
-const Button = styled.div`padding:4 rem;`
+const Form = styled.div`
+  padding: 4 rem;
+`
+const Button = styled.div`
+  padding: 4 rem;
+`
 
 // contact page
 // ************
