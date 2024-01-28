@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import PropTypes from "prop-types"
 
 const Bar = styled.nav`
   font-size: 18px;
@@ -12,6 +11,9 @@ const Bar = styled.nav`
     height: 70px;
     align-items: center;
   }
+`
+const NameBox = styled.div`
+  margin-left: 30px;
 `
 const MainNav = styled.ul`
   list-style-type: none;
@@ -55,51 +57,41 @@ const Hamburger = styled.img`
 export const HrLine = styled.hr`
   border-top: 1px solid lightgrey;
 `
-class Navbar extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = { displayNav: props.displayNav ? "flex" : "none" }
-  }
-  toggleNavBar() {
-    this.setState((prevState, props) => {
-      switch (prevState.displayNav) {
-        case "none":
-          return { displayNav: "flex" }
-        case "flex":
-        default:
-          return { displayNav: "none" }
-      }
-    })
-  }
-  render() {
-    return (
-      <>
-        <Bar>
-          <NavBarToggle onClick={() => this.toggleNavBar()}>
-            <Hamburger />
-          </NavBarToggle>
-          <div>Don Stevenson</div>
-          <MainNav display={this.state.displayNav}>
-            <NavLi>
-              <NavLink href="/">home</NavLink>
-            </NavLi>
-            <NavLi>
-              <NavLink href="/about">about</NavLink>
-            </NavLi>
-            <NavLi>
-              <NavLink href="/contact">contact</NavLink>
-            </NavLi>
-          </MainNav>
-        </Bar>
-        <HrLine />
-      </>
-    )
-  }
-}
 
-Navbar.propTypes = {
-  // decides if we initially display the navbar open or not
-  displayNav: PropTypes.bool
+const toggleNavBar = () => {
+  this.setState((prevState, props) => {
+    switch (prevState.displayNav) {
+      case "none":
+        return { displayNav: "flex" }
+      case "flex":
+      default:
+        return { displayNav: "none" }
+    }
+  })
+}
+const Navbar = () => {
+  return (
+    <>
+      <Bar>
+        <NavBarToggle onClick={() => toggleNavBar()}>
+          <Hamburger />
+        </NavBarToggle>
+        <NameBox>Don Stevenson</NameBox>
+        <MainNav>
+          <NavLi>
+            <NavLink href="/">home</NavLink>
+          </NavLi>
+          <NavLi>
+            <NavLink href="/about">about</NavLink>
+          </NavLi>
+          <NavLi>
+            <NavLink href="/contact">contact</NavLink>
+          </NavLi>
+        </MainNav>
+      </Bar>
+      <HrLine />
+    </>
+  )
 }
 
 export default Navbar
