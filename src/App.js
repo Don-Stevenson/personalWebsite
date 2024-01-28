@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import styled from "styled-components"
 import Footer from "./components/Footer/Footer"
 import HomePage from "./pages/HomePage"
@@ -25,7 +25,6 @@ const App = () => {
     <Router>
       <Navbar />
       <Container className="p-0" fluid={true}>
-        <Navbar />
         <Route
           path="/"
           exact
@@ -42,7 +41,7 @@ const App = () => {
           path="/contact"
           render={() => <ContactPage title={contact.title} />}
         />
-        <Footer></Footer>
+        <Footer />
       </Container>
     </Router>
   )
