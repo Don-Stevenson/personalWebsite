@@ -4,10 +4,11 @@ const theme = {
   primaryDark: "#0D0C1D",
   primaryLight: "#EFFFFA",
   primaryHover: "#343078",
-  mobile: "576px",
+  mobile: "768px"
 }
 
 export const StyledMenu = styled.nav`
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +25,7 @@ export const StyledMenu = styled.nav`
     width: 100%;
   }
 
-  a {
+  link {
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -44,4 +45,24 @@ export const StyledMenu = styled.nav`
     }
   }
 `
-export { default } from "./Menu"
+export const link = styled.div`
+  link {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: ${theme.primaryDark};
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    @media (max-width: ${theme.mobile}) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &:hover {
+      color: ${theme.primaryHover};
+    }
+  }
+`

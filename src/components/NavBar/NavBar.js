@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState, useRef } from "react"
+import { useOnClickOutside } from "../../hooks"
 import styled from "styled-components"
 import Burger from "./Burger/Burger"
 import Menu from "./Menu/Menu"
@@ -31,27 +32,18 @@ const NavBarToggle = styled.span`
 export const HrLine = styled.hr`
   border-top: 1px solid lightgrey;
 `
-
-const toggleNavBar = () => {
-  this.setState((prevState, props) => {
-    switch (prevState.displayNav) {
-      case "none":
-        return { displayNav: "flex" }
-      case "flex":
-      default:
-        return { displayNav: "none" }
-    }
-  })
-}
 const Navbar = () => {
+  const node = useRef()
+  useOnClickOutside(node, () => setOpen(false))
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Bar>
-        <NavBarToggle onClick={() => toggleNavBar()}>
-          <Burger />
-        </NavBarToggle>
-        <NameBox>Don Stevenson</NameBox>
-        <Menu />
+        <Burger open={open} setOpen={setOpen} />
+        <div ref={node}>
+          <NameBox>Don Stevenson</NameBox>
+          <Menu open={open} setOpen={setOpen} />
+        </div>
       </Bar>
       <HrLine />
     </>
