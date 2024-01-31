@@ -1,28 +1,25 @@
 import React from "react"
-import { StyledMenu } from "./style"
+import { bool } from "prop-types"
+import { StyledMenu, link } from "./style"
+import { BrowserRouter as Link } from "react-router-dom"
 
-const Menu = () => {
+const Menu = ({ open }) => {
   return (
-    <StyledMenu>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-        </span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">
-          &#x1f4b8;
-        </span>
-        Pricing
-      </a>
-      <a href="/">
-        <span role="img" aria-label="contact">
-          &#x1f4e9;
-        </span>
+    <StyledMenu open={open}>
+      <Link className="link" to="/">
+        Home
+      </Link>
+      <Link className="link" to="/about">
+        About
+      </Link>
+      <Link className="link" to="/contact">
         Contact
-      </a>
+      </Link>
     </StyledMenu>
   )
+}
+
+Menu.propTypes = {
+  open: bool.isRequired
 }
 export default Menu
