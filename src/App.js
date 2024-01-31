@@ -8,8 +8,7 @@ import ContactPage from "./pages/ContactPage"
 import Navbar from "./components/NavBar/NavBar"
 
 const Container = styled.div`
-  margin: 2rem;
-  padding: 2rem;
+  margin: 0.5rem;
 `
 
 const App = () => {
@@ -24,7 +23,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <Container className="p-0" fluid={true}>
+      <Container>
         <Route
           path="/"
           exact
