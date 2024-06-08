@@ -15,7 +15,6 @@ export const Link = styled.a`
   color: ${theme.primaryDark};
   text-decoration: none;
   transition: color 0.3s linear;
-
   @media (max-width: ${theme.mobile}) {
     font-size: 1.5rem;
     text-align: center;
@@ -23,6 +22,7 @@ export const Link = styled.a`
 `
 
 export const StyledMenu = styled.nav`
+  background-color: red;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   display: flex;
   flex-direction: column;
