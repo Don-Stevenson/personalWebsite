@@ -1,18 +1,9 @@
 import styled from "styled-components"
-
-const theme = {
-  primaryDark: "#0D0C1D",
-  primaryLight: "#EFFFFA",
-  primaryHover: "#343078",
-  mobile: "1068px"
-}
+import theme from "../../../utils/theme"
 
 export const StyledBurger = styled.button`
-  @media (min-width: ${theme.mobile}) {
-    display: none;
-  }
   position: absolute;
-  top: 5%;
+  top: 15px;
   left: 2rem;
   display: flex;
   flex-direction: column;
@@ -24,7 +15,6 @@ export const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-
   &:focus {
     outline: none;
   }

@@ -6,27 +6,21 @@ import Menu from "./Menu/Menu"
 // Tute: https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
 
 const Bar = styled.nav`
+  display: flex;
+  justify-content: end;
   font-size: 18px;
   padding-bottom: 10px;
   @media (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
     padding-bottom: 0;
     height: 70px;
     align-items: center;
   }
 `
-const NameBox = styled.div`
-  margin-left: 30px;
-`
 
-const NavBarToggle = styled.span`
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
+const NameAndMenuContainer = styled.div`
+  margin-left: 30px;
+  margin-bottom: 12px;
+  margin-right: 25px;
 `
 
 export const HrLine = styled.hr`
@@ -39,11 +33,11 @@ const Navbar = () => {
   return (
     <>
       <Bar>
-        <Burger open={open} setOpen={setOpen} />
-        <div ref={node}>
-          <NameBox>Don Stevenson</NameBox>
+        <NameAndMenuContainer ref={node}>
+          <div>Don Stevenson</div>
           <Menu open={open} setOpen={setOpen} />
-        </div>
+          <Burger open={open} setOpen={setOpen} />
+        </NameAndMenuContainer>
       </Bar>
       <HrLine />
     </>
