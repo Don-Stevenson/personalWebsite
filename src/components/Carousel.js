@@ -20,7 +20,7 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/FTPsychStatic.png"),
     gifSrc: require("../components/assets/images/FTPsychGif.gif"),
     link: "https://www.ftpsych.ca/",
-    selected: false
+    selected: false,
   },
   {
     id: 1,
@@ -30,7 +30,7 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/SebastianKnoxStatic.png"),
     gifSrc: require("../components/assets/images/SebastianKnoxGif.gif"),
     link: "https://www.sebastianknox.com/",
-    selected: false
+    selected: false,
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/SchedulerStatic.png"),
     gifSrc: require("../components/assets/images/SchedulerGIF.gif"),
     link: "https://github.com/Don-Stevenson/scheduler",
-    selected: false
+    selected: false,
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/MovieDBstatic.png"),
     gifSrc: require("../components/assets/images/batman.gif"),
     link: "https://github.com/Don-Stevenson/moviedb",
-    selected: false
+    selected: false,
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/NagMe-static.png"),
     gifSrc: require("../components/assets/images/NagMe.gif"),
     link: "https://github.com/Don-Stevenson/nag-me",
-    selected: false
+    selected: false,
   },
   {
     id: 5,
@@ -66,13 +66,13 @@ const carouselItems = [
     imgSrc: require("../components/assets/images/WeatherAppStatic.jpg"),
     gifSrc: require("../components/assets/images/WeatherAppGif.gif"),
     link: "https://github.com/Don-Stevenson/weather-app",
-    selected: false
-  }
+    selected: false,
+  },
 ]
 
 export default function Carousel() {
   const [state, setState] = useState({
-    carouselItems
+    carouselItems,
   })
 
   const handleCardClick = id => {
@@ -89,7 +89,7 @@ export default function Carousel() {
 
     setState(prevState => ({
       ...prevState,
-      carouselItems
+      carouselItems,
     }))
   }
 

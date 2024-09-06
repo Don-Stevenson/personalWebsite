@@ -15,7 +15,7 @@ const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
-    text: "Checkout my work below"
+    text: "Checkout my work below",
   })
   const [about] = useState({ title: "About Me." })
   const [contact] = useState({ title: "Talk to Me." })
