@@ -4,8 +4,9 @@ const theme = {
   primaryDark: "#0D0C1D",
   primaryLight: "#EFFFFA",
   primaryHover: "#343078",
-  mobile: "768px"
+  mobile: "768px",
 }
+
 export const Link = styled.a`
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -22,18 +23,19 @@ export const Link = styled.a`
 `
 
 export const StyledMenu = styled.nav`
-  background-color: red;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   display: flex;
   flex-direction: column;
-  margin-top: 25rem;
   height: 100vh;
+  margin-top: 25rem;
   text-align: left;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
+  right: 0;
+  transition: transform 0.4s ease-in-out;
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  z-index: 10;
+  width: 150px;
 
   @media (max-width: ${theme.mobile}) {
     width: 100%;
