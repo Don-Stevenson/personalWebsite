@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a0004271.css",
+    "main.js": "/static/js/main.8d711044.js",
+    "static/media/FTPsychGif.gif": "/static/media/FTPsychGif.9723d4055980a1c10752.gif",
+    "static/media/SebastianKnoxGif.gif": "/static/media/SebastianKnoxGif.a10c10e1ffcdefd3a6a8.gif",
+    "static/media/NagMe.gif": "/static/media/NagMe.3c41aa94cd54fe57013e.gif",
+    "static/media/WeatherAppGif.gif": "/static/media/WeatherAppGif.baf33f06a95c7cc572f3.gif",
+    "static/media/SchedulerGIF.gif": "/static/media/SchedulerGIF.cc57b03f74dddbf3cb89.gif",
+    "static/media/batman.gif": "/static/media/batman.70ba664e53875541b456.gif",
+    "static/media/WeatherAppStatic.jpg": "/static/media/WeatherAppStatic.9a27c459817576b0db67.jpg",
+    "static/media/profile-pic.jpg": "/static/media/profile-pic.674186198b8cbb278f03.jpg",
+    "static/media/FTPsychStatic.png": "/static/media/FTPsychStatic.5865dcbe1c2c013e0aa2.png",
+    "static/media/DS Resume.pdf": "/static/media/DS Resume.4a29f4f6c8b5d5e5c333.pdf",
+    "static/media/NagMe-static.png": "/static/media/NagMe-static.176a93c373660a063c42.png",
+    "static/media/SebastianKnoxStatic.png": "/static/media/SebastianKnoxStatic.3600f45f66f03ab4dbc9.png",
+    "static/media/SchedulerStatic.png": "/static/media/SchedulerStatic.94df55e6354e58995810.png",
+    "static/media/MovieDBstatic.png": "/static/media/MovieDBstatic.2133fc2a7196114822b0.png",
+    "index.html": "/index.html",
+    "main.a0004271.css.map": "/static/css/main.a0004271.css.map",
+    "main.8d711044.js.map": "/static/js/main.8d711044.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0004271.css",
+    "static/js/main.8d711044.js"
+  ]
+}

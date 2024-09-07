@@ -1,23 +1,16 @@
 import React, { useState } from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import styled from "styled-components"
 import Footer from "./components/Footer/Footer"
 import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
+import Navbar from "./components/NavBar/NavBar"
 
 const Container = styled.div`
-  margin: 2rem;
-  padding: 2rem;
+  margin: 0.5rem;
 `
-const Navbar = styled.div`
-  margin: 2rem;
-  padding: 2rem;
-`
-const Nav = styled.div`
-  margin: 2rem;
-  padding: 2rem;
-`
+
 const App = () => {
   const [home] = useState({
     title: "Keep Learning.",
@@ -29,24 +22,8 @@ const App = () => {
 
   return (
     <Router>
-      <Container className="p-0" fluid={true}>
-        <Navbar className="border-bottom" bg="transparent" expand="lg">
-          <Navbar>Don Stevenson - Web Developer</Navbar>
-          <Navbar className="border-0" aria-controls="navbar-toggle" />
-          <Navbar id="navbar-toggle">
-            <Nav className="ml-auto">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
-              <Link className="nav-link" to="/contact">
-                Contact
-              </Link>
-            </Nav>
-          </Navbar>
-        </Navbar>
+      <Navbar />
+      <Container>
         <Route
           path="/"
           exact
@@ -63,7 +40,7 @@ const App = () => {
           path="/contact"
           render={() => <ContactPage title={contact.title} />}
         />
-        <Footer></Footer>
+        <Footer />
       </Container>
     </Router>
   )
