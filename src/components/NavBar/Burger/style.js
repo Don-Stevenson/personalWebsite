@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import theme from "../../../utils/theme"
+import { devices } from "../../../utils/constants"
 
 export const StyledBurger = styled.button`
-  @media (min-width: 768px) {
+  @media ${devices.md} {
     display: none;
   }
   display: flex;

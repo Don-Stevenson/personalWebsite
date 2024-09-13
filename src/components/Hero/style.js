@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { devices } from "../../utils/constants"
 
 export const Title = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -9,7 +10,7 @@ export const Title = styled.div`
   font-size: 4.55rem;
   padding: 2.5 rem;
   color: #212529;
- @media (min-width: 768px) {
+ @media ${devices.md} {
   font-size: 6rem;
   padding: 4 rem;
   text-align: left;
@@ -24,7 +25,7 @@ export const SubTitle1 = styled.div`
   margin-bottom: 0.5rem;
   font-weight: 300 !important;
   font-size: 3.5rem;
-  @media (min-width: 768px) {
+  @media ${devices.md} {
    text-align: left;
   }
 `
@@ -39,7 +40,7 @@ export const SubTitle2 = styled.div`
   margin-bottom: 0.5rem;
   color: #212529;
   text align: center;
-  @media (min-width: 768px) {
+  @media ${devices.md} {
     text-align: left;
   }
 `
@@ -47,7 +48,7 @@ export const Container = styled.div`
   display: flex-col;
   margin: 1.5rem;
   margin-bottom: 2rem;
-  @media (min-width: 768px) {
+  @media ${devices.md} {
     margin: 2rem;
     margin-bottom: 8rem;
   }
