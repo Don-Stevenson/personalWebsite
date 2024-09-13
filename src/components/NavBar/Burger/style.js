@@ -2,6 +2,9 @@ import styled from "styled-components"
 import theme from "../../../utils/theme"
 
 export const StyledBurger = styled.button`
+  @media (min-width: 768px) {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
   justify-content: space-around;

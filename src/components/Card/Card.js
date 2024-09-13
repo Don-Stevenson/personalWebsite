@@ -1,10 +1,11 @@
 import React from "react"
-import CardInfo from "../components/CardInfo"
+import CardInfo from "../CardInfo"
+import { CardWrapper } from "./style"
 
 export default function Card({ click, item }) {
   return (
-    <div className="d-inline-block d-card" onClick={() => click(item)}>
-      <img className="d-card-image" src={item.imgSrc} alt={item.subTitle} />
+    <CardWrapper onClick={() => click(item)}>
+      <img src={item.imgSrc} alt={item.subTitle} />
 
       {item.selected && (
         <CardInfo
@@ -15,6 +16,6 @@ export default function Card({ click, item }) {
       )}
 
       {!item.selected && <div className="placeholder"></div>}
-    </div>
+    </CardWrapper>
   )
 }

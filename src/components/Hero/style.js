@@ -5,21 +5,28 @@ export const Title = styled.div`
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-weight: bolder !important;
-  tex-aling: left;
+  text align: center;
+  font-size: 4.55rem;
+  padding: 2.5 rem;
+  color: #212529;
+ @media (min-width: 768px) {
   font-size: 6rem;
   padding: 4 rem;
-  color: #212529;
-  margin-bottom: 0.5rem;
+  text-align: left;
+  }
 `
 export const SubTitle1 = styled.div`
   color: #212529;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  text-align: left;
+  text align: center;
   margin-bottom: 0.5rem;
   font-weight: 300 !important;
   font-size: 3.5rem;
+  @media (min-width: 768px) {
+   text-align: left;
+  }
 `
 export const SubTitle2 = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -31,8 +38,17 @@ export const SubTitle2 = styled.div`
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: #212529;
-  text-align: left;
+  text align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `
 export const Container = styled.div`
-  margin-left: 5.5rem;
+  display: flex-col;
+  margin: 1.5rem;
+  margin-bottom: 2rem;
+  @media (min-width: 768px) {
+    margin: 2rem;
+    margin-bottom: 8rem;
+  }
 `

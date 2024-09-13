@@ -1,47 +1,40 @@
-import React, { useState } from "react"
+import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import styled from "styled-components"
 import Footer from "./components/Footer/Footer"
 import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import Navbar from "./components/NavBar/NavBar"
 
-const Container = styled.div`
-  margin: 0.5rem;
-`
-
 const App = () => {
-  const [home] = useState({
+  const home = {
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
     text: "Checkout my work below",
-  })
-  const [about] = useState({ title: "About Me." })
-  const [contact] = useState({ title: "Talk to Me." })
+  }
+  const about = { title: "About Me." }
+  const contact = { title: "Talk to Me." }
 
   return (
     <Router>
       <Navbar />
-      <Container>
-        <Route
-          path="/"
-          exact
-          render={() => (
-            <HomePage
-              title={home.title}
-              subTitle={home.subTitle}
-              text={home.text}
-            />
-          )}
-        />
-        <Route path="/about" render={() => <AboutPage title={about.title} />} />
-        <Route
-          path="/contact"
-          render={() => <ContactPage title={contact.title} />}
-        />
-        <Footer />
-      </Container>
+      <Route
+        path="/"
+        exact
+        render={() => (
+          <HomePage
+            title={home.title}
+            subTitle={home.subTitle}
+            text={home.text}
+          />
+        )}
+      />
+      <Route path="/about" render={() => <AboutPage title={about.title} />} />
+      <Route
+        path="/contact"
+        render={() => <ContactPage title={contact.title} />}
+      />
+      <Footer />
     </Router>
   )
 }

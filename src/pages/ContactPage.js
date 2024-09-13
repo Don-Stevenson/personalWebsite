@@ -10,8 +10,6 @@ const Button = styled.div`
   padding: 4 rem;
 `
 
-// contact page
-// ************
 export default function ContactPage({ title }) {
   const { handleSubmit, handleChange, state, errors } = Useform()
 
