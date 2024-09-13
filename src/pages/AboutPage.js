@@ -12,9 +12,6 @@ const Column = styled.div`
 const Row = styled.div`
   padding: 3rem;
 `
-
-// returns the about page
-//**********************/
 export default function AboutPage({ title }) {
   return (
     <div>

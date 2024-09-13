@@ -1,14 +1,8 @@
 import styled from "styled-components"
-
-const theme = {
-  primaryDark: "#0D0C1D",
-  primaryLight: "#EFFFFA",
-  primaryHover: "#343078",
-  mobile: "768px",
-}
+import theme from "../../../utils/theme"
 
 export const Link = styled.a`
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   padding: 2rem 0;
   font-weight: bold;
@@ -16,16 +10,16 @@ export const Link = styled.a`
   color: ${theme.primaryDark};
   text-decoration: none;
   transition: color 0.3s linear;
-  @media (max-width: ${theme.mobile}) {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+  text-align: center;
 `
 
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  background-color: white;
+  border-radius: 8px;
+  opacity: 0.87;
+  height: 80vh;
   margin-top: 25rem;
   text-align: left;
   padding: 2rem;
@@ -36,8 +30,4 @@ export const StyledMenu = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   z-index: 10;
   width: 150px;
-
-  @media (max-width: ${theme.mobile}) {
-    width: 100%;
-  }
 `

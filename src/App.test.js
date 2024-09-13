@@ -1,13 +1,6 @@
 import React from "react"
-import {
-  render,
-  prettyDOM,
-  screen,
-  fireEvent,
-  cleanup
-} from "@testing-library/react"
+import { render, fireEvent, cleanup } from "@testing-library/react"
 import App from "./App"
-import { act } from "react-dom/test-utils"
 
 afterEach(() => {
   cleanup()

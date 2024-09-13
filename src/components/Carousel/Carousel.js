@@ -1,18 +1,54 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import {
+  CarouselContainer,
+  Card,
+  CardImage,
+  CardContent,
+  FadeIn,
+  CardSubtitle,
+  ViewLink,
+} from "./style"
 
-const CardContent = styled.section`
-  padding: 4em;
-`
-const CardTitle = styled.section`
-  padding: 4em;
-`
-const Card = styled.section`
-  padding: 4em;
-`
-const CardHeader = styled.section`
-  padding: 4rem;
-`
+export default function Carousel() {
+  const [items, setItems] = useState(carouselItems)
+
+  const handleCardClick = id => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id
+          ? { ...item, selected: true }
+          : { ...item, selected: false }
+      )
+    )
+  }
+
+  return (
+    <CarouselContainer>
+      {items.map(item => (
+        <Card key={item.id} onClick={() => handleCardClick(item.id)}>
+          <CardImage
+            src={item.selected ? item.gifSrc : item.imgSrc}
+            alt={item.title}
+          />
+          <CardContent>
+            {item.selected && (
+              <FadeIn>
+                <CardSubtitle>{item.subTitle}</CardSubtitle>
+                <ViewLink
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site / Source Code
+                </ViewLink>
+              </FadeIn>
+            )}
+          </CardContent>
+        </Card>
+      ))}
+    </CarouselContainer>
+  )
+}
 
 const carouselItems = [
   {
@@ -71,47 +107,3 @@ const carouselItems = [
     selected: false,
   },
 ]
-
-export default function Carousel() {
-  const [items, setItems] = useState(carouselItems)
-
-  const handleCardClick = id => {
-    setItems(prevItems =>
-      prevItems.map(item =>
-        item.id === id
-          ? { ...item, selected: !item.selected }
-          : { ...item, selected: false }
-      )
-    )
-  }
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {items.map(item => (
-        <Card
-          key={item.id}
-          className="cursor-pointer"
-          onClick={() => handleCardClick(item.id)}
-        >
-          <CardHeader>
-            <CardTitle>{item.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{item.subTitle}</p>
-            <img
-              src={item.selected ? item.gifSrc : item.imgSrc}
-              alt={item.title}
-              className="w-full h-48 object-cover mt-2"
-            />
-            <a
-              href={item.link}
-              className="text-blue-500 hover:underline mt-2 block"
-            >
-              View Project
-            </a>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  )
-}

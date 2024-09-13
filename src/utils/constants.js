@@ -15,3 +15,10 @@ export const devices = {
   xl: `(min-width: ${breakpoints.xl})`,
   "2xl": `(min-width: ${breakpoints["2xl"]})`,
 }
+
+export const theme = {
+  primaryDark: "#0D0C1D",
+  primaryLight: "#EFFFFA",
+  primaryHover: "#343078",
+  mobile: "768px",
+}

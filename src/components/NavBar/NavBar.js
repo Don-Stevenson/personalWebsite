@@ -1,31 +1,32 @@
 import React, { useState, useRef } from "react"
 import { useOnClickOutside } from "../../hooks"
-import styled from "styled-components"
 import Burger from "./Burger/Burger"
 import Menu from "./Menu/Menu"
+import {
+  HrLine,
+  LinksWrapper,
+  NameAndMenuContainer,
+  NavBarWrapper,
+  Link,
+} from "./style"
 
-const NameAndMenuContainer = styled.div`
-  display: flex;
-  margin: 2rem;
-  justify-content: space-between;
-`
-
-export const HrLine = styled.hr`
-  border-top: 1px solid lightgrey;
-`
 const Navbar = () => {
   const node = useRef()
   useOnClickOutside(node, () => setOpen(false))
   const [open, setOpen] = useState(false)
   return (
-    <>
+    <NavBarWrapper>
       <NameAndMenuContainer ref={node}>
-        <div>Don Stevenson</div>
         <Menu open={open} setOpen={setOpen} />
         <Burger open={open} setOpen={setOpen} />
+        <LinksWrapper>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </LinksWrapper>
       </NameAndMenuContainer>
       <HrLine />
-    </>
+    </NavBarWrapper>
   )
 }
 
