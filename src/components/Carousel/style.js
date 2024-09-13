@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import { devices } from "../../utils/constants"
 
 const fadeIn = keyframes`
   from {
@@ -23,12 +24,12 @@ export const CarouselContainer = styled.div`
   margin: auto;
   place-items: center;
 
-  @media (min-width: 768px) {
+  @media ${devices.md} {
     grid-template-columns: repeat(2, 1fr);
     place-items: unset;
   }
 
-  @media (min-width: 1024px) {
+  @media ${devices.lg} {
     grid-template-columns: repeat(3, 1fr);
   }
 `

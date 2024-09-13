@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import theme from "../../utils/theme"
+import { devices } from "../../utils/constants"
 
 export const NameAndMenuContainer = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ export const Link = styled.a`
   transition: color 0.3s linear;
 `
 export const LinksWrapper = styled.div`
-  @media (min-width: 768px) {
+  @media ${devices.md} {
     display: flex;
     gap: 1rem;
     align-items: end;
