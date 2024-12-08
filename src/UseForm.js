@@ -14,7 +14,7 @@ const useForm = () => {
     email: "",
     message: "",
     disabled: false,
-    emailSent: null
+    emailSent: null,
   })
 
   // handling the changes made on the input fields
@@ -51,10 +51,10 @@ const useForm = () => {
         // to do: add ternary to check if on local or production
         // to do: clear form after sending email
         // "http://localhost:3030/api/email",
-        "https://donpersonalwebsite-api.herokuapp.com/api/email",
+        "https://personalwebsite-api.onrender.com/api/email",
         state
       )
-      
+
       dataSent.data.success
         ? setState({
             ...state,
@@ -62,7 +62,7 @@ const useForm = () => {
             emailSent: true,
             name: "",
             email: "",
-            message: ""
+            message: "",
           })
         : setState({ ...state, disabled: false, emailSent: false })
     } catch (error) {
@@ -74,7 +74,7 @@ const useForm = () => {
     handleChange,
     handleSubmit,
     state,
-    errors
+    errors,
   }
 }
 
