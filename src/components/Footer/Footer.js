@@ -9,7 +9,7 @@ export default function Footer() {
       <HrLine />
       <Container>
         <CopyrightContainer>
-          Custom site by Don&nbsp;Stevenson ©&nbsp;{year}
+          {`Custom site by Don Stevenson ©${year}`}
         </CopyrightContainer>
       </Container>
     </>

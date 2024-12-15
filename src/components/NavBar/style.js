@@ -4,7 +4,7 @@ import { devices } from "../../utils/constants"
 
 export const NameAndMenuContainer = styled.div`
   display: flex;
-  margin: 1rem;
+  margin: 0.5rem;
   justify-content: end;
 `
 
@@ -16,10 +16,10 @@ export const NavBarWrapper = styled.div`
 `
 
 export const Link = styled.a`
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 1rem;
   color: ${theme.primaryDark};
   text-decoration: none;
   transition: color 0.3s linear;

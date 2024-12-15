@@ -6,14 +6,12 @@ export const Title = styled.div`
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-weight: bolder !important;
-  text align: center;
   font-size: 4.55rem;
   padding: 2.5 rem;
   color: #212529;
- @media ${devices.md} {
-  font-size: 6rem;
-  padding: 4 rem;
-  text-align: left;
+  @media ${devices.md} {
+    font-size: 6rem;
+    padding: 4 rem;
   }
 `
 export const SubTitle1 = styled.div`

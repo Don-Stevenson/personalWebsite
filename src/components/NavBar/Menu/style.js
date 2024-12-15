@@ -2,11 +2,11 @@ import styled from "styled-components"
 import theme from "../../../utils/theme"
 
 export const Link = styled.a`
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 1rem;
   padding: 2rem 0;
-  font-weight: bold;
-  letter-spacing: 0.5rem;
   color: ${theme.primaryDark};
   text-decoration: none;
   transition: color 0.3s linear;
@@ -19,7 +19,7 @@ export const StyledMenu = styled.nav`
   background-color: white;
   border-radius: 8px;
   opacity: 0.87;
-  height: 80vh;
+  height: 30vh;
   margin-top: 25rem;
   text-align: left;
   padding: 2rem;
