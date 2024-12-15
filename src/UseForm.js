@@ -1,4 +1,4 @@
-import { Axios } from "axios"
+import axios from "axios"
 import { useState } from "react"
 
 const useForm = () => {
@@ -18,31 +18,56 @@ const useForm = () => {
   }
 
   const handleSubmit = async event => {
-    setErrors(state)
     event.preventDefault()
-    setState({ ...state, disabled: true })
-    try {
-      const dataSent = await Axios.post(
-        // to do: add ternary to check if on local or production
-        // to do: clear form after sending email
-        // "http://localhost:3030/api/email",
-        "https://donpersonalwebsite-api.herokuapp.com/api/email",
-        state
-      )
 
-      dataSent.data.success
-        ? setState({
-            ...state,
-            disabled: false,
+    const newErrors = {
+      name: state.name ? "" : "Name is required",
+      email: state.email ? "" : "Email is required",
+      message: state.message ? "" : "Message is required",
+    }
+
+    setErrors(newErrors)
+
+    if (!newErrors.name && !newErrors.email && !newErrors.message) {
+      setState(prev => ({ ...prev, disabled: true }))
+
+      try {
+        const response = await axios.post(
+          "https://personalwebsite-api.onrender.com/api/email",
+          state
+        )
+
+        if (response.data.success) {
+          setState(prev => ({
+            ...prev,
             emailSent: true,
-            name: "",
-            email: "",
-            message: "",
-          })
-        : setState({ ...state, disabled: false, emailSent: false })
-    } catch (error) {
-      console.error(error)
-      setState({ ...state, disabled: false, emailSent: false })
+            disabled: false,
+          }))
+
+          // Clear form fields after a delay to allow useEffect to trigger
+          setTimeout(() => {
+            setState(prev => ({
+              ...prev,
+              name: "",
+              email: "",
+              message: "",
+            }))
+          }, 0)
+        } else {
+          setState(prev => ({
+            ...prev,
+            disabled: false,
+            emailSent: false,
+          }))
+        }
+      } catch (error) {
+        console.error(error)
+        setState(prev => ({
+          ...prev,
+          disabled: false,
+          emailSent: false,
+        }))
+      }
     }
   }
   return {
