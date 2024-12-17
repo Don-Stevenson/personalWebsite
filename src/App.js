@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Footer from "./components/Footer/Footer"
 import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
@@ -18,22 +18,24 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <Route
-        path="/"
-        exact
-        render={() => (
-          <HomePage
-            title={home.title}
-            subTitle={home.subTitle}
-            text={home.text}
-          />
-        )}
-      />
-      <Route path="/about" render={() => <AboutPage title={about.title} />} />
-      <Route
-        path="/contact"
-        render={() => <ContactPage title={contact.title} />}
-      />
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <HomePage
+              title={home.title}
+              subTitle={home.subTitle}
+              text={home.text}
+            />
+          }
+        />
+        <Route path="/about" element={<AboutPage title={about.title} />} />
+        <Route
+          path="/contact"
+          element={<ContactPage title={contact.title} />}
+        />
+      </Routes>
       <Footer />
     </Router>
   )

@@ -9,31 +9,45 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
-
 const ContentWrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 `
-
 const FormBox = styled.textarea`
+  display: block;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #ced4da;
   width: 100%;
+  font-size: 1rem;
 `
-
+const Text = styled.p`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  color: #5a5a5a;
+`
+const Label = styled.label`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  color: #5a5a5a;
+`
 const Success = styled.p`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #9ad19a;
 `
 
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 16rem;
   margin-bottom: 1rem;
   @media ${devices.sm} {
@@ -66,7 +80,6 @@ const Wrapper = styled.div`
 
 export default function ContactPage({ title }) {
   const { handleSubmit, handleChange, state, errors } = Useform()
-
   return (
     <PageContainer>
       <Hero title={title} />
@@ -74,7 +87,7 @@ export default function ContactPage({ title }) {
         <Wrapper>
           <form onSubmit={handleSubmit}>
             <FormWrapper>
-              <label htmlFor="full-name">Name</label>
+              <Label htmlFor="full-name">Name</Label>
               <FormBox
                 id="full-name"
                 name="name"
@@ -85,7 +98,7 @@ export default function ContactPage({ title }) {
               />
             </FormWrapper>
             <FormWrapper>
-              <label htmlFor="email">Email</label>
+              <Label htmlFor="email">Email</Label>
               <FormBox
                 id="email"
                 name="email"
@@ -96,7 +109,7 @@ export default function ContactPage({ title }) {
               />
             </FormWrapper>
             <FormWrapper>
-              <label htmlFor="message">Message</label>
+              <Label htmlFor="message">Message</Label>
               <FormBox
                 id="message"
                 name="message"
@@ -107,9 +120,11 @@ export default function ContactPage({ title }) {
               />
             </FormWrapper>
 
-            {errors.message && <p>{errors.message}</p>}
+            {errors.message && <Text>{errors.message}</Text>}
 
-            <p>Note: please allow up to 10 seconds for the email to send</p>
+            <Text>
+              Note: please allow up to 10 seconds for the email to send
+            </Text>
 
             <Button type="submit" disabled={state.disabled}>
               Send
