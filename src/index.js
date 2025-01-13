@@ -3,13 +3,10 @@ import { createRoot } from "react-dom/client"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
-// Find the root element
 const root = document.getElementById("root")
 
-// Create the root
 const rootContainer = createRoot(root)
 
-// Render the app
 rootContainer.render(
   <React.StrictMode>
     <App />

@@ -18,7 +18,6 @@ export const CarouselContainer = styled.div`
   display: grid;
   gap: 1rem;
   max-width: 100%;
-  padding: 1rem;
   grid-template-columns: 1fr;
   margin-top: 2rem;
   margin: auto;
@@ -40,7 +39,7 @@ export const Card = styled.div`
   min-height: 0;
   border-radius: 8px;
   margin: 0 1rem;
-  width: 310px;
+  max-width: 300px;
   overflow: hidden;
   cursor: pointer;
 `
