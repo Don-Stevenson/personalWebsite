@@ -22,12 +22,11 @@ export const CarouselContainer = styled.div`
   margin-top: 2rem;
   margin: auto;
   place-items: center;
-
   @media ${devices.md} {
     grid-template-columns: repeat(2, 1fr);
     place-items: unset;
+    padding-left: 2rem;
   }
-
   @media ${devices.lg} {
     grid-template-columns: repeat(3, 1fr);
   }
