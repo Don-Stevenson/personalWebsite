@@ -1,7 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import Hero from "../components/Hero/Hero"
 import Useform from "../../src/UseForm"
+import styled from "styled-components"
 import { devices } from "../utils/constants"
 
 const PageContainer = styled.div`
@@ -9,12 +9,24 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
+
 const ContentWrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  margin-right: 6rem;
+  margin-left: 1rem;
+
+  @media ${devices.sm} {
+    margin-left: 2rem;
+  }
+
+  @media ${devices.md} {
+    margin-left: 2rem;
+  }
 `
-const FormBox = styled.textarea`
+
+const FormInput = styled.textarea`
   display: block;
   padding: 10px;
   border-radius: 4px;
@@ -22,24 +34,27 @@ const FormBox = styled.textarea`
   width: 100%;
   font-size: 1rem;
 `
+
+const baseTextStyles = `
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+`
+
 const Text = styled.p`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  ${baseTextStyles}
   font-size: 1rem;
   color: #5a5a5a;
 `
+
 const Label = styled.label`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  ${baseTextStyles}
   font-size: 1rem;
   color: #5a5a5a;
 `
-const Success = styled.p`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
+const SuccessMessage = styled.p`
+  ${baseTextStyles}
   font-size: 0.9rem;
   color: #9ad19a;
 `
@@ -48,92 +63,95 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 16rem;
+  min-width: 15rem;
+  max-width: 20rem;
   margin-bottom: 1rem;
+
   @media ${devices.sm} {
-    width: 25rem;
+    min-width: 20rem;
+    max-width: 30rem;
   }
+
   @media ${devices.md} {
-    width: 45rem;
+    max-width: 35rem;
   }
 `
 
-const Button = styled.button`
+const SubmitButton = styled.button`
   display: flex;
   justify-content: center;
-  border: 1.5px solid;
+  border: 1.5px solid #007bff;
   color: #007bff;
   padding: 5px;
-  border-color: #007bff;
   border-radius: 4px;
   width: 3rem;
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 `
 
-const Wrapper = styled.div`
-  margin-right: 6rem;
-  margin-left: 2.5rem;
-`
-
-export default function ContactPage({ title }) {
+const ContactPage = ({ title }) => {
   const { handleSubmit, handleChange, state, errors } = Useform()
+
   return (
     <PageContainer>
       <Hero title={title} />
       <ContentWrapper>
-        <Wrapper>
-          <form onSubmit={handleSubmit}>
-            <FormWrapper>
-              <Label htmlFor="full-name">Name</Label>
-              <FormBox
-                id="full-name"
-                name="name"
-                type="text"
-                value={state.name}
-                onChange={handleChange}
-                required
-              />
-            </FormWrapper>
-            <FormWrapper>
-              <Label htmlFor="email">Email</Label>
-              <FormBox
-                id="email"
-                name="email"
-                type="email"
-                value={state.email}
-                onChange={handleChange}
-                required
-              />
-            </FormWrapper>
-            <FormWrapper>
-              <Label htmlFor="message">Message</Label>
-              <FormBox
-                id="message"
-                name="message"
-                rows="3"
-                value={state.message}
-                onChange={handleChange}
-                required
-              />
-            </FormWrapper>
+        <form onSubmit={handleSubmit}>
+          <FormWrapper>
+            <Label htmlFor="full-name">Name</Label>
+            <FormInput
+              as="input"
+              id="full-name"
+              name="name"
+              type="text"
+              value={state.name}
+              onChange={handleChange}
+              required
+            />
+          </FormWrapper>
 
-            {errors.message && <Text>{errors.message}</Text>}
+          <FormWrapper>
+            <Label htmlFor="email">Email</Label>
+            <FormInput
+              as="input"
+              id="email"
+              name="email"
+              type="email"
+              value={state.email}
+              onChange={handleChange}
+              required
+            />
+          </FormWrapper>
 
-            <Text>
-              Note: please allow up to 10 seconds for the email to send
-            </Text>
+          <FormWrapper>
+            <Label htmlFor="message">Message</Label>
+            <FormInput
+              as="input"
+              id="message"
+              name="message"
+              rows="3"
+              value={state.message}
+              onChange={handleChange}
+              required
+            />
+          </FormWrapper>
 
-            <Button type="submit" disabled={state.disabled}>
-              Send
-            </Button>
+          {errors.message && <Text>{errors.message}</Text>}
 
-            {state.emailSent && <Success>Email Sent!</Success>}
-          </form>
-        </Wrapper>
+          <Text>Note: please allow up to 20 seconds for the email to send</Text>
+
+          <SubmitButton type="submit" disabled={state.disabled}>
+            Send
+          </SubmitButton>
+
+          {state.emailSent && <SuccessMessage>Email Sent!</SuccessMessage>}
+        </form>
       </ContentWrapper>
     </PageContainer>
   )
 }
+
+export default ContactPage

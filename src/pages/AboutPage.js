@@ -15,7 +15,7 @@ const PageContainer = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 8rem;
 
   @media ${devices.md} {
@@ -58,7 +58,6 @@ const Paragraph = styled.p`
 const SocialLinksRow = styled.div`
   display: flex;
   align-items: center;
-
   @media ${devices.md} {
     margin-left: 3rem;
   }
