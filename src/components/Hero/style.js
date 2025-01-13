@@ -6,10 +6,11 @@ export const Title = styled.div`
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-weight: bolder !important;
-  font-size: 4.55rem;
+  font-size: 3.75rem;
   padding: 2.5 rem;
   color: #212529;
   @media ${devices.md} {
+    font-size: 4.55rem;
     font-size: 6rem;
     padding: 4 rem;
   }
@@ -22,8 +23,9 @@ export const SubTitle1 = styled.div`
   text align: center;
   margin-bottom: 0.5rem;
   font-weight: 300 !important;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   @media ${devices.md} {
+   font-size: 3.5rem;
    text-align: left;
   }
 `
@@ -44,7 +46,7 @@ export const SubTitle2 = styled.div`
 `
 export const Container = styled.div`
   display: flex-col;
-  margin: 1.5rem;
+  padding: 0 1rem;
   margin-bottom: 2rem;
   @media ${devices.md} {
     margin: 2rem;
