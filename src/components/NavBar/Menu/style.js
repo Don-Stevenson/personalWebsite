@@ -6,7 +6,7 @@ export const Link = styled.a`
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-size: 1rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
   color: ${theme.primaryDark};
   text-decoration: none;
   transition: color 0.3s linear;
@@ -18,8 +18,8 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   background-color: white;
   border-radius: 8px;
-  opacity: 0.87;
-  height: 30vh;
+  opacity: 0.9;
+  height: 20vh;
   margin-top: 25rem;
   text-align: left;
   padding: 2rem;
@@ -30,4 +30,5 @@ export const StyledMenu = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   z-index: 10;
   width: 150px;
+  border: 1.5px solid lightgrey;
 `
