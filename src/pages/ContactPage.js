@@ -22,7 +22,7 @@ const ContentWrapper = styled.div`
   }
 
   @media ${devices.md} {
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
 `
 
@@ -45,6 +45,11 @@ const Text = styled.p`
   ${baseTextStyles}
   font-size: 1rem;
   color: #5a5a5a;
+`
+
+const TextLightGrey = styled(Text)`
+  color: rgb(194, 194, 194);
+  font-size: 0.8rem;
 `
 
 const Label = styled.label`
@@ -141,7 +146,9 @@ const ContactPage = ({ title }) => {
 
           {errors.message && <Text>{errors.message}</Text>}
 
-          <Text>Note: please allow up to 20 seconds for the email to send</Text>
+          <TextLightGrey>
+            Note: please allow up to 20 seconds for the email to send
+          </TextLightGrey>
 
           <SubmitButton type="submit" disabled={state.disabled}>
             Send
