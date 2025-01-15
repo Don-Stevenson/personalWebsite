@@ -3,7 +3,6 @@ import { useState } from "react"
 
 const useForm = () => {
   const [errors, setErrors] = useState({ email: "", name: "", message: "" })
-
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -15,61 +14,74 @@ const useForm = () => {
   const handleChange = event => {
     const { name, value } = event.target
     setState({ ...state, [name]: value })
+
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" })
+    }
+  }
+
+  const validateEmail = email => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+    return emailRegex.test(email)
+  }
+
+  const validateForm = () => {
+    const newErrors = {
+      name: state.name.trim() ? "" : "Name is required",
+      message: state.message.trim() ? "" : "Message is required",
+      email: "",
+    }
+
+    if (!state.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!validateEmail(state.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+
+    setErrors(newErrors)
+    return !Object.values(newErrors).some(error => error !== "")
   }
 
   const handleSubmit = async event => {
     event.preventDefault()
 
-    const newErrors = {
-      name: state.name ? "" : "Name is required",
-      email: state.email ? "" : "Email is required",
-      message: state.message ? "" : "Message is required",
+    if (!validateForm()) {
+      return
     }
 
-    setErrors(newErrors)
+    setState(prev => ({ ...prev, disabled: true }))
 
-    if (!newErrors.name && !newErrors.email && !newErrors.message) {
-      setState(prev => ({ ...prev, disabled: true }))
+    try {
+      const response = await axios.post(
+        "https://personalwebsite-api.onrender.com/api/email",
+        state
+      )
 
-      try {
-        const response = await axios.post(
-          "https://personalwebsite-api.onrender.com/api/email",
-          state
-        )
-
-        if (response.data.success) {
-          setState(prev => ({
-            ...prev,
-            emailSent: true,
-            disabled: false,
-          }))
-
-          // Clear form fields after a delay to allow useEffect to trigger
-          setTimeout(() => {
-            setState(prev => ({
-              ...prev,
-              name: "",
-              email: "",
-              message: "",
-            }))
-          }, 0)
-        } else {
-          setState(prev => ({
-            ...prev,
-            disabled: false,
-            emailSent: false,
-          }))
-        }
-      } catch (error) {
-        console.error(error)
+      if (response.data.success) {
+        setState(prev => ({
+          name: "",
+          email: "",
+          message: "",
+          disabled: false,
+          emailSent: true,
+        }))
+      } else {
         setState(prev => ({
           ...prev,
           disabled: false,
           emailSent: false,
         }))
       }
+    } catch (error) {
+      console.error("Failed to send email:", error)
+      setState(prev => ({
+        ...prev,
+        disabled: false,
+        emailSent: false,
+      }))
     }
   }
+
   return {
     handleChange,
     handleSubmit,

@@ -63,6 +63,11 @@ const SuccessMessage = styled.p`
   font-size: 0.9rem;
   color: #9ad19a;
 `
+const ErrorText = styled.p`
+  ${baseTextStyles}
+  font-size: 0.8rem;
+  color: #ff0000;
+`
 
 const FormWrapper = styled.div`
   display: flex;
@@ -144,7 +149,7 @@ const ContactPage = ({ title }) => {
             />
           </FormWrapper>
 
-          {errors.message && <Text>{errors.message}</Text>}
+          {errors.email && <ErrorText>{errors.email}</ErrorText>}
 
           <TextLightGrey>
             Note: please allow up to 20 seconds for the email to send
