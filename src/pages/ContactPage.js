@@ -3,6 +3,7 @@ import Hero from "../components/Hero/Hero"
 import Useform from "../../src/UseForm"
 import styled from "styled-components"
 import { devices } from "../utils/constants"
+import { Blocks } from "react-loader-spinner"
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -103,9 +104,15 @@ const SubmitButton = styled.button`
     cursor: not-allowed;
   }
 `
+const SubmittingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+`
 
 const ContactPage = ({ title }) => {
-  const { handleSubmit, handleChange, state, errors } = Useform()
+  const { handleSubmit, handleChange, state, errors, isSubmitting } = Useform()
 
   return (
     <PageContainer>
@@ -124,7 +131,6 @@ const ContactPage = ({ title }) => {
               required
             />
           </FormWrapper>
-
           <FormWrapper>
             <Label htmlFor="email">Email</Label>
             <FormInput
@@ -137,7 +143,6 @@ const ContactPage = ({ title }) => {
               required
             />
           </FormWrapper>
-
           <FormWrapper>
             <Label htmlFor="message">Message</Label>
             <FormInput
@@ -150,17 +155,26 @@ const ContactPage = ({ title }) => {
               required
             />
           </FormWrapper>
-
           {errors.email && <ErrorText>{errors.email}</ErrorText>}
-
           <TextLightGrey>
             Note: please allow up to 20 seconds for the email to send
           </TextLightGrey>
-
-          <SubmitButton type="submit" disabled={state.disabled}>
-            Send
-          </SubmitButton>
-
+          <SubmittingWrapper>
+            <SubmitButton type="submit" disabled={state.disabled}>
+              Send
+            </SubmitButton>
+            {isSubmitting && (
+              <Blocks
+                height="35"
+                width="35"
+                color="#007bff"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+                visible={true}
+              />
+            )}
+          </SubmittingWrapper>
           {state.emailSent && <SuccessMessage>Email Sent!</SuccessMessage>}
         </form>
       </ContentWrapper>
