@@ -100,16 +100,34 @@ export default function AboutPage({ title }) {
         </ImageSection>
         <ContentSection>
           <Paragraph>
-            Hi, I'm Don! I'm a full stack software developer with experience in
-            Javascript, Clojure, WordPress, Ruby on Rails, Python, PhP, Node JS,
-            React JS, Gatsby JS, Express JS, SQl, GraphQL, PostgreSQL, MongoDB,
-            HTML5, CSS, Jest, and Mocha / Chai.
+            Hi, I’m Don - passionate full-stack software developer, mentor, and
+            lifelong learner based in Toronto, Ontario. With expertise spanning
+            a wide array of technologies, including React, JavaScript,
+            TypeScript, Laravel, PHP, Node.js, GraphQL, and MongoDB, I
+            specialize in building scalable, high-performing web applications
+            that solve real-world problems.
           </Paragraph>
           <Paragraph>
-            When I am not building apps and working on other coding projects, I
-            enjoy doing things like: practicing guitar, playing team sports,
-            keeping aquariums, roasting my own coffee, knife sharpening and
-            working on different DIY projects.
+            Over the years, I’ve worked with notable clients like Ford and
+            Manulife, contributing to impactful projects such as fleet repair
+            management tools and fintech platforms. My journey has also taken me
+            through mentorship roles at Lighthouse Labs, where I helped aspiring
+            developers build their skills and launch successful careers in tech.
+          </Paragraph>
+          <Paragraph>
+            Beyond coding, I thrive on creativity and craftsmanship. Whether
+            it’s playing guitar, DIY projects, or roasting coffee, I bring
+            curiosity and a multidisciplinary perspective to everything I do. My
+            diverse background in music, education, and web development fuels my
+            ability to think outside the box, fostering innovative solutions and
+            seamless user experiences.
+          </Paragraph>
+          <Paragraph>
+            When I’m not writing code, you’ll find me practicing guitar, keeping
+            aquariums, or engaging in team sports. I’m always eager to connect
+            with like-minded individuals and organizations driven to make a
+            difference through technology. Let’s create something incredible
+            together!
           </Paragraph>
           <Paragraph>
             Here is my{" "}

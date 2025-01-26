@@ -90,11 +90,13 @@ const FormWrapper = styled.div`
 const SubmitButton = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 1.5px solid #007bff;
   color: #007bff;
-  padding: 5px;
+  background-color: rgb(243, 249, 255);
   border-radius: 4px;
   width: 3rem;
+  height: 2rem;
 
   &:disabled {
     opacity: 0.5;
