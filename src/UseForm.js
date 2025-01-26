@@ -3,6 +3,7 @@ import { useState } from "react"
 
 const useForm = () => {
   const [errors, setErrors] = useState({ email: "", name: "", message: "" })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -44,6 +45,7 @@ const useForm = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
+    setIsSubmitting(true)
 
     if (!validateForm()) {
       return
@@ -65,6 +67,7 @@ const useForm = () => {
           disabled: false,
           emailSent: true,
         }))
+        setIsSubmitting(false)
       } else {
         setState(prev => ({
           ...prev,
@@ -79,6 +82,7 @@ const useForm = () => {
         disabled: false,
         emailSent: false,
       }))
+      setIsSubmitting(false)
     }
   }
 
@@ -87,6 +91,7 @@ const useForm = () => {
     handleSubmit,
     state,
     errors,
+    isSubmitting,
   }
 }
 
