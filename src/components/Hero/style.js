@@ -40,7 +40,9 @@ export const SubTitle2 = styled.div`
   margin-bottom: 0.5rem;
   color: #212529;
   text align: center;
+  margin-bottom: 5rem;
   @media ${devices.md} {
+    margin-bottom: 0;
     text-align: left;
   }
 `
