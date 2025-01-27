@@ -57,7 +57,7 @@ export const CardSubtitle = styled.p`
 `
 
 export const CardImage = styled.img`
-  width: 100%;
+  width: 92%;
   height: 425px;
 `
 
