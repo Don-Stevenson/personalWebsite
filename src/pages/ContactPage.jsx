@@ -53,6 +53,11 @@ const TextLightGrey = styled.p`
   font-size: 1rem;
   color: rgb(194, 194, 194);
   font-size: 0.8rem;
+  margin: 0.5rem 0 1rem;
+  width: 18rem;
+  @media ${devices.sm} {
+    width: 100%;
+  }
 `
 
 const Label = styled.label`
@@ -70,8 +75,24 @@ const ErrorText = styled.p`
   ${baseTextStyles}
   font-size: 0.8rem;
   color: #ff0000;
+  width: 100%;
+  margin: 0;
+  width: 18rem;
+  @media ${devices.sm} {
+    width: 100%;
+  }
 `
-
+const PlaceHolderText = styled.p`
+  ${baseTextStyles}
+  font-size: 0.8rem;
+  color: #ffffff;
+  width: 100%;
+  margin: 0;
+  width: 18rem;
+  @media ${devices.sm} {
+    width: 100%;
+  }
+`
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -157,7 +178,13 @@ const ContactPage = ({ title }) => {
               required
             />
           </FormWrapper>
-          {errors.email && <ErrorText>{errors.email}</ErrorText>}
+          {errors.email ? (
+            <ErrorText>{errors.email}</ErrorText>
+          ) : (
+            !errors.email && (
+              <PlaceHolderText>placeholderText placeholderText</PlaceHolderText>
+            )
+          )}
           <TextLightGrey>
             Note: please allow up to 30 seconds for the message to send
           </TextLightGrey>
