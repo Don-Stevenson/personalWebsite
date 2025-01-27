@@ -48,7 +48,9 @@ const Text = styled.p`
   color: #5a5a5a;
 `
 
-const TextLightGrey = styled(Text)`
+const TextLightGrey = styled.p`
+  ${baseTextStyles}
+  font-size: 1rem;
   color: rgb(194, 194, 194);
   font-size: 0.8rem;
 `
