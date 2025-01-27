@@ -76,7 +76,7 @@ const useForm = () => {
         }))
       }
     } catch (error) {
-      console.error("Failed to send email:", error)
+      console.error("Failed to send message:", error)
       setState(prev => ({
         ...prev,
         disabled: false,

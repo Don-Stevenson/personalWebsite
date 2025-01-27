@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import Hero from "../components/Hero/Hero"
-import ProfilePic from "../components/assets/images/profile pic 2024.webp"
-import Resume from "../components/assets/docs/DS Resume.pdf"
+import ProfilePic from "..//images/profile pic 2024.webp"
+import Resume from "../assets/docs/DS Resume.pdf"
 import { devices } from "../utils/constants"
 
 const PageContainer = styled.div`

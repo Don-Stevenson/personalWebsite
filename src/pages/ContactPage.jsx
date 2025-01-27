@@ -1,6 +1,6 @@
 import React from "react"
 import Hero from "../components/Hero/Hero"
-import Useform from "../../src/UseForm"
+import Useform from "../UseForm"
 import styled from "styled-components"
 import { devices } from "../utils/constants"
 import { Blocks } from "react-loader-spinner"
@@ -157,7 +157,7 @@ const ContactPage = ({ title }) => {
           </FormWrapper>
           {errors.email && <ErrorText>{errors.email}</ErrorText>}
           <TextLightGrey>
-            Note: please allow up to 20 seconds for the email to send
+            Note: please allow up to 30 seconds for the message to send
           </TextLightGrey>
           <SubmittingWrapper>
             <SubmitButton type="submit" disabled={state.disabled}>
@@ -175,7 +175,7 @@ const ContactPage = ({ title }) => {
               />
             )}
           </SubmittingWrapper>
-          {state.emailSent && <SuccessMessage>Email Sent!</SuccessMessage>}
+          {state.emailSent && <SuccessMessage>Message Sent!</SuccessMessage>}
         </form>
       </ContentWrapper>
     </PageContainer>
