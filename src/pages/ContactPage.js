@@ -157,7 +157,7 @@ const ContactPage = ({ title }) => {
           </FormWrapper>
           {errors.email && <ErrorText>{errors.email}</ErrorText>}
           <TextLightGrey>
-            Note: please allow up to 30 seconds for the email to send
+            Note: please allow up to 30 seconds for the message to send
           </TextLightGrey>
           <SubmittingWrapper>
             <SubmitButton type="submit" disabled={state.disabled}>
