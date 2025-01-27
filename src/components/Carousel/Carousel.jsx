@@ -9,17 +9,17 @@ import {
   ViewLink,
 } from "./style"
 
-import FTPPyschStatic from "../../images/FTPsychStatic.png"
+import FTPPyschStatic from "../../images/FTPsychStatic.webp"
 import FTPPyschGif from "../../images/FTPsychGif.gif"
-import SebastianKnoxStatic from "../../images/SebastianKnoxStatic.png"
+import SebastianKnoxStatic from "../../images/SebastianKnoxStatic.webp"
 import SebastianKnoxGif from "../../images/SebastianKnoxGif.gif"
-import schedulerStatic from "../../images/SchedulerStatic.png"
+import schedulerStatic from "../../images/SchedulerStatic.webp"
 import schedulerGif from "../../images/SchedulerGIF.gif"
-import movieDBStatic from "../../images/MovieDBstatic.png"
+import movieDBStatic from "../../images/MovieDBstatic.webp"
 import movieDBGif from "../../images/batman.gif"
-import nagMeStatic from "../../images/NagMe-static.png"
+import nagMeStatic from "../../images/NagMe-static.webp"
 import nagMeGif from "../../images/NagMe.gif"
-import weatherAppStatic from "../../images/WeatherAppStatic.jpg"
+import weatherAppStatic from "../../images/WeatherAppStatic.webp"
 import weatherAppGif from "../../images/WeatherAppGif.gif"
 
 const carouselItems = [
