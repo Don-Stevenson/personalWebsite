@@ -35,8 +35,21 @@ const useForm = () => {
 
     if (!state.email.trim()) {
       newErrors.email = "Email is required"
+      newErrors.email = "Please enter a valid email address"
+      setState(prev => ({
+        ...prev,
+        disabled: false,
+        emailSent: false,
+      }))
+      setIsSubmitting(false)
     } else if (!validateEmail(state.email)) {
       newErrors.email = "Please enter a valid email address"
+      setState(prev => ({
+        ...prev,
+        disabled: false,
+        emailSent: false,
+      }))
+      setIsSubmitting(false)
     }
 
     setErrors(newErrors)
