@@ -1,9 +1,14 @@
 import styled from "styled-components"
+import { devices } from "../../utils/constants"
 export const Container = styled.div`
   display: flex;
   justify-content: end;
-  margin-top: 16px;
+  align-items: center;
   margin-right: 0.5rem;
+  height: 1.5rem;
+  @media ${devices.md} {
+    height: 2rem;
+  }
 `
 export const CopyrightContainer = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
