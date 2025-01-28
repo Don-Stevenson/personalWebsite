@@ -15,8 +15,8 @@ import SebastianKnoxStatic from "../../images/SebastianKnoxStatic.webp"
 import SebastianKnoxGif from "../../images/SebastianKnoxGif.gif"
 import schedulerStatic from "../../images/SchedulerStatic.webp"
 import schedulerGif from "../../images/SchedulerGIF.gif"
-import movieDBStatic from "../../images/MovieDBstatic.webp"
-import movieDBGif from "../../images/batman.gif"
+import TeamCreatorStatic from "../../images/TeamCreatorStatic.webp"
+import TeamCreatorGif from "../../images/TeamCreatorGif.gif"
 import nagMeStatic from "../../images/NagMe-static.webp"
 import nagMeGif from "../../images/NagMe.gif"
 import weatherAppStatic from "../../images/WeatherAppStatic.webp"
@@ -44,6 +44,15 @@ const carouselItems = [
   },
   {
     id: 2,
+    title: "Soccer Team Creator",
+    subTitle: "An app that creates balanced teams for soccer",
+    imgSrc: TeamCreatorStatic,
+    gifSrc: TeamCreatorGif,
+    link: "https://create-teams.vercel.app/login",
+    selected: false,
+  },
+  {
+    id: 3,
     title: "Scheduler",
     subTitle: "An app for managing work appointments ",
     imgSrc: schedulerStatic,
@@ -51,15 +60,7 @@ const carouselItems = [
     link: "https://github.com/Don-Stevenson/scheduler",
     selected: false,
   },
-  {
-    id: 3,
-    title: "Movie-DB",
-    subTitle: "An app that returns movie search results.",
-    imgSrc: movieDBStatic,
-    gifSrc: movieDBGif,
-    link: "https://github.com/Don-Stevenson/moviedb",
-    selected: false,
-  },
+
   {
     id: 4,
     title: "Nag-me",
