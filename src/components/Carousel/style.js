@@ -37,10 +37,13 @@ export const Card = styled.div`
   height: 100%;
   min-height: 0;
   border-radius: 8px;
-  margin: 0 1rem;
+  margin: auto;
   max-width: 300px;
   overflow: hidden;
   cursor: pointer;
+  @media ${devices.md} {
+    margin: 0 1rem;
+  }
 `
 
 export const CardContent = styled.div`
