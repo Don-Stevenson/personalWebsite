@@ -56,6 +56,7 @@ export const CardContent = styled.div`
 export const CardSubtitle = styled.p`
   font-size: 0.9rem;
   color: #666;
+  padding: 0 0.5rem 0 0;
   margin: 0.5rem 0;
 `
 
