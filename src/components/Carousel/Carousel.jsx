@@ -25,6 +25,15 @@ import weatherAppGif from "../../images/WeatherAppGif.gif"
 const carouselItems = [
   {
     id: 0,
+    title: "Soccer Team Creator",
+    subTitle: "An app that creates balanced teams for soccer",
+    imgSrc: TeamCreatorStatic,
+    gifSrc: TeamCreatorGif,
+    link: "https://create-teams.vercel.app/login",
+    selected: false,
+  },
+  {
+    id: 1,
     title: "Forward Thinking Psychology",
     subTitle: "I worked as a Front-End Dev for this site",
     imgSrc: FTPPyschStatic,
@@ -33,22 +42,13 @@ const carouselItems = [
     selected: false,
   },
   {
-    id: 1,
+    id: 2,
     title: "Sebastian Knox Woodwinds Services",
     subTitle: `I worked Front-End Dev for this \n Saxophone
        Service & E-commerce Site.`,
     imgSrc: SebastianKnoxStatic,
     gifSrc: SebastianKnoxGif,
     link: "https://www.sebastianknox.com/",
-    selected: false,
-  },
-  {
-    id: 2,
-    title: "Soccer Team Creator",
-    subTitle: "An app that creates balanced teams for soccer",
-    imgSrc: TeamCreatorStatic,
-    gifSrc: TeamCreatorGif,
-    link: "https://create-teams.vercel.app/login",
     selected: false,
   },
   {
