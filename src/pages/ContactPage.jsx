@@ -54,9 +54,13 @@ const TextLightGrey = styled.p`
   color: rgb(194, 194, 194);
   font-size: 0.8rem;
   margin: 0.5rem 0 0.5rem;
-  width: 18rem;
+  width: 10rem;
   @media ${devices.sm} {
     width: 100%;
+    width: 18rem;
+  }
+  @media ${devices.md} {
+    width: 25rem;
   }
 `
 
@@ -208,7 +212,7 @@ const ContactPage = ({ title }) => {
                   visible={true}
                 />
                 <TextLightGrey>
-                  Note: please allow up to 30 seconds for the message to send
+                  Please allow up to 30 seconds for the message to send
                 </TextLightGrey>
               </div>
             )}
