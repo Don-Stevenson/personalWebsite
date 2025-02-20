@@ -53,7 +53,7 @@ const TextLightGrey = styled.p`
   font-size: 1rem;
   color: rgb(194, 194, 194);
   font-size: 0.8rem;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 0.5rem;
   width: 18rem;
   @media ${devices.sm} {
     width: 100%;
@@ -185,23 +185,32 @@ const ContactPage = ({ title }) => {
               <PlaceHolderText>placeholderText placeholderText</PlaceHolderText>
             )
           )}
-          <TextLightGrey>
-            Note: please allow up to 30 seconds for the message to send
-          </TextLightGrey>
           <SubmittingWrapper>
             <SubmitButton type="submit" disabled={state.disabled}>
               Send
             </SubmitButton>
             {isSubmitting && (
-              <Blocks
-                height="35"
-                width="35"
-                color="#007bff"
-                ariaLabel="blocks-loading"
-                wrapperStyle={{}}
-                wrapperClass="blocks-wrapper"
-                visible={true}
-              />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                <Blocks
+                  height="35"
+                  width="35"
+                  color="#007bff"
+                  ariaLabel="blocks-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="blocks-wrapper"
+                  visible={true}
+                />
+                <TextLightGrey>
+                  Note: please allow up to 30 seconds for the message to send
+                </TextLightGrey>
+              </div>
             )}
           </SubmittingWrapper>
           {state.emailSent && <SuccessMessage>Message Sent!</SuccessMessage>}
