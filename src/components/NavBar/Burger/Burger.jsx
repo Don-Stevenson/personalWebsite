@@ -1,13 +1,16 @@
 import React from "react"
-import { StyledBurger } from "./style"
+import styles from "./Burger.module.css"
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
+    <button
+      className={`${styles.burger} ${open ? styles.open : ""}`}
+      onClick={() => setOpen(!open)}
+    >
+      <div className={styles.burgerLine} />
+      <div className={styles.burgerLine} />
+      <div className={styles.burgerLine} />
+    </button>
   )
 }
 

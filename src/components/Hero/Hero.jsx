@@ -1,12 +1,12 @@
 import React from "react"
-import { Container, Title, SubTitle1, SubTitle2 } from "./style"
+import styles from "./Hero.module.css"
 
 export default function Hero({ title, subTitle, text }) {
   return (
-    <Container>
-      <Title>{title}</Title>
-      <SubTitle1>{subTitle}</SubTitle1>
-      <SubTitle2>{text}</SubTitle2>
-    </Container>
+    <div className={styles.container}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.subtitle1}>{subTitle}</div>
+      <div className={styles.subtitle2}>{text}</div>
+    </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from "react"
 import CardInfo from "../CardInfo"
-import { CardWrapper } from "./style"
+import styles from "./Card.module.css"
 
 export default function Card({ click, item }) {
   return (
-    <CardWrapper onClick={() => click(item)}>
+    <div className={styles.cardWrapper} onClick={() => click(item)}>
       <img src={item.imgSrc} alt={item.subTitle} />
 
       {item.selected && (
@@ -15,7 +15,7 @@ export default function Card({ click, item }) {
         />
       )}
 
-      {!item.selected && <div className="placeholder"></div>}
-    </CardWrapper>
+      {!item.selected && <div className="placeholder" />}
+    </div>
   )
 }
