@@ -1,0 +1,90 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    margin-left: 3rem;
+    flex-direction: row;
+  }
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 93%;
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  object-fit: contain;
+  align-self: left;
+}
+
+.contentSection {
+  margin-right: 1rem;
+}
+
+.paragraph {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  max-width: 30rem;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+}
+
+.socialLinksRow {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .socialLinksRow {
+    margin-left: 3rem;
+  }
+}
+
+.iconLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.githubIcon {
+  color: #333;
+  font-size: 35px;
+  margin: 6px;
+  transition: color 0.3s ease;
+}
+
+.githubIcon:hover {
+  color: #666;
+}
+
+.linkedinIcon {
+  color: #0077b5;
+  font-size: 35px;
+  margin: 6px;
+  transition: color 0.3s ease;
+}
+
+.linkedinIcon:hover {
+  color: #0099d4;
+}

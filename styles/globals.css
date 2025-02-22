@@ -1,0 +1,7 @@
+:root {
+  --primary-dark: #333333; /* Replace with your desired color */
+  /* Add other global CSS variables here */
+  --primary-light: #ffffff;
+  --primary-accent: #007bff;
+  /* etc */
+}
