@@ -1,7 +1,6 @@
 import React from "react"
 import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
-import { devices } from "../utils/constants"
 import { Blocks } from "react-loader-spinner"
 import styles from "./ContactPage.module.css"
 
@@ -10,14 +9,16 @@ const ContactPage = ({ title }) => {
   const [showSuccess, setShowSuccess] = React.useState(false)
 
   React.useEffect(() => {
-    let timeoutId
     if (state.emailSent) {
       setShowSuccess(true)
-      timeoutId = setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setShowSuccess(false)
-      }, 2000)
+      }, 3000)
+
+      return () => {
+        clearTimeout(timeoutId)
+      }
     }
-    return () => clearTimeout(timeoutId)
   }, [state.emailSent])
 
   return (
