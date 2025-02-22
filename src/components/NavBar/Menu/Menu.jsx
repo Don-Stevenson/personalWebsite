@@ -1,13 +1,21 @@
 import React from "react"
-import { StyledMenu, Link } from "./style"
+import styles from "./Menu.module.css"
 
 const Menu = ({ open }) => {
   return (
-    <StyledMenu open={open}>
-      <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
-      <Link href="/contact">Contact</Link>
-    </StyledMenu>
+    <nav
+      className={`${styles.menu} ${open ? styles.menuOpen : styles.menuClosed}`}
+    >
+      <a className={styles.link} href="/">
+        Home
+      </a>
+      <a className={styles.link} href="/about">
+        About
+      </a>
+      <a className={styles.link} href="/contact">
+        Contact
+      </a>
+    </nav>
   )
 }
 

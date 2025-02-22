@@ -1,13 +1,5 @@
 import React, { useState } from "react"
-import {
-  CarouselContainer,
-  Card,
-  CardImage,
-  CardContent,
-  FadeIn,
-  CardSubtitle,
-  ViewLink,
-} from "./style"
+import styles from "./Carousel.module.css"
 
 import FTPPyschStatic from "../../images/FTPsychStatic.webp"
 import FTPPyschGif from "../../images/FTPsychGif.gif"
@@ -103,28 +95,37 @@ export default function Carousel() {
   const { activeItems, handleCardClick } = useCarousel(carouselItems)
 
   return (
-    <CarouselContainer>
+    <div className={styles.carouselContainer}>
       {activeItems.map(
         ({ id, title, subTitle, imgSrc, gifSrc, link, selected }) => (
-          <Card key={id} onClick={() => handleCardClick(id)}>
-            <CardImage src={selected ? gifSrc : imgSrc} alt={title} />
-            <CardContent>
+          <div
+            key={id}
+            className={styles.card}
+            onClick={() => handleCardClick(id)}
+          >
+            <img
+              className={styles.cardImage}
+              src={selected ? gifSrc : imgSrc}
+              alt={title}
+            />
+            <div className={styles.cardContent}>
               {selected && (
-                <FadeIn>
-                  <CardSubtitle>{subTitle}</CardSubtitle>
-                  <ViewLink
+                <div className={styles.fadeIn}>
+                  <p className={styles.cardSubtitle}>{subTitle}</p>
+                  <a
+                    className={styles.viewLink}
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     View Site / Source Code
-                  </ViewLink>
-                </FadeIn>
+                  </a>
+                </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         )
       )}
-    </CarouselContainer>
+    </div>
   )
 }

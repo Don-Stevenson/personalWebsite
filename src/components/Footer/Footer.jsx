@@ -1,17 +1,17 @@
 import React from "react"
-import { Container, CopyrightContainer, HrLine } from "./style"
+import styles from "./Footer.module.css"
 
 const year = new Date().toLocaleDateString("en-US", { year: "numeric" })
 
 export default function Footer() {
   return (
     <>
-      <HrLine />
-      <Container>
-        <CopyrightContainer>
+      <hr className={styles.hrLine} />
+      <div className={styles.container}>
+        <div className={styles.copyrightContainer}>
           {`Custom site by Don Stevenson ©${year}`}
-        </CopyrightContainer>
-      </Container>
+        </div>
+      </div>
     </>
   )
 }
