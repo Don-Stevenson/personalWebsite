@@ -1,12 +1,15 @@
 import React from "react"
+import { useState } from "react"
 import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
 import { Blocks } from "react-loader-spinner"
 import styles from "./ContactPage.module.css"
+import { EmailError } from "../components/EmailError/EmailError"
 
 const ContactPage = ({ title }) => {
-  const { handleSubmit, handleChange, state, errors, isSubmitting } = Useform()
-  const [showSuccess, setShowSuccess] = React.useState(false)
+  const { handleChange, handleSubmit, state, errors, isSubmitting } = Useform()
+
+  const [showSuccess, setShowSuccess] = useState(false)
 
   React.useEffect(() => {
     if (state.emailSent) {
@@ -68,15 +71,9 @@ const ContactPage = ({ title }) => {
               required
             />
           </div>
-          {errors.email ? (
-            <p className={styles.errorText}>{errors.email}</p>
-          ) : (
-            !errors.email && (
-              <p className={styles.placeholderText}>
-                placeholderText placeholderText
-              </p>
-            )
-          )}
+          <div className={styles.errorContainer}>
+            <EmailError errorMsg={errors.message || ""} />
+          </div>
           <div className={styles.submittingWrapper}>
             <button
               className={styles.submitButton}
