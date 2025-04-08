@@ -89,7 +89,8 @@ const useForm = () => {
         }))
       }
     } catch (error) {
-      console.error("Failed to send message:", error)
+      console.error("😥 Oops! Failed to send message:", error)
+      setErrors({ message: "😥 Oops! Failed to send the message" })
       setState(prev => ({
         ...prev,
         disabled: false,

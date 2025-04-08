@@ -1,0 +1,20 @@
+.errorText {
+  font-family: var(--system-font);
+  font-size: 0.8rem;
+  color: #ff0000;
+  margin: 0;
+  width: 18rem;
+}
+
+.errorContainer {
+  height: 1.5rem;
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .errorText {
+    width: 100%;
+  }
+}

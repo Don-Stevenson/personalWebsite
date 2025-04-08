@@ -92,28 +92,6 @@
   }
 }
 
-.errorText {
-  font-family: var(--system-font);
-  font-size: 0.8rem;
-  color: #ff0000;
-  margin: 0;
-  width: 18rem;
-}
-
-@media (min-width: 640px) {
-  .errorText {
-    width: 100%;
-  }
-}
-
-.placeholderText {
-  font-family: var(--system-font);
-  font-size: 0.8rem;
-  color: #ffffff;
-  margin: 0;
-  width: 18rem;
-}
-
 @media (min-width: 640px) {
   .placeholderText {
     width: 100%;
