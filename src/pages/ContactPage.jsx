@@ -6,34 +6,39 @@ import styles from "./ContactPage.module.css"
 import { EmailError } from "../components/EmailError/EmailError"
 
 const ContactPage = ({ title }) => {
-  const { handleChange, handleSubmit, formData, formErrors, isSubmitting } =
-    Useform()
+  const {
+    handleInputChange,
+    handleFormSubmit,
+    formState,
+    validationErrors,
+    isLoading,
+  } = Useform()
 
   const [showSuccess, setShowSuccess] = useState(false)
 
   useEffect(() => {
     let timer
 
-    if (formData.emailSent === true) {
+    if (formState.emailSent === true) {
       setShowSuccess(true)
 
       timer = setTimeout(() => {
         setShowSuccess(false)
       }, 5000)
-    } else if (formData.emailSent === false || formData.emailSent === null) {
+    } else if (formState.emailSent === false || formState.emailSent === null) {
       setShowSuccess(false)
     }
 
     return () => {
       if (timer) clearTimeout(timer)
     }
-  }, [formData.emailSent])
+  }, [formState.emailSent])
 
   return (
     <div className={styles.pageContainer}>
       <Hero title={title} />
       <div className={styles.contentWrapper}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <div className={styles.formWrapper}>
             <label className={styles.label} htmlFor="full-name">
               Name
@@ -43,8 +48,8 @@ const ContactPage = ({ title }) => {
               id="full-name"
               name="name"
               type="text"
-              value={formData.name}
-              onChange={handleChange}
+              value={formState.name}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -57,8 +62,8 @@ const ContactPage = ({ title }) => {
               id="email"
               name="email"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={formState.email}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -71,33 +76,37 @@ const ContactPage = ({ title }) => {
               id="message"
               name="message"
               rows="3"
-              value={formData.message}
-              onChange={handleChange}
+              value={formState.message}
+              onChange={handleInputChange}
               required
             />
-            {formErrors.message && (
-              <p className={styles.errorText}>{formErrors.message || ""}</p>
+            {validationErrors.message && (
+              <p className={styles.errorText}>
+                {validationErrors.message || ""}
+              </p>
             )}
           </div>
-          <EmailError errorMsg={formErrors.message || ""} />
+          <EmailError errorMsg={validationErrors.message || ""} />
           <div className={styles.submittingWrapper}>
             <button
               className={styles.submitButton}
               type="submit"
-              disabled={formData.isDisabled}
+              disabled={formState.isDisabled}
             >
               Send
             </button>
-            {formErrors.name && (
-              <p className={styles.errorText}>{formErrors.name || ""}</p>
+            {validationErrors.name && (
+              <p className={styles.errorText}>{validationErrors.name || ""}</p>
             )}
-            {formErrors.email && (
-              <p className={styles.errorText}>{formErrors.email || ""}</p>
+            {validationErrors.email && (
+              <p className={styles.errorText}>{validationErrors.email || ""}</p>
             )}
-            {formErrors.message && (
-              <p className={styles.errorText}>{formErrors.message || ""}</p>
+            {validationErrors.message && (
+              <p className={styles.errorText}>
+                {validationErrors.message || ""}
+              </p>
             )}
-            {isSubmitting && (
+            {isLoading && (
               <div className={styles.loadingContainer}>
                 <Blocks
                   height="35"
