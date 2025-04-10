@@ -2,98 +2,138 @@ import axios from "axios"
 import { useState } from "react"
 
 const useForm = () => {
-  const [errors, setErrors] = useState({ email: "", name: "", message: "" })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [state, setState] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    disabled: false,
+    isDisabled: false,
     emailSent: null,
   })
 
-  const handleChange = event => {
-    const { name, value } = event.target
-    setState({ ...state, [name]: value })
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: "" })
-    }
-  }
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const validateEmail = email => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+    const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/
     return emailRegex.test(email)
+  }
+
+  const handleChange = event => {
+    const { name, value } = event.target
+
+    setFormData(prevData => ({ ...prevData, [name]: value }))
+
+    if (formErrors[name]) {
+      setFormErrors(prevErrors => ({ ...prevErrors, [name]: "" }))
+    }
   }
 
   const validateForm = () => {
     const newErrors = {
-      name: state.name.trim() ? "" : "Name is required",
-      message: state.message.trim() ? "" : "Message is required",
+      name: formData.name.trim() ? "" : "Name is required",
+      message: formData.message.trim() ? "" : "Message is required",
       email: "",
     }
 
-    if (!state.email.trim()) {
+    if (!formData.email.trim()) {
       newErrors.email = "Email is required"
-      newErrors.email = "Please enter a valid email address"
-      setState(prev => ({
+      setFormData(prev => ({
         ...prev,
-        disabled: false,
+        isDisabled: false,
         emailSent: false,
       }))
       setIsSubmitting(false)
-    } else if (!validateEmail(state.email)) {
+    } else if (!validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address"
-      setState(prev => ({
+      setFormData(prev => ({
         ...prev,
-        disabled: false,
+        isDisabled: false,
         emailSent: false,
       }))
       setIsSubmitting(false)
     }
 
-    setErrors(newErrors)
-    return !Object.values(newErrors).some(error => error !== "")
+    setFormErrors(newErrors)
+
+    const isError = !Object.values(newErrors).some(error => error !== "")
+    return isError
   }
 
   const handleSubmit = async event => {
     event.preventDefault()
     setIsSubmitting(true)
 
+    const startTime = Date.now()
+
     if (!validateForm()) {
+      setIsSubmitting(false)
       return
     }
 
-    setState(prev => ({ ...prev, disabled: true }))
+    setFormData(prev => ({ ...prev, isDisabled: true }))
 
     try {
       const response = await axios.post(
         "https://personalwebsite-api.onrender.com/api/email",
-        state
+        formData
       )
 
+      const elapsedTime = Date.now() - startTime
+      const minLoadingTime = 3000 // 3 seconds in milliseconds
+
+      if (elapsedTime < minLoadingTime) {
+        await new Promise(resolve =>
+          setTimeout(resolve, minLoadingTime - elapsedTime)
+        )
+      }
+
       if (response.data.success) {
-        setState(prev => ({
+        setFormData({
           name: "",
           email: "",
           message: "",
-          disabled: false,
+          isDisabled: false,
           emailSent: true,
-        }))
+        })
         setIsSubmitting(false)
+
+        setTimeout(() => {
+          setFormData(prev => ({
+            ...prev,
+            emailSent: null,
+          }))
+        }, 5000)
       } else {
-        setState(prev => ({
+        setFormData(prev => ({
           ...prev,
-          disabled: false,
+          isDisabled: false,
           emailSent: false,
         }))
+        setIsSubmitting(false)
       }
     } catch (error) {
+      const elapsedTime = Date.now() - startTime
+      const minLoadingTime = 3000
+
+      if (elapsedTime < minLoadingTime) {
+        await new Promise(resolve =>
+          setTimeout(resolve, minLoadingTime - elapsedTime)
+        )
+      }
+
       console.error("😥 Oops! Failed to send message:", error)
-      setErrors({ message: "😥 Oops! Failed to send the message" })
-      setState(prev => ({
+      setFormErrors(prev => ({
         ...prev,
-        disabled: false,
+        message: "😥 Oops! Failed to send the message",
+      }))
+      setFormData(prev => ({
+        ...prev,
+        isDisabled: false,
         emailSent: false,
       }))
       setIsSubmitting(false)
@@ -103,8 +143,8 @@ const useForm = () => {
   return {
     handleChange,
     handleSubmit,
-    state,
-    errors,
+    formData,
+    formErrors,
     isSubmitting,
   }
 }
