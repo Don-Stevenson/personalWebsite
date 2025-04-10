@@ -1,5 +1,4 @@
-import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
 import { Blocks } from "react-loader-spinner"
@@ -7,22 +6,28 @@ import styles from "./ContactPage.module.css"
 import { EmailError } from "../components/EmailError/EmailError"
 
 const ContactPage = ({ title }) => {
-  const { handleChange, handleSubmit, state, errors, isSubmitting } = Useform()
+  const { handleChange, handleSubmit, formData, formErrors, isSubmitting } =
+    Useform()
 
   const [showSuccess, setShowSuccess] = useState(false)
 
-  React.useEffect(() => {
-    if (state.emailSent) {
-      setShowSuccess(true)
-      const timeoutId = setTimeout(() => {
-        setShowSuccess(false)
-      }, 3000)
+  useEffect(() => {
+    let timer
 
-      return () => {
-        clearTimeout(timeoutId)
-      }
+    if (formData.emailSent === true) {
+      setShowSuccess(true)
+
+      timer = setTimeout(() => {
+        setShowSuccess(false)
+      }, 5000)
+    } else if (formData.emailSent === false || formData.emailSent === null) {
+      setShowSuccess(false)
     }
-  }, [state.emailSent])
+
+    return () => {
+      if (timer) clearTimeout(timer)
+    }
+  }, [formData.emailSent])
 
   return (
     <div className={styles.pageContainer}>
@@ -38,7 +43,7 @@ const ContactPage = ({ title }) => {
               id="full-name"
               name="name"
               type="text"
-              value={state.name}
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -52,7 +57,7 @@ const ContactPage = ({ title }) => {
               id="email"
               name="email"
               type="email"
-              value={state.email}
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -66,22 +71,32 @@ const ContactPage = ({ title }) => {
               id="message"
               name="message"
               rows="3"
-              value={state.message}
+              value={formData.message}
               onChange={handleChange}
               required
             />
+            {formErrors.message && (
+              <p className={styles.errorText}>{formErrors.message || ""}</p>
+            )}
           </div>
-          <div className={styles.errorContainer}>
-            <EmailError errorMsg={errors.message || ""} />
-          </div>
+          <EmailError errorMsg={formErrors.message || ""} />
           <div className={styles.submittingWrapper}>
             <button
               className={styles.submitButton}
               type="submit"
-              disabled={state.disabled}
+              disabled={formData.isDisabled}
             >
               Send
             </button>
+            {formErrors.name && (
+              <p className={styles.errorText}>{formErrors.name || ""}</p>
+            )}
+            {formErrors.email && (
+              <p className={styles.errorText}>{formErrors.email || ""}</p>
+            )}
+            {formErrors.message && (
+              <p className={styles.errorText}>{formErrors.message || ""}</p>
+            )}
             {isSubmitting && (
               <div className={styles.loadingContainer}>
                 <Blocks
@@ -98,10 +113,12 @@ const ContactPage = ({ title }) => {
                 </p>
               </div>
             )}
+            {showSuccess && (
+              <div className={styles.successMessageContainer}>
+                <p className={styles.successMessage}>Message Sent!</p>
+              </div>
+            )}
           </div>
-          {showSuccess && (
-            <p className={styles.successMessage}>Message Sent!</p>
-          )}
         </form>
       </div>
     </div>

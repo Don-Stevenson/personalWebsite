@@ -71,20 +71,28 @@
   color: #5a5a5a;
 }
 
-.successMessage {
-  font-family: var(--system-font);
-  font-size: 0.9rem;
-  color: #9ad19a;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-  animation: fadeOut 2s ease-out forwards;
+.successMessageContainer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 2.5rem;
+  margin-top: 0;
 }
 
-@keyframes fadeOut {
+.successMessage {
+  color: #56d975;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+@keyframes fadeInOut {
   0% {
+    opacity: 0;
+  }
+  5% {
     opacity: 1;
   }
-  75% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -130,18 +138,37 @@
   border-radius: 4px;
   width: 3rem;
   height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  position: relative;
+  top: 0;
+  outline: none;
+}
+
+.submitButton:active,
+.submitButton:focus {
+  outline: none;
+  border: 1.5px solid #007bff;
+  box-shadow: none;
+  transform: none;
 }
 
 .submitButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  border: 1.5px solid #007bff;
+  color: #007bff;
+  background-color: rgb(243, 249, 255);
 }
 
 .submittingWrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   gap: 1rem;
+  min-height: 2rem;
+  position: relative;
 }
 
 .loadingContainer {
@@ -149,4 +176,12 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  position: absolute;
+  left: 4rem;
+  top: 0;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.8rem;
 }
