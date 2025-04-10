@@ -1,5 +1,4 @@
-import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
 import { Blocks } from "react-loader-spinner"
@@ -7,28 +6,39 @@ import styles from "./ContactPage.module.css"
 import { EmailError } from "../components/EmailError/EmailError"
 
 const ContactPage = ({ title }) => {
-  const { handleChange, handleSubmit, state, errors, isSubmitting } = Useform()
+  const {
+    handleInputChange,
+    handleFormSubmit,
+    formState,
+    validationErrors,
+    isLoading,
+  } = Useform()
 
   const [showSuccess, setShowSuccess] = useState(false)
 
-  React.useEffect(() => {
-    if (state.emailSent) {
-      setShowSuccess(true)
-      const timeoutId = setTimeout(() => {
-        setShowSuccess(false)
-      }, 3000)
+  useEffect(() => {
+    let timer
 
-      return () => {
-        clearTimeout(timeoutId)
-      }
+    if (formState.emailSent === true) {
+      setShowSuccess(true)
+
+      timer = setTimeout(() => {
+        setShowSuccess(false)
+      }, 5000)
+    } else if (formState.emailSent === false || formState.emailSent === null) {
+      setShowSuccess(false)
     }
-  }, [state.emailSent])
+
+    return () => {
+      if (timer) clearTimeout(timer)
+    }
+  }, [formState.emailSent])
 
   return (
     <div className={styles.pageContainer}>
       <Hero title={title} />
       <div className={styles.contentWrapper}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <div className={styles.formWrapper}>
             <label className={styles.label} htmlFor="full-name">
               Name
@@ -38,8 +48,8 @@ const ContactPage = ({ title }) => {
               id="full-name"
               name="name"
               type="text"
-              value={state.name}
-              onChange={handleChange}
+              value={formState.name}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -52,8 +62,8 @@ const ContactPage = ({ title }) => {
               id="email"
               name="email"
               type="email"
-              value={state.email}
-              onChange={handleChange}
+              value={formState.email}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -66,23 +76,37 @@ const ContactPage = ({ title }) => {
               id="message"
               name="message"
               rows="3"
-              value={state.message}
-              onChange={handleChange}
+              value={formState.message}
+              onChange={handleInputChange}
               required
             />
+            {validationErrors.message && (
+              <p className={styles.errorText}>
+                {validationErrors.message || ""}
+              </p>
+            )}
           </div>
-          <div className={styles.errorContainer}>
-            <EmailError errorMsg={errors.message || ""} />
-          </div>
+          <EmailError errorMsg={validationErrors.message || ""} />
           <div className={styles.submittingWrapper}>
             <button
               className={styles.submitButton}
               type="submit"
-              disabled={state.disabled}
+              disabled={formState.isDisabled}
             >
               Send
             </button>
-            {isSubmitting && (
+            {validationErrors.name && (
+              <p className={styles.errorText}>{validationErrors.name || ""}</p>
+            )}
+            {validationErrors.email && (
+              <p className={styles.errorText}>{validationErrors.email || ""}</p>
+            )}
+            {validationErrors.message && (
+              <p className={styles.errorText}>
+                {validationErrors.message || ""}
+              </p>
+            )}
+            {isLoading && (
               <div className={styles.loadingContainer}>
                 <Blocks
                   height="35"
@@ -98,10 +122,12 @@ const ContactPage = ({ title }) => {
                 </p>
               </div>
             )}
+            {showSuccess && (
+              <div className={styles.successMessageContainer}>
+                <p className={styles.successMessage}>Message Sent!</p>
+              </div>
+            )}
           </div>
-          {showSuccess && (
-            <p className={styles.successMessage}>Message Sent!</p>
-          )}
         </form>
       </div>
     </div>
