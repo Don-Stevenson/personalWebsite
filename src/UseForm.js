@@ -16,7 +16,7 @@ const useForm = () => {
     message: "",
   })
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isSending, setIsSending] = useState(false)
 
   const isValidEmail = email => {
     const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/
@@ -47,7 +47,7 @@ const useForm = () => {
         isDisabled: false,
         emailSent: false,
       }))
-      setIsLoading(false)
+      setIsSending(false)
     } else if (!isValidEmail(formState.email)) {
       newErrors.email = "Please enter a valid email address"
       setFormState(prev => ({
@@ -55,7 +55,7 @@ const useForm = () => {
         isDisabled: false,
         emailSent: false,
       }))
-      setIsLoading(false)
+      setIsSending(false)
     }
 
     setValidationErrors(newErrors)
@@ -65,12 +65,12 @@ const useForm = () => {
 
   const handleFormSubmit = async event => {
     event.preventDefault()
-    setIsLoading(true)
+    setIsSending(true)
 
     const submissionStartTime = Date.now()
 
     if (!validateForm()) {
-      setIsLoading(false)
+      setIsSending(false)
       return
     }
 
@@ -83,11 +83,11 @@ const useForm = () => {
       )
 
       const elapsedTime = Date.now() - submissionStartTime
-      const minLoadingDuration = 3000
+      const minSendingDuration = 3000
 
-      if (elapsedTime < minLoadingDuration) {
+      if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>
-          setTimeout(resolve, minLoadingDuration - elapsedTime)
+          setTimeout(resolve, minSendingDuration - elapsedTime)
         )
       }
 
@@ -99,7 +99,7 @@ const useForm = () => {
           isDisabled: false,
           emailSent: true,
         })
-        setIsLoading(false)
+        setIsSending(false)
 
         setTimeout(() => {
           setFormState(prev => ({
@@ -113,15 +113,15 @@ const useForm = () => {
           isDisabled: false,
           emailSent: false,
         }))
-        setIsLoading(false)
+        setIsSending(false)
       }
     } catch (error) {
       const elapsedTime = Date.now() - submissionStartTime
-      const minLoadingDuration = 3000
+      const minSendingDuration = 3000
 
-      if (elapsedTime < minLoadingDuration) {
+      if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>
-          setTimeout(resolve, minLoadingDuration - elapsedTime)
+          setTimeout(resolve, minSendingDuration - elapsedTime)
         )
       }
 
@@ -135,7 +135,7 @@ const useForm = () => {
         isDisabled: false,
         emailSent: false,
       }))
-      setIsLoading(false)
+      setIsSending(false)
     }
   }
 
@@ -144,7 +144,7 @@ const useForm = () => {
     handleFormSubmit,
     formState,
     validationErrors,
-    isLoading,
+    isSending,
   }
 }
 
