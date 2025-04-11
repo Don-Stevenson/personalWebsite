@@ -11,7 +11,7 @@ const ContactPage = ({ title }) => {
     handleFormSubmit,
     formState,
     validationErrors,
-    isLoading,
+    isSending,
   } = Useform()
 
   const [showSuccess, setShowSuccess] = useState(false)
@@ -106,7 +106,7 @@ const ContactPage = ({ title }) => {
                 {validationErrors.message || ""}
               </p>
             )}
-            {isLoading && (
+            {isSending && (
               <div className={styles.loadingContainer}>
                 <Blocks
                   height="35"
