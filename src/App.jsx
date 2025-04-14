@@ -7,7 +7,7 @@ import AboutPage from "./pages/AboutPage"
 import ContactPage from "./pages/ContactPage"
 import Navbar from "./components/NavBar/NavBar"
 
-const App = () => {
+export default function App() {
   const home = {
     title: "Keep Learning.",
     subTitle: "Projects that make a difference",
@@ -41,5 +41,3 @@ const App = () => {
     </Router>
   )
 }
-
-export default App
