@@ -14,7 +14,11 @@ export default defineConfig({
       exclude: ["node_modules/", "src/setupTests.js"],
     },
     deps: {
-      inline: [/@vitejs\/plugin-react-swc/],
+      optimizer: {
+        web: {
+          include: [/@vitejs\/plugin-react-swc/],
+        },
+      },
     },
   },
   resolve: {
