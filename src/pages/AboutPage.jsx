@@ -2,7 +2,7 @@ import React from "react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import Hero from "../components/Hero/Hero"
 import ProfilePic from "..//images/profile pic 2024.webp"
-import Resume from "../assets/docs/DS Resume.pdf"
+import Resume from "../assets/docs/Don Stevenson - SR engineer -  resume.pdf"
 import styles from "./AboutPage.module.css"
 
 export default function AboutPage({ title }) {
