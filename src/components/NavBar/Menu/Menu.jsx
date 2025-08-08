@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import styles from "./Menu.module.css"
 
 const Menu = ({ open }) => {
@@ -6,15 +7,15 @@ const Menu = ({ open }) => {
     <nav
       className={`${styles.menu} ${open ? styles.menuOpen : styles.menuClosed}`}
     >
-      <a className={styles.link} href="/">
+      <Link className={styles.link} href="/">
         Home
-      </a>
-      <a className={styles.link} href="/about">
+      </Link>
+      <Link className={styles.link} href="/about">
         About
-      </a>
-      <a className={styles.link} href="/contact">
+      </Link>
+      <Link className={styles.link} href="/contact">
         Contact
-      </a>
+      </Link>
     </nav>
   )
 }

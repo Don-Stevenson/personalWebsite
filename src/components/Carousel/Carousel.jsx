@@ -1,18 +1,19 @@
+"use client"
 import React, { useState } from "react"
 import styles from "./Carousel.module.css"
 
-import FTPPyschStatic from "../../images/FTPsychStatic.webp"
-import FTPPyschGif from "../../images/FTPsychGif.gif"
-import SebastianKnoxStatic from "../../images/SebastianKnoxStatic.webp"
-import SebastianKnoxGif from "../../images/SebastianKnoxGif.gif"
-import schedulerStatic from "../../images/SchedulerStatic.webp"
-import schedulerGif from "../../images/SchedulerGIF.gif"
-import TeamCreatorStatic from "../../images/TeamCreatorStatic.webp"
-import TeamCreatorGif from "../../images/TeamCreatorGif.gif"
-import nagMeStatic from "../../images/NagMe-static.webp"
-import nagMeGif from "../../images/NagMe.gif"
-import weatherAppStatic from "../../images/WeatherAppStatic.webp"
-import weatherAppGif from "../../images/WeatherAppGif.gif"
+const FTPPyschStatic = "/FTPsychStatic.webp"
+const FTPPyschGif = "/FTPsychGif.gif"
+const SebastianKnoxStatic = "/SebastianKnoxStatic.webp"
+const SebastianKnoxGif = "/SebastianKnoxGif.gif"
+const schedulerStatic = "/SchedulerStatic.webp"
+const schedulerGif = "/SchedulerGIF.gif"
+const TeamCreatorStatic = "/TeamCreatorStatic.webp"
+const TeamCreatorGif = "/TeamCreatorGif.gif"
+const nagMeStatic = "/NagMe-static.webp"
+const nagMeGif = "/NagMe.gif"
+const weatherAppStatic = "/WeatherAppStatic.webp"
+const weatherAppGif = "/WeatherAppGif.gif"
 
 const carouselItems = [
   {
@@ -75,7 +76,7 @@ const carouselItems = [
 
 function useCarousel(items) {
   const [activeItems, setActiveItems] = useState(
-    items.map(item => ({ ...item, selected: false }))
+    items.map(item => ({ ...item, selected: false })),
   )
 
   const handleCardClick = id => {
@@ -83,8 +84,8 @@ function useCarousel(items) {
       prevItems.map(item =>
         item.id === id
           ? { ...item, selected: true }
-          : { ...item, selected: false }
-      )
+          : { ...item, selected: false },
+      ),
     )
   }
 
@@ -124,7 +125,7 @@ export default function Carousel() {
               )}
             </div>
           </div>
-        )
+        ),
       )}
     </div>
   )

@@ -1,0 +1,151 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Hero/Hero.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.Hero_container__KML1d {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.Hero_title__bGj6o {
+  font-family: var(--system-fonts);
+  font-weight: bolder;
+  font-size: 3.75rem;
+  padding: 2.5 2.5 2.5 0rem;
+  color: #212529;
+}
+
+.Hero_subtitle1__bMi4f {
+  color: #212529;
+  font-family: var(--system-fonts);
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.Hero_subtitle2__7IBh7 {
+  font-family: var(--system-fonts);
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 5rem;
+  color: #212529;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .Hero_container__KML1d {
+    margin: 2rem;
+    margin-bottom: 8rem;
+  }
+
+  .Hero_title__bGj6o {
+    font-size: 6rem;
+    padding: 4 rem;
+  }
+
+  .Hero_subtitle1__bMi4f {
+    font-size: 3.5rem;
+  }
+
+  .Hero_subtitle2__7IBh7 {
+    margin-bottom: 0;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/pages/AboutPage.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.AboutPage_pageContainer__I06cd {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.AboutPage_contentWrapper__gWUjL {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .AboutPage_contentWrapper__gWUjL {
+    margin-left: 3rem;
+    flex-direction: row;
+  }
+}
+
+.AboutPage_imageSection__Lj_BT {
+  display: flex;
+  flex-direction: column;
+  max-width: 93%;
+}
+
+.AboutPage_profileImage__N9RPH {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  object-fit: contain;
+  align-self: left;
+}
+
+.AboutPage_contentSection__Qka_9 {
+  margin-right: 1rem;
+}
+
+.AboutPage_paragraph__aluUP {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  max-width: 30rem;
+}
+
+@media (min-width: 768px) {
+  .AboutPage_paragraph__aluUP {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+}
+
+.AboutPage_socialLinksRow__22adB {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .AboutPage_socialLinksRow__22adB {
+    margin-left: 3rem;
+  }
+}
+
+.AboutPage_iconLink__ZjGyt {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.AboutPage_githubIcon__vcbQQ {
+  color: #333;
+  font-size: 35px;
+  margin: 6px;
+  transition: color 0.3s ease;
+}
+
+.AboutPage_githubIcon__vcbQQ:hover {
+  color: #666;
+}
+
+.AboutPage_linkedinIcon__0OG8l {
+  color: #0077b5;
+  font-size: 35px;
+  margin: 6px;
+  transition: color 0.3s ease;
+}
+
+.AboutPage_linkedinIcon__0OG8l:hover {
+  color: #0099d4;
+}
+

@@ -1,9 +1,3 @@
-:root {
-  --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-}
-
 .errorText {
   font-family: var(--system-font);
   font-size: 0.8rem;
