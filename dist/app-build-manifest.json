@@ -1,3 +1,52 @@
 {
-  "pages": {}
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/chunks/app/_not-found/page-429ac35bcea6e02b.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/css/239c6beed3cf8d37.css",
+      "static/chunks/app/layout-fc33dc972dc95c15.js"
+    ],
+    "/api/email/route": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/chunks/app/api/email/route-c83e9f60faf3ad64.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/css/c5339c595f751ea4.css",
+      "static/chunks/app/about/page-2bf3cdc83fb62811.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/css/c5339c595f751ea4.css",
+      "static/chunks/app/page-a185718f9da9bfd3.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-2b62440454913efd.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-e229cbb18e88417e.js",
+      "static/chunks/main-app-7fe4fec6118081c9.js",
+      "static/css/c5339c595f751ea4.css",
+      "static/chunks/160b575a-642fcda196a43aac.js",
+      "static/chunks/16-13dcb9d83346a784.js",
+      "static/chunks/app/contact/page-ece53e7c43748048.js"
+    ]
+  }
 }
