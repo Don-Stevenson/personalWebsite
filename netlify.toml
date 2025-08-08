@@ -14,7 +14,7 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "https://donstevenson.dev"
-  status = 301
+  from = "/"
+  to = "https://donstevenson.dev/"
+  status = 302
   force = true
