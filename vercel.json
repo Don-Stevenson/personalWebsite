@@ -1,7 +1,4 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": ".next",
-    "framework": "nextjs",
     "functions": {
         "src/app/api/email/route.js": {
             "maxDuration": 10
