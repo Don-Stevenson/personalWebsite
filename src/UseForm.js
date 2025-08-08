@@ -1,3 +1,4 @@
+"use client"
 import axios from "axios"
 import { useState } from "react"
 
@@ -77,17 +78,14 @@ const useForm = () => {
     setFormState(prev => ({ ...prev, isDisabled: true }))
 
     try {
-      const response = await axios.post(
-        "https://personalwebsite-api.onrender.com/api/email",
-        formState
-      )
+      const response = await axios.post("/api/email", formState)
 
       const elapsedTime = Date.now() - submissionStartTime
       const minSendingDuration = 3000
 
       if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>
-          setTimeout(resolve, minSendingDuration - elapsedTime)
+          setTimeout(resolve, minSendingDuration - elapsedTime),
         )
       }
 
@@ -121,7 +119,7 @@ const useForm = () => {
 
       if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>
-          setTimeout(resolve, minSendingDuration - elapsedTime)
+          setTimeout(resolve, minSendingDuration - elapsedTime),
         )
       }
 
