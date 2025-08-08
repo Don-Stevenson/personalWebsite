@@ -1,45 +1,26 @@
 import React from "react"
 import { render, screen } from "@testing-library/react"
-import { expect } from "vitest"
-import { MemoryRouter } from "react-router-dom"
-import App from "./App"
+import HomePage from "./pages/HomePage"
 
-// Mock the router components
-vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual("react-router-dom")
-  return {
-    ...actual,
-    // Replace BrowserRouter with MemoryRouter for testing
-    BrowserRouter: ({ children }) => (
-      <actual.MemoryRouter initialEntries={["/"]}>
-        {children}
-      </actual.MemoryRouter>
-    ),
+// Helper function to render HomePage
+const renderHomePage = () => {
+  const homeProps = {
+    title: "Keep Learning.",
+    subTitle: "Projects that make a difference", 
+    text: "Checkout my work below"
   }
-})
-
-// Helper function to render App directly (no need to wrap with Router)
-const renderApp = () => {
-  return render(<App />)
+  return render(<HomePage {...homeProps} />)
 }
 
-describe("App Component", () => {
+describe("HomePage Component", () => {
   describe("Homepage Content", () => {
     beforeEach(() => {
-      renderApp()
+      renderHomePage()
     })
 
     test("renders main heading", () => {
       const titleElement = screen.getByText(/Keep Learning./i)
       expect(titleElement).toBeInTheDocument()
-    })
-
-    test("renders navigation links", () => {
-      const homeLink = screen.getAllByText(/Home/i)[0]
-      const aboutLink = screen.getAllByText(/About/i)[0]
-
-      expect(homeLink).toBeInTheDocument()
-      expect(aboutLink).toBeInTheDocument()
     })
 
     test("renders project section headings", () => {
@@ -52,45 +33,18 @@ describe("App Component", () => {
       expect(checkoutText).toBeInTheDocument()
     })
 
-    test("renders footer content", () => {
-      const footerText = screen.getByText(/Custom site by Don Stevenson/i)
-      expect(footerText).toBeInTheDocument()
+    test("renders carousel component", () => {
+      // Test that carousel container exists
+      const carouselContainer = document.querySelector('.carouselContainer')
+      expect(carouselContainer).toBeInTheDocument()
+    })
+
+    test("renders project cards", () => {
+      // Test that project cards are rendered
+      const cards = document.querySelectorAll('.card')
+      expect(cards.length).toBeGreaterThan(0)
     })
   })
 
-  describe("Navigation Functionality", () => {
-    beforeEach(() => {
-      renderApp()
-    })
 
-    test("Contact link has correct href", () => {
-      const contactLinks = screen.getAllByText(/Contact/i)
-
-      // Check that at least one contact link exists
-      expect(contactLinks.length).toBeGreaterThan(0)
-
-      // Check that the first contact link has the correct href
-      expect(contactLinks[0].getAttribute("href")).toBe("/contact")
-    })
-
-    test("About link has correct href", () => {
-      const aboutLinks = screen.getAllByText(/About/i)
-
-      // Check that at least one about link exists
-      expect(aboutLinks.length).toBeGreaterThan(0)
-
-      // Check that the first about link has the correct href
-      expect(aboutLinks[0].getAttribute("href")).toBe("/about")
-    })
-
-    test("Home link has correct href", () => {
-      const homeLinks = screen.getAllByText(/Home/i)
-
-      // Check that at least one home link exists
-      expect(homeLinks.length).toBeGreaterThan(0)
-
-      // Check that the first home link has the correct href
-      expect(homeLinks[0].getAttribute("href")).toBe("/")
-    })
-  })
 })

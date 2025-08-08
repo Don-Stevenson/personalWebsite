@@ -1,18 +1,17 @@
 import { renderHook, act } from "@testing-library/react"
-import { expect } from "vitest"
 import useForm from "./UseForm"
 import axios from "axios"
 
 // Mock axios
-vi.mock("axios")
+jest.mock("axios")
 
 describe("useForm hook", () => {
   let consoleErrorSpy
 
   beforeEach(() => {
-    vi.clearAllMocks()
+    jest.clearAllMocks()
     // Spy on console.error to suppress expected error messages
-    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {})
+    consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {})
   })
 
   afterEach(() => {
@@ -124,7 +123,7 @@ describe("useForm hook", () => {
     })
 
     expect(axios.post).toHaveBeenCalledWith(
-      "https://personalwebsite-api.onrender.com/api/email",
+      "/api/email",
       expect.objectContaining({
         name: "John Doe",
         email: "john@example.com",
