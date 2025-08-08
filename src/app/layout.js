@@ -5,6 +5,9 @@ import Footer from "../components/Footer/Footer"
 export const metadata = {
   title: "Don Stevenson -Software Developer",
   description: "Don Stevenson - Software Developer",
+}
+
+export const viewport = {
   themeColor: "#000000",
 }
 

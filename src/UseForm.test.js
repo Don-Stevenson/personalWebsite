@@ -1,18 +1,17 @@
 import { renderHook, act } from "@testing-library/react"
-import { expect } from "vitest"
 import useForm from "./UseForm"
 import axios from "axios"
 
 // Mock axios
-vi.mock("axios")
+jest.mock("axios")
 
 describe("useForm hook", () => {
   let consoleErrorSpy
 
   beforeEach(() => {
-    vi.clearAllMocks()
+    jest.clearAllMocks()
     // Spy on console.error to suppress expected error messages
-    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {})
+    consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {})
   })
 
   afterEach(() => {
@@ -86,7 +85,7 @@ describe("useForm hook", () => {
     })
 
     expect(result.current.validationErrors.email).toBe(
-      "Please enter a valid email address"
+      "Please enter a valid email address",
     )
   })
 
@@ -124,12 +123,12 @@ describe("useForm hook", () => {
     })
 
     expect(axios.post).toHaveBeenCalledWith(
-      "https://personalwebsite-api.onrender.com/api/email",
+      "/api/email",
       expect.objectContaining({
         name: "John Doe",
         email: "john@example.com",
         message: "Hello world",
-      })
+      }),
     )
 
     // Check form is reset after successful submission
@@ -176,7 +175,7 @@ describe("useForm hook", () => {
     })
 
     expect(result.current.validationErrors.message).toBe(
-      "😥 Oops! Failed to send the message"
+      "😥 Oops! Failed to send the message",
     )
     expect(result.current.formState.emailSent).toBe(false)
     expect(result.current.formState.isDisabled).toBe(false)
@@ -189,8 +188,8 @@ describe("useForm hook", () => {
     axios.post.mockImplementation(
       () =>
         new Promise(resolve =>
-          setTimeout(() => resolve({ data: { success: true } }), 100)
-        )
+          setTimeout(() => resolve({ data: { success: true } }), 100),
+        ),
     )
 
     // Fill form with valid data

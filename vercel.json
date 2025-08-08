@@ -1,0 +1,7 @@
+{
+    "functions": {
+        "src/app/api/email/route.js": {
+            "maxDuration": 10
+        }
+    }
+}
