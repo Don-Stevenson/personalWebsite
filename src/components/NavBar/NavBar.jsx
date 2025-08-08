@@ -1,4 +1,6 @@
+"use client"
 import React, { useState, useRef } from "react"
+import Link from "next/link"
 import { useOnClickOutside } from "../../hooks"
 import Burger from "./Burger/Burger"
 import Menu from "./Menu/Menu"
@@ -14,15 +16,15 @@ const Navbar = () => {
         <Menu open={open} setOpen={setOpen} />
         <Burger open={open} setOpen={setOpen} />
         <div className={styles.linksWrapper}>
-          <a className={styles.link} href="/">
+          <Link className={styles.link} href="/">
             Home
-          </a>
-          <a className={styles.link} href="/about">
+          </Link>
+          <Link className={styles.link} href="/about">
             About
-          </a>
-          <a className={styles.link} href="/contact">
+          </Link>
+          <Link className={styles.link} href="/contact">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
       <hr className={styles.hrLine} />
