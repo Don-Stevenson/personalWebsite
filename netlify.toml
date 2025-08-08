@@ -12,3 +12,9 @@
 [test]
   command = "npm run test:coverage"
   publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "https://donstevenson.dev"
+  status = 301
+  force = true
