@@ -2,6 +2,6 @@
   "/_not-found/page": "/_not-found",
   "/api/email/route": "/api/email",
   "/about/page": "/about",
-  "/page": "/",
-  "/contact/page": "/contact"
+  "/contact/page": "/contact",
+  "/page": "/"
 }
