@@ -119,7 +119,7 @@ const ContactPage = ({ title }) => {
                   visible={true}
                 />
                 <p className={styles.textLightGrey}>
-                  Please allow up to 30 seconds for the message to send
+                  Please allow up to 5 seconds for the message to send
                 </p>
               </div>
             )}
