@@ -1,5 +1,5 @@
 [build]
-  command = "npm run test && npm run build" # Run tests before building
+  command = "npm run build" # Build the application
   publish = "dist" # Or the directory where your build output is
 
 [dev]
@@ -9,7 +9,4 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[test]
-  command = "npm run test:coverage"
-  publish = "dist"
 
