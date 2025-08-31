@@ -16,9 +16,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <Navbar />
-        {children}
-        <Footer />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
+          <main style={{ flex: "1" }}>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )

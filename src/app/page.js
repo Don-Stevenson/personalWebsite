@@ -1,13 +1,11 @@
 import HomePage from "../pages/HomePage"
 
-export default function Home() {
-  const home = {
-    title: "Keep Learning.",
-    subTitle: "Projects that make a difference",
-    text: "Checkout my work below",
-  }
-
+export default function Page() {
   return (
-    <HomePage title={home.title} subTitle={home.subTitle} text={home.text} />
+    <HomePage
+      title="Don Stevenson"
+      subTitle="Software Developer"
+      text="Redirecting to the new site..."
+    />
   )
 }
