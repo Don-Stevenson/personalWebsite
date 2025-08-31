@@ -1,10 +1,9 @@
 [build]
-  command = "npm run build" # Build the application
-  publish = "dist" # Or the directory where your build output is
+  command = "npm run build"
+  publish = ".next"
 
-[dev]
-  command = "npm run dev" # Command for development build
-  publish = "dist" # Or the directory for development build output
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NODE_VERSION = "18"

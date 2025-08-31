@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove custom distDir for Vercel deployment
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -8,6 +7,8 @@ const nextConfig = {
   experimental: {
     esmExternals: true,
   },
+  // Ensure the build output goes to .next for Netlify
+  // No custom distDir needed for standard Netlify deployment
 }
 
 export default nextConfig
