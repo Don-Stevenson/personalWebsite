@@ -30,8 +30,9 @@ export default function HomePage({ title, subTitle, text }) {
           marginTop: "10rem",
         }}
       >
-        Redirecting to https://donstevenson.dev in {countdown} seconds...
-        <div style={{ height: "1rem" }}></div>
+        Redirecting to the new page https://donstevenson.dev in {countdown}{" "}
+        seconds...
+        <div style={{ height: "1rem" }} />
         <a className={styles.contentSection} href="https://donstevenson.dev">
           Or click here to go to new page
         </a>
