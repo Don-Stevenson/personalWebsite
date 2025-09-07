@@ -12,7 +12,7 @@ export async function POST(request) {
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev", // Using Resend's verified domain for testing
       to: process.env.MY_EMAIL,
-      subject: `Portfolio contact from ${name}`,
+      subject: `Don Stevenson.dev - Message from ${name}`,
       react: EmailTemplate({ name, email, message }), // React component!
     })
 

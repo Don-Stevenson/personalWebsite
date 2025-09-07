@@ -10,6 +10,8 @@
   padding: 0;
   z-index: 11;
   position: fixed;
+  top: 1rem;
+  right: 1rem;
 }
 
 .burger:focus {
@@ -26,8 +28,16 @@
   transform-origin: 1px;
 }
 
-.open .burgerLine {
+.burger.open .burgerLine:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.burger.open .burgerLine:nth-child(2) {
   opacity: 0;
+}
+
+.burger.open .burgerLine:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 @media (min-width: 768px) {

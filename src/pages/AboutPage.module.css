@@ -37,11 +37,12 @@
 }
 
 .paragraph {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--system-fonts);
   font-size: 1rem;
   max-width: 30rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
 }
 
 @media (min-width: 768px) {
@@ -68,7 +69,7 @@
 }
 
 .githubIcon {
-  color: #333;
+  color: var(--primary-dark);
   font-size: 35px;
   margin: 6px;
   transition: color 0.3s ease;
@@ -87,4 +88,13 @@
 
 .linkedinIcon:hover {
   color: #0099d4;
+}
+
+.paragraph a {
+  color: var(--primary-accent);
+  text-decoration: underline;
+}
+
+.paragraph a:hover {
+  color: #0056b3;
 }

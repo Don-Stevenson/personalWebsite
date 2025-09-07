@@ -4,7 +4,7 @@ import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
 import { Blocks } from "react-loader-spinner"
 import styles from "./ContactPage.module.css"
-import { EmailError } from "../components/EmailError/EmailError"
+import { ContactError } from "../components/ContactError/ContactError"
 
 const ContactPage = ({ title }) => {
   const {
@@ -35,6 +35,7 @@ const ContactPage = ({ title }) => {
     }
   }, [formState.emailSent])
 
+  console.log({ validationErrors })
   return (
     <div className={styles.pageContainer}>
       <Hero title={title} />
@@ -81,13 +82,7 @@ const ContactPage = ({ title }) => {
               onChange={handleInputChange}
               required
             />
-            {validationErrors.message && (
-              <p className={styles.errorText}>
-                {validationErrors.message || ""}
-              </p>
-            )}
           </div>
-          <EmailError errorMsg={validationErrors.message || ""} />
           <div className={styles.submittingWrapper}>
             <button
               className={styles.submitButton}
@@ -96,17 +91,7 @@ const ContactPage = ({ title }) => {
             >
               Send
             </button>
-            {validationErrors.name && (
-              <p className={styles.errorText}>{validationErrors.name || ""}</p>
-            )}
-            {validationErrors.email && (
-              <p className={styles.errorText}>{validationErrors.email || ""}</p>
-            )}
-            {validationErrors.message && (
-              <p className={styles.errorText}>
-                {validationErrors.message || ""}
-              </p>
-            )}
+
             {isSending && (
               <div className={styles.loadingContainer}>
                 <Blocks
@@ -123,11 +108,25 @@ const ContactPage = ({ title }) => {
                 </p>
               </div>
             )}
-            {showSuccess && (
-              <div className={styles.successMessageContainer}>
-                <p className={styles.successMessage}>Message Sent!</p>
-              </div>
-            )}
+            <div className={styles.sendMessageContainer}>
+              {(validationErrors.message ||
+                validationErrors.email ||
+                validationErrors.name) && (
+                <ContactError
+                  errorMsg={
+                    validationErrors.message ||
+                    validationErrors.email ||
+                    validationErrors.name ||
+                    ""
+                  }
+                />
+              )}
+              {showSuccess && (
+                <div className={styles.successMessageContainer}>
+                  <p className={styles.successMessage}>Message Sent!</p>
+                </div>
+              )}
+            </div>
           </div>
         </form>
       </div>

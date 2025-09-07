@@ -31,6 +31,7 @@
   border: 1px solid #ced4da;
   width: 100%;
   font-size: 1rem;
+  background-color: white;
 }
 
 .text {
@@ -180,4 +181,10 @@
 .errorText {
   color: red;
   font-size: 0.8rem;
+}
+
+.sendMessageContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }

@@ -9,7 +9,7 @@
   font-family: var(--system-fonts);
   font-weight: bolder;
   font-size: 3.75rem;
-  padding: 2.5 2.5 2.5 0rem;
+  padding: 2.5rem 2.5rem 2.5rem 0rem;
   color: #212529;
 }
 
@@ -40,7 +40,7 @@
 
   .title {
     font-size: 6rem;
-    padding: 4 rem;
+    padding: 4rem;
   }
 
   .subtitle1 {
