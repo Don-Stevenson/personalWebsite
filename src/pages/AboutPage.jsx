@@ -1,7 +1,7 @@
 import React from "react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import Hero from "../components/Hero/Hero"
-const ProfilePic = "/profile pic 2024.webp"
+const ProfilePic = "/LinkedInProfile.webp"
 const Resume = "/Don Stevenson - Full Stack Developer Sept 2025.pdf"
 import styles from "./AboutPage.module.css"
 
