@@ -1,6 +1,6 @@
 # A Personalized Portfolio Website
 
-You can find my portolio site here: [https://donstevenson.netlify.app/](https://donstevenson.netlify.app/)
+You can find my portolio site here: [donstevenson.dev](https://donstevenson.dev/)
 
 ## About
 
