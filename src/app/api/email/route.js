@@ -3,10 +3,17 @@ import { Resend } from "resend"
 import EmailTemplate from "../../../../emails/ContactEmail" // React component
 import { NextResponse } from "next/server"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request) {
   try {
+    // Validate environment variables
+    if (!process.env.RESEND_API_KEY || !process.env.MY_EMAIL) {
+      return NextResponse.json(
+        { success: false, error: "Email service not configured" },
+        { status: 500 },
+      )
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const { name, email, message } = await request.json()
 
     const { data, error } = await resend.emails.send({
