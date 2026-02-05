@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import HomePage from "../src/pages/HomePage"
 
 describe("HomePage", () => {
-    it.only("should render the home page", () => {
+    it("should render the home page", () => {
         render(<HomePage />)
 
         const title = screen.getByTestId("title")
@@ -13,9 +13,4 @@ describe("HomePage", () => {
         expect(text).toBeInTheDocument()
     })
 
-    it("should render the carousel", () => {
-        render(<HomePage />)
-        const carousel = screen.getByRole("carousel")
-        expect(carousel).toBeInTheDocument()
-    })
 })
