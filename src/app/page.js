@@ -2,8 +2,8 @@ import HomePage from "../pages/HomePage"
 
 export default function Home() {
   const home = {
-    title: "Keep Learning.",
-    subTitle: "Projects that make a difference",
+    title: "Engineering Solutions.",
+    subTitle: "Continuously Improving.",
     text: "Checkout my work below",
   }
 
