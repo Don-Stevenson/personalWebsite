@@ -2,7 +2,7 @@ import React from "react"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import Hero from "../components/Hero/Hero"
 const ProfilePic = "/LinkedInProfile.webp"
-const Resume = "/Don_Stevenson_FrontEnd_NextJS_Contract_Resume.pdf"
+const Resume = "/Don-Stevenson-FullStack-Resume.pdf"
 import styles from "./AboutPage.module.css"
 
 export default function AboutPage({ title }) {
