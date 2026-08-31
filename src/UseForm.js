@@ -2,7 +2,7 @@
 import axios from "axios"
 import { useState } from "react"
 
-const useForm = () => {
+const useForm = ({ minSendingDuration = 3000 } = {}) => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -81,7 +81,6 @@ const useForm = () => {
       const response = await axios.post("/api/email", formState)
 
       const elapsedTime = Date.now() - submissionStartTime
-      const minSendingDuration = 3000
 
       if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>
@@ -115,7 +114,6 @@ const useForm = () => {
       }
     } catch (error) {
       const elapsedTime = Date.now() - submissionStartTime
-      const minSendingDuration = 3000
 
       if (elapsedTime < minSendingDuration) {
         await new Promise(resolve =>

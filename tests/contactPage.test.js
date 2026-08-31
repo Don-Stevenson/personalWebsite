@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react"
+import { render, screen, act } from "@testing-library/react"
 import { fireEvent } from "@testing-library/react"
 import ContactPage from "../src/pages/ContactPage"
 import Useform from "../src/UseForm"
@@ -169,8 +169,9 @@ describe("ContactPage", () => {
         // Verify success message appears
         await screen.findByText("Message Sent!")
 
-        // Fast forward time
-        jest.advanceTimersByTime(5000)
+        await act(async () => {
+            jest.advanceTimersByTime(5000)
+        })
 
         // Force a rerender to allow React to process state changes
         rerender(<ContactPage />)
@@ -302,8 +303,9 @@ describe("ContactPage", () => {
         // Unmount before timeout completes
         unmount()
 
-        // Fast-forward timers - cleanup should prevent state updates
-        jest.runAllTimers()
+        await act(async () => {
+            jest.runAllTimers()
+        })
 
         // If cleanup works properly, no warnings should occur
         expect(jest.getTimerCount()).toBe(0)
