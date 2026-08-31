@@ -1,26 +1,43 @@
-import { renderHook, waitFor } from "@testing-library/react"
+import { renderHook, waitFor, act } from "@testing-library/react"
 import useForm from "../src/UseForm"
 import axios from "axios"
 
-// Mock axios
 jest.mock("axios")
+
+const validFields = {
+  name: "John Doe",
+  email: "john@example.com",
+  message: "Hello world",
+}
+
+async function fillForm(result, fields) {
+  await act(async () => {
+    for (const [name, value] of Object.entries(fields)) {
+      result.current.handleInputChange({ target: { name, value } })
+    }
+  })
+
+  await waitFor(() => {
+    for (const [name, value] of Object.entries(fields)) {
+      expect(result.current.formState[name]).toBe(value)
+    }
+  })
+}
 
 describe("useForm hook", () => {
   let consoleErrorSpy
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    // Spy on console.error to suppress expected error messages
+    jest.resetAllMocks()
     consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => { })
   })
 
   afterEach(() => {
-    // Restore console.error after each test
     consoleErrorSpy.mockRestore()
   })
 
-  test("initial form state is correct", async () => {
-    const { result } = renderHook(() => useForm())
+  test("initial form state is correct", () => {
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
 
     expect(result.current.formState).toEqual({
       name: "",
@@ -40,25 +57,25 @@ describe("useForm hook", () => {
   })
 
   test("handleInputChange updates form state correctly", async () => {
-    const { result } = renderHook(() => useForm())
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
 
-    result.current.handleInputChange({
-      target: {
-        name: "name",
-        value: "John Doe",
-      },
+    await act(async () => {
+      result.current.handleInputChange({
+        target: {
+          name: "name",
+          value: "John Doe",
+        },
+      })
     })
 
-    await waitFor(() => {
-      expect(result.current.formState.name).toBe("John Doe")
-    })
+    expect(result.current.formState.name).toBe("John Doe")
   })
 
   test("form validation on empty submission", async () => {
-    const { result } = renderHook(() => useForm())
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
 
-    await waitFor(() => {
-      result.current.handleFormSubmit({ preventDefault: () => { } })
+    await act(async () => {
+      await result.current.handleFormSubmit({ preventDefault: () => { } })
     })
 
     expect(result.current.validationErrors).toEqual({
@@ -69,32 +86,15 @@ describe("useForm hook", () => {
   })
 
   test("form validation on invalid email", async () => {
-    const { result } = renderHook(() => useForm())
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
 
-    result.current.handleInputChange({
-      target: {
-        name: "email",
-        value: "invalid-email",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "name",
-        value: "John Doe",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "message",
-        value: "Hello world",
-      },
+    await fillForm(result, {
+      name: "John Doe",
+      email: "invalid-email",
+      message: "Hello world",
     })
 
-    await waitFor(() => {
-      expect(result.current.formState.email).toBe("invalid-email")
-    })
-
-    await waitFor(async () => {
+    await act(async () => {
       await result.current.handleFormSubmit({ preventDefault: () => { } })
     })
 
@@ -104,45 +104,20 @@ describe("useForm hook", () => {
   })
 
   test("handleFormSubmit successfully sends email", async () => {
-    const { result } = renderHook(() => useForm())
+    axios.post.mockResolvedValueOnce({ data: { success: true } })
 
-    // Fill form with valid data
-    result.current.handleInputChange({
-      target: {
-        name: "name",
-        value: "John Doe",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "email",
-        value: "john@example.com",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "message",
-        value: "Hello world",
-      },
-    })
-    // Mock successful axios response
-    await waitFor(() => {
-      axios.post.mockResolvedValueOnce({ data: { success: true } })
-    })
-    // Submit form
-    await result.current.handleFormSubmit({ preventDefault: () => { } })
-    await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith(
-        "/api/email",
-        expect.objectContaining({
-          name: "John Doe",
-          email: "john@example.com",
-          message: "Hello world",
-        }),
-      )
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
+    await fillForm(result, validFields)
+
+    await act(async () => {
+      await result.current.handleFormSubmit({ preventDefault: () => { } })
     })
 
-    // Check form is reset after successful submission
+    expect(axios.post).toHaveBeenCalledWith(
+      "/api/email",
+      expect.objectContaining(validFields),
+    )
+
     expect(result.current.formState).toEqual({
       name: "",
       email: "",
@@ -153,104 +128,53 @@ describe("useForm hook", () => {
   })
 
   test("handleFormSubmit handles API error", async () => {
-    const { result } = renderHook(() => useForm())
-
-    // Fill form with valid data
-    result.current.handleInputChange({
-      target: {
-        name: "name",
-        value: "John Doe",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "email",
-        value: "john@example.com",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "message",
-        value: "Hello world",
-      },
-    })
-
-    await waitFor(() => {
-      expect(result.current.formState.name).toBe("John Doe")
-      expect(result.current.formState.email).toBe("john@example.com")
-      expect(result.current.formState.message).toBe("Hello world")
-    })
-
     axios.post.mockRejectedValueOnce(new Error("API Error"))
 
-    await result.current.handleFormSubmit({ preventDefault: () => { } })
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
+    await fillForm(result, validFields)
 
-    await waitFor(() => {
-      expect(result.current.validationErrors.message).toBe(
-        "😥 Oops! Failed to send the message",
-      )
+    await act(async () => {
+      await result.current.handleFormSubmit({ preventDefault: () => { } })
     })
 
+    expect(result.current.validationErrors.message).toBe(
+      "😥 Oops! Failed to send the message",
+    )
     expect(result.current.formState.emailSent).toBe(false)
     expect(result.current.formState.isDisabled).toBe(false)
   })
 
   test("form is disabled during submission", async () => {
-    const { result } = renderHook(() => useForm())
-
-    // Mock successful axios response with delay
+    let resolvePost
     axios.post.mockImplementation(
       () =>
-        new Promise(resolve =>
-          setTimeout(() => resolve({ data: { success: true } }), 100),
-        ),
+        new Promise(resolve => {
+          resolvePost = resolve
+        }),
     )
 
-    // Fill form with valid data
-    result.current.handleInputChange({
-      target: {
-        name: "name",
-        value: "John Doe",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "email",
-        value: "john@example.com",
-      },
-    })
-    result.current.handleInputChange({
-      target: {
-        name: "message",
-        value: "Hello world",
-      },
-    })
-    await waitFor(() => {
-      expect(result.current.formState.name).toBe("John Doe")
-      expect(result.current.formState.email).toBe("john@example.com")
-      expect(result.current.formState.message).toBe("Hello world")
+    const { result } = renderHook(() => useForm({ minSendingDuration: 0 }))
+    await fillForm(result, validFields)
+
+    let submitPromise
+    await act(async () => {
+      submitPromise = result.current.handleFormSubmit({
+        preventDefault: () => { },
+      })
     })
 
-    // Now submit the form
-    const submitPromise = result.current.handleFormSubmit({
-      preventDefault: () => { },
-    })
-
-
-    // Wait for state to update after submission starts
     await waitFor(() => {
       expect(result.current.formState.isDisabled).toBe(true)
       expect(result.current.isSending).toBe(true)
     })
 
-    // Wait for the minimum submission duration (3 seconds)
-    await submitPromise
-
-    // Check final state after submission completes
-    await waitFor(() => {
-      expect(result.current.formState.isDisabled).toBe(false)
-      expect(result.current.isSending).toBe(false)
-      expect(result.current.formState.emailSent).toBe(true)
+    await act(async () => {
+      resolvePost({ data: { success: true } })
+      await submitPromise
     })
+
+    expect(result.current.formState.isDisabled).toBe(false)
+    expect(result.current.isSending).toBe(false)
+    expect(result.current.formState.emailSent).toBe(true)
   })
 })
