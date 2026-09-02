@@ -1,6 +1,6 @@
 import { render, screen, act } from "@testing-library/react"
 import { fireEvent } from "@testing-library/react"
-import ContactPage from "../src/pages/ContactPage"
+import ContactPage from "../src/views/ContactPage"
 import Useform from "../src/UseForm"
 
 jest.mock("../src/UseForm", () => ({
@@ -146,10 +146,9 @@ describe("ContactPage", () => {
         expect(await screen.findByText("Message Sent!")).toBeInTheDocument()
     })
 
-    it("should hide success message after 5 seconds", async () => {
+    it("should hide success message after 5 seconds", () => {
         jest.useFakeTimers()
 
-        // Mock Useform to return emailSent: true
         Useform.mockReturnValue({
             handleInputChange: jest.fn(),
             handleFormSubmit: jest.fn(),
@@ -164,21 +163,15 @@ describe("ContactPage", () => {
             isSending: false
         })
 
-        const { rerender } = render(<ContactPage />)
+        render(<ContactPage />)
 
-        // Verify success message appears
-        await screen.findByText("Message Sent!")
+        expect(screen.getByText("Message Sent!")).toBeInTheDocument()
 
-        await act(async () => {
+        act(() => {
             jest.advanceTimersByTime(5000)
         })
 
-        // Force a rerender to allow React to process state changes
-        rerender(<ContactPage />)
-
-        // The timer should have cleared the success message
-        // We just verify the timer was set (coverage achieved)
-        expect(jest.getTimerCount()).toBe(0)
+        expect(screen.queryByText("Message Sent!")).not.toBeInTheDocument()
     })
 
     it("should show loading spinner when sending email", () => {
@@ -278,7 +271,7 @@ describe("ContactPage", () => {
         expect(errorMessages.length).toBeGreaterThanOrEqual(1)
     })
 
-    it("should cleanup timer on unmount", async () => {
+    it("should cleanup timer on unmount", () => {
         jest.useFakeTimers()
 
         Useform.mockReturnValue({
@@ -297,18 +290,15 @@ describe("ContactPage", () => {
 
         const { unmount } = render(<ContactPage />)
 
-        // Wait for initial effect to run
-        expect(await screen.findByText("Message Sent!")).toBeInTheDocument()
+        expect(screen.getByText("Message Sent!")).toBeInTheDocument()
 
-        // Unmount before timeout completes
         unmount()
 
-        await act(async () => {
-            jest.runAllTimers()
+        act(() => {
+            jest.runOnlyPendingTimers()
         })
 
-        // If cleanup works properly, no warnings should occur
-        expect(jest.getTimerCount()).toBe(0)
+        expect(screen.queryByText("Message Sent!")).not.toBeInTheDocument()
     })
 
     it("should render EmailError component with message error", () => {

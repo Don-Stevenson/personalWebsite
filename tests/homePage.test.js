@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import HomePage from "../src/pages/HomePage"
+import HomePage from "../src/views/HomePage"
 
 describe("HomePage", () => {
     it("should render the home page", () => {
