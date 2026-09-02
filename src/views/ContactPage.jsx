@@ -1,10 +1,15 @@
 "use client"
 import { useState, useEffect } from "react"
+import dynamic from "next/dynamic"
 import Hero from "../components/Hero/Hero"
 import Useform from "../UseForm"
-import { Blocks } from "react-loader-spinner"
 import styles from "./ContactPage.module.css"
 import { EmailError } from "../components/EmailError/EmailError"
+
+const Blocks = dynamic(
+  () => import("react-loader-spinner").then(mod => mod.Blocks),
+  { ssr: false },
+)
 
 const ContactPage = ({ title }) => {
   const {

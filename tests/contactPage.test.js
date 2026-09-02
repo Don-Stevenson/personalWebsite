@@ -1,6 +1,6 @@
 import { render, screen, act } from "@testing-library/react"
 import { fireEvent } from "@testing-library/react"
-import ContactPage from "../src/pages/ContactPage"
+import ContactPage from "../src/views/ContactPage"
 import Useform from "../src/UseForm"
 
 jest.mock("../src/UseForm", () => ({
